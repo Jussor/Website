@@ -7,6 +7,7 @@ import img1 from "../../assets/person1.jpeg"
 import img2 from "../../assets/person2.jpeg"
 import img3 from "../../assets/person3.jpeg"
 import img4 from "../../assets/person4.jpeg"
+import img5 from "../../assets/person5.jpeg"
 import { Link } from "react-router-dom";
 import "./OurTeam.css"
 const OurTeam = () => {
@@ -35,9 +36,13 @@ const OurTeam = () => {
         name: "أبانوب نبيل فكري حبيب",
         status: "محرر فيديو",
         icon: "/",
-        
-
-      }
+      },
+      {
+        imgurl:img5,
+        name: "فيصل الذبحاني ",
+        status: "صحفي",
+        icon: "/",
+         }
   ];
   return (
     <div className="our-team">
