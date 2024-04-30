@@ -19,7 +19,7 @@ const Tvcomp = () => {
 
   return (
     <div className="tv-bg">
-      <div className="container">
+      <div className="container mt-5">
         <br/>
       <h1 className="tv_header"> TV جسور  </h1>
         <div className="row">

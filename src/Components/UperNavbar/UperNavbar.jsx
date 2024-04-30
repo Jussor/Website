@@ -45,9 +45,9 @@ const formattedDate = `${dayName} ${date} ${monthName}`;
             <Link to="https://www.youtube.com/@Jusoor_News">
               <TbBrandYoutube />
             </Link >
-            {/* <Link to="#">
+            <Link to="https://www.tiktok.com/@jusoornews">
               <FaTiktok />
-            </Link> */}
+            </Link>
           </div>
           <div className="right-uper-nav">
             <div className="right-links">

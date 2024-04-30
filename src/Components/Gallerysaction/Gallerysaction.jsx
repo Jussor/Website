@@ -9,14 +9,15 @@ import { IMAGE_PATH } from "../../Utils/utils";
 import { Home } from "../../redux/slice/homeSlice";
 
 AOS.init();
-
 const Gallerysaction = () => {
   const dispatch = useDispatch();
   const { Main } = useSelector((state) => state.home);
 
+
   useEffect(() => {
     dispatch(Home());
   }, []);
+
 
   // Function to truncate text to a certain number of letters
   const truncateText = (text, maxLength) => {
@@ -35,15 +36,17 @@ const Gallerysaction = () => {
     return text;
   };
 
+
   console.log(Main);
   const handleClick = () => {
     window.scrollTo(0, 0); // Scroll to top of the page
   };
+
   return (
     <div>
       <div className="container mt-4">
         <div className="row gy-4">
-          
+
           <div className="col-lg-3">
             <div className="row gy-4">
               {Main &&
@@ -54,7 +57,9 @@ const Gallerysaction = () => {
                     data-aos-duration="2000"
                     key={index}
                   >
+
                     <Link to={`/podcast/1`} onClick={handleClick}>
+
                   <div className="blog_card">
                     <div className="blog_card_img">
                       <img
@@ -83,7 +88,9 @@ const Gallerysaction = () => {
                     data-aos-duration="2000"
                     key={index}
                   >
+
                     <Link to={`/podcast/1`} onClick={handleClick}>
+
                   <div className="blog_card">
                     <div className="blog_card_img">
                       <img
@@ -114,7 +121,9 @@ const Gallerysaction = () => {
                 data-aos-duration="2000"
                 key={index}
               >
+
                 <Link to={`/podcast/2`} onClick={handleClick}>
+
                   <div className="blog_card">
                     <div className="blog_card_img">
                       <img
@@ -126,10 +135,12 @@ const Gallerysaction = () => {
                       />
                       <div className="button-div">
                         <button>{item.category.categoryName}</button>
+
                       </div>
                     </div>
                     {/* Use truncateText or truncateWords function here */}
                     {/* <div className="bottom_img">{truncateText(item.title, 20)}</div> */}
+
                     <div className="bottom_img">{truncateWords(item.title, 10)}</div>
                   </div>
                 </Link>
@@ -139,13 +150,16 @@ const Gallerysaction = () => {
             <div className="row gy-4">
               {Main &&
                 Main.filter((post, index) => index == 3).map((item, index) => (
+
                   <div
                     className="col-lg-12 col-md-6"
                     data-aos="fade-up"
                     data-aos-duration="2000"
                     key={index}
                   >
+
                     <Link to={`/podcast/3`} onClick={handleClick}>
+
                   <div className="blog_card">
                     <div className="blog_card_img">
                       <img
@@ -166,6 +180,7 @@ const Gallerysaction = () => {
                 </Link>
                   </div>
                 ))}
+
               {Main &&
                 Main.filter((post, index) => index === 4).map((item, index) => (
                   <div
@@ -195,6 +210,8 @@ const Gallerysaction = () => {
                 </Link>
                   </div>
                 ))}
+
+
             </div>
           </div>
         </div>
@@ -202,5 +219,4 @@ const Gallerysaction = () => {
     </div>
   );
 };
-
 export default Gallerysaction;
