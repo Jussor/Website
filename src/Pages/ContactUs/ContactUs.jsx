@@ -2,7 +2,7 @@ import React from 'react'
 import ContactUscomp from '../../Components/Contactus/Contactfield'
 import Header from "../../Components/Common/Header/Header";
 import Contactmage from '../../assets/contactus.png'
-import Faqsaction from "../../Components/Faq/Faq";
+
 
 
 const ContactUs = () => {
