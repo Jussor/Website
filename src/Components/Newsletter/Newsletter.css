@@ -1,0 +1,94 @@
+.newsletter{
+    background-image: url('../../assets/news-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    padding: 40px 40px 65px 40px;
+    height: 100%;
+    width: 100%;
+
+}
+.newsletter-right{
+    background-image: url('../../assets/new-2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    padding: 40px 40px 65px 40px;
+    height: 100%;
+
+
+}
+.newsletter h1{
+    font-family: "Noto Naskh Arabic", serif;
+    color:white;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: right;
+
+    
+}
+.newsletter p{
+    font-family: "Noto Naskh Arabic", serif;
+    color: #454545;
+    font-size: 15px;
+    color:white;
+    text-align: right;
+  
+}
+.newsletter-field {
+  position: relative;
+}
+.newsletter-field input{
+    font-family: "Noto Naskh Arabic", serif;
+    color: #616161;
+    font-size: 16px;
+    text-align: end;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border: 0;
+    background: white;
+    outline: none;
+    padding: 20px 20px;
+    transition: 0.5s;
+}
+      
+      .contact-form-text:focus {
+        box-shadow: 0 0 10px 4px #57D367;
+      }
+
+
+.newsletter  div{
+    position: relative;
+}
+.newsletter  div button{
+    font-family: "Noto Naskh Arabic", serif;
+    width: 137px;
+    height: 50px;
+    background:#F5F6FA;
+    color: black;
+    font-size: 16px;
+    position: absolute;
+    border: none;
+    /* left: 0; */
+    right: 0px;
+    top: 8px;
+}
+.newsletter-right div{
+    position: relative;
+}
+ .newsletter-right button{
+    width: 137px;
+    height: 50px;
+    background:#F5F6FA;
+    font-family: "Noto Naskh Arabic", serif;
+    color: black;
+    font-size: 16px;
+    position: absolute;
+    border: none;
+    right: 0px;
+
+    /* left: 5px; */
+    top: 8px;
+
+}

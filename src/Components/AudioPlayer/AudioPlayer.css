@@ -1,0 +1,31 @@
+.audio-player {
+  background: #4095c61f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px;
+}
+.wave-form {
+  width: 100vw;
+}
+.audio-play {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #fff;
+  width: 85%;
+  padding: 0 5px;
+}
+.audio-info span {
+  color: #615959;
+  font-size: 12px;
+}
+.play-btn {
+  font-size: 30px;
+  background: transparent;
+  border: 0;
+}
+.play-btn span {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,73 @@
+.footer {
+  background-color: #000;
+  padding: 1.5rem 0;
+}
+.left-footer {
+  /* border-bottom: 1px solid grey; */
+  padding-bottom: 5px;
+  min-width: 30%;
+  /* max-width: 50%; */
+}
+.left-footer p {
+  font-family: "Noto Naskh Arabic", serif;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 28.5px;
+  text-align: right;
+  color: #fff;
+}
+.left-footer span {
+  font-family: "Noto Naskh Arabic", serif;
+  color: #fff;
+}
+.left-footer input {
+  background: transparent;
+  border: 0;
+  outline: 0;
+  font-family: "Noto Naskh Arabic", serif;
+  color: #fff;
+  text-align: right;
+  width: 100%;
+}
+.left-footer input::placeholder {
+  font-family: "Noto Naskh Arabic", serif;
+  color: #fff;
+}
+.left-footer .border-bottom {
+  border-bottom: 1px solid #D9D9D9 !important;
+}
+.left-footer form button{
+  background: transparent;
+}
+.right-footer p {
+  font-family: "Noto Naskh Arabic", serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 27px;
+  text-align: right;
+  color: #fff;
+}
+.right-footer a {
+  font-family: "Cairo", sans-serif;
+  color: #E8E8E8;
+  text-align: right;
+}
+.right-footer .logo {
+  float: right;
+}
+@media screen and (max-width: 576px) {
+  .right-footer p {
+    line-height: 20px;
+  }
+  .footer-logo {
+    order: -1;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  .right-footer p {
+    line-height: 20px;
+  }
+  .footer-logo {
+    order: -1;
+  }
+}

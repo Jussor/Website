@@ -1,0 +1,75 @@
+.podcast-hero {
+  padding-top: 2.5rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  color: #fff;
+  background-image: url("../../../assets/Rectangle\ 43.png");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  min-height: 400px;
+
+}
+
+.podcast-hero-content {
+  width: 715px;
+  min-height: 257px;
+}
+.bg .podcast-hero-content .content {
+  
+  border-right: 2px solid white;
+  padding-right: 20px;
+}
+.podcast-hero-content .date {
+  
+  border-right: 3px solid #4095c6;
+  padding-right: 20px;
+}
+.podcast-hero-content span {
+  font-family: "Noto Naskh Arabic", serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 33px;
+  text-align: right;
+}
+.podcast-hero-content h1 {
+  font-family: "Cairo", sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 58px;
+  text-align: right;
+  color: #fff;
+}
+.podcast-hero-content p {
+  font-family: "Noto Naskh Arabic", serif;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 41px;
+  text-align: right;
+  color: #fff;
+}
+.podcast-hero-btns .btn-2 {
+  font-family: "Noto Naskh Arabic", serif;
+  width: 200px;
+  height: 62px;
+  border: 0;
+  background: #1d1d1d;
+  color: #fff;
+  font-size: 26px;
+  font-weight: 600;
+}
+.podcast-hero-btns .btn-1 {
+  font-family: "Noto Naskh Arabic", serif;
+  width: 107px;
+  height: 62px;
+  border: 0;
+  color: #fff;
+  background: transparent;
+  font-size: 23px;
+  font-weight: 600;
+}
+.podcast-hero-btns span {
+  font-family: "Noto Naskh Arabic", serif;
+  font-size: 36px;
+}

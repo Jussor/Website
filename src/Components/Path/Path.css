@@ -1,0 +1,40 @@
+.path{
+    background: #F5F6FA;
+    
+    padding: 1.5rem 0;
+    
+
+}
+.path .path-flow{
+    display: flex;
+    justify-content: end;
+    justify-content: end;
+    gap: 5px;
+}
+.path p{
+    margin-bottom: 0;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 25.5px;
+    font-family: "Noto Naskh Arabic", serif;
+    color: #000;
+}
+.path span{
+    color: #4095C6;
+    font-family: "Noto Naskh Arabic", serif;
+}
+@media screen and (max-width : 768px) {
+    .path .path-flow{
+        
+        flex-direction: column;
+        
+        
+    }
+    .path .path-flow .topic{
+        order: 1;
+    }
+    .path p{
+        font-family: "Noto Naskh Arabic", serif;
+        font-size: 14px;
+    }
+}

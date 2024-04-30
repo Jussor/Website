@@ -1,0 +1,37 @@
+.headlines {
+  padding: 1.5rem 0;
+  font-family: "Noto Naskh Arabic", serif;
+}
+.headlines button {
+  color: #fff;
+  border: 0;
+  padding: 4px 8px;
+}
+
+.headlines .headline-area {
+  background-color: rgb(232, 230, 230);
+  padding: 10px 20px;
+}
+
+.headlines .btn-arrow-left,
+.headlines .btn-arrow-right {
+  background: #B7B7B9;
+  color: #1D1D1D !important;
+  border: 0;
+  padding: 10px 14px !important;
+}
+
+.headlines .btn-arrow-left:hover,
+.headlines .btn-arrow-right:hover {
+  background-color: #4095C6;
+  color: #fff !important;
+  font-weight: 400;
+}
+
+.headlines .clicked {
+  background-color: rgb(50, 136, 241);
+  color: #fff !important;
+}
+
+
+

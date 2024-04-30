@@ -1,0 +1,29 @@
+.slider-container{
+  background-image: url('../../../assets//background-banner.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.custom-indicators {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+  
+    top: 20px;
+    right: 20px;
+  }
+  .indicator {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white; /* Default indicator color */
+    margin-left: auto;
+    margin-bottom: 8px;
+
+  }
+  .indicator.active {
+    border-radius: 24px;
+    background-color:#4095C6; /* Active indicator color */
+  }

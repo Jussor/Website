@@ -1,0 +1,52 @@
+.blog_card {
+    position: relative;
+    font-family: "Cairo", sans-serif;
+  }
+  
+  .blog_card_img {
+    position: relative;
+  }
+  .blog_card_img .blog_img{
+    width: 100% !important;
+    height: 70vh;
+  }
+  .button-div{
+    position: absolute;
+    top: 10px;
+    right: 10px; 
+
+  }
+  .button-div button{
+    background-color: #4095C6;
+    color: white;
+    font-family: "Noto Naskh Arabic", serif;
+    padding: 10px;
+    border: none;
+  }
+  
+  .bottom_img {
+  background: url("../../assets/galleryback.png");
+  background-repeat: no-repeat;
+  background-size: cover; 
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0; 
+  padding: 10px;
+  font-family: "Cairo", sans-serif;
+  text-align: center;
+  color: white;
+  padding: 14px 10px;
+  }
+  @media (max-width: 1192px) {
+    .right-image-saction{
+      margin-top: 20px;
+      }
+    
+   
+  }
+   @media (max-width: 575px) {
+    .right-image-saction{
+        margin-top: 20px;
+        }
+     } 

@@ -1,0 +1,309 @@
+
+  .textarea {
+    height: 150px; 
+    resize: none; 
+  }
+  .social-media {
+    display: flex;
+    gap: 10px;
+    justify-content: end;
+    margin-top: 50px;
+  }
+  .social-icon {
+    background-color:#4095C6;
+    color: white;
+    font-family: "Noto Naskh Arabic", serif;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+  }
+  .social-icon:hover {
+    background-color: #4095C6;
+    color: white;
+  }
+  .label-textarea{
+    font-family: "Noto Naskh Arabic", serif;
+    text-align: end;
+    color: #000000;
+    font-weight: 600;
+}
+
+  .inside-textarea-button {
+    font-family: "Noto Naskh Arabic", serif;
+    background-color:black !important;
+    color: white !important; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px; 
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+  }
+  
+  .benifit_card_corner {
+
+    background-color: #345473;
+    padding: 20px 50px 50px 30px;
+    position: absolute;
+    top: -30px;
+    left: -30px;
+  }
+  .main-saction {
+    display: flex;
+    gap: 10px;
+  }
+  .right-contact-text{
+    text-align: end;
+    color: #4095C6;
+  }
+  
+  
+  .contact-form-text {
+    font-family: "Noto Naskh Arabic", serif;
+    margin: 5px 0;
+    background: white;
+    width: 100%;
+    border: 3px solid #f5f5f5;
+    padding: 20px 30px 25px 40px;
+    outline: none;
+    color: #123054;
+    transition: 0.5s;
+    text-align: end;
+  }
+  
+  .contact-form-text:focus {
+    box-shadow: 0 0 10px 4px #4095C6;
+  }
+  .Touch-head {
+    font-family: "Cairo", sans-serif;
+    color: #4095C6;
+
+    font-size: 60px;
+  }
+  .Touch-para {
+    font-family: "Noto Naskh Arabic", serif;
+    color: #123054;
+  }
+  
+  textarea.contact-form-text {
+    font-family: "Noto Naskh Arabic", serif;
+    resize: none;
+    height: 100%;
+  }
+  .submit-button {
+    width: 175px;
+    height: 57px;
+    border-radius: 40px;
+    background-color: #345473;
+    border: none;
+    font-family: "Noto Naskh Arabic", serif;
+    color: white;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    letter-spacing: 0em;
+  }
+  
+  .submit-button:hover {
+    background-color: #345473;
+  }
+  
+  .icon-contact {
+    background-color: #312b2b;
+    font-family: "Noto Naskh Arabic", serif;
+    font-size: 40px;
+    color: #00bbdc;
+    border-radius: 50%;
+    padding: 5px;
+  }
+  .social-icon:hover {
+    background-color: #00bbdc;
+    color: white;
+  }
+  .contact-text {
+    font-family: "Noto Naskh Arabic", serif;
+    font-size: 25px;
+    color: #233b53;
+    font-weight: 600;
+  }
+  .Gotouch-hero{
+    padding-left: 110px;
+    padding-right: 110px;
+  }
+  .benifit_card_hero{
+    margin-top: 70px;
+    padding: 0;
+  
+  }
+  .Gotouch-hero{
+    margin-top: 32px;
+  }
+  
+  @media only screen and (max-width: 1192px) {
+    .animatiom-image {
+      width: 100%;
+      display: block;
+    }
+    .Responsive_card_hero {
+      margin: auto;
+      padding-top: 50px;
+    }
+    .benifit_card {
+      background-color:  #00BBDC;
+      /* Set the background color with decreased opacity */
+      box-shadow: 0px 0px 0px 0px;
+      padding: 80px 100px 100px 70px;
+      color: #233b53;
+      border-radius: 10px;
+      border-radius: 10px 0 0px 10px;
+      position: relative;
+    }
+    .Gotouch-hero {
+      padding-left: 81px !important;
+      padding-right: 81px !important;
+    }
+    .rightdiv-hero { 
+      padding-left: 60px !important;
+      padding-right: 60px !important;
+    }
+    .icon-contact {
+      display: none; /* Hidden on larger screens */
+    }
+    .contact-text {
+      font-size: 25px;
+  
+      color: #233b53;
+      font-weight: 600;
+    }
+
+  }
+  @media only screen and (max-width: 992px) {
+    .animatiom-image {
+      width: 100%;
+      display: block;
+    }
+    .Responsive_card_hero {
+      margin: auto;
+      padding-top: 50px;
+    }
+    .benifit_card {
+      background-color:  #00BBDC;
+      /* Set the background color with decreased opacity */
+      box-shadow: 0px 0px 0px 0px;
+      padding: 80px 100px 100px 70px;
+      color: #233b53;
+      border-radius: 10px;
+      border-radius: 10px 0 0px 10px;
+      position: relative;
+    }
+    .Gotouch-hero {
+      padding-left: 100px !important;
+      padding-right: 100px !important;
+    }
+    .rightdiv-hero { 
+      padding-left: 100px !important;
+      padding-right: 100px !important;
+    }
+    .icon-contact {
+      display: none; /* Hidden on larger screens */
+    }
+    .contact-text {
+      font-size: 40px;
+      color: #233b53;
+      font-weight: 600;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .animatiom-image {
+      width: 100%;
+      display: block;
+    }
+    .Responsive_card_hero {
+      margin: auto;
+      padding-top: 50px;
+    }
+    .benifit_card {
+      background-color:  #00BBDC;
+      /* Set the background color with decreased opacity */
+      box-shadow: 0px 0px 0px 0px;
+      padding: 80px 100px 100px 70px;
+      color: #233b53;
+      border-radius: 10px;
+      border-radius: 10px 0 0px 10px;
+      position: relative;
+    }
+    .Gotouch-hero {
+      padding-left: 60px !important;
+      padding-right: 60px !important;
+    }
+    .rightdiv-hero { 
+      padding-left: 60px !important;
+      padding-right: 60px !important;
+    }
+    .icon-contact {
+      display: block; /* Hidden on larger screens */
+    }
+    .contact-text {
+      font-size: 18px;
+      color: #233b53;
+      font-weight: 600;
+    }
+  }
+  
+  @media only screen and (max-width: 575px) {
+    /* Styles specific to smaller screens */
+    .Gotouch-hero {
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+    .benifit_card {
+      background-color: #00bbdc;
+      box-shadow: 0px 0px 0px 0px;
+      padding: 80px 100px 100px 40px; /* Overriding padding */
+      color: #233b53;
+      border-radius: 10px;
+    }
+    .icon-contact {
+      display: none; /* Displayed on smaller screens */
+      background-color: #312b2b;
+      font-size: 30px;
+      color: #00bbdc;
+      border-radius: 50%;
+      padding: 5px;
+    }
+    .contact-text {
+      font-size: 17px; /* Adjusted font size */
+    }
+    .Touch-head {
+      color: #312b2b;
+      font-size: 30px;
+      padding: 10px;
+    }
+    .rightdiv-hero { 
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+    }
+  }
+  
+  
+  @media only screen and (max-width: 280px) {
+    .contact-text {
+      font-size: 12px !important;
+      color: #233b53;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    .benifit_card {
+      background-color:  #00BBDC;
+      box-shadow: 0px 0px 0px 0px;
+      padding:30px;
+      color: #233b53;
+      border-radius: 10px;
+      border-radius: 10px 0 0px 10px;
+      position: relative;
+    }
+  }
+  

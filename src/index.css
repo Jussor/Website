@@ -1,0 +1,32 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+
+body {
+  font-family: "Noto Naskh Arabic", serif;
+
+  
+}
+h1,h2,h3,h4,h5,h6 ,p{
+  font-family: "Noto Naskh Arabic", serif;
+
+}
+
+
+a {
+  text-decoration: none !important;
+  cursor: pointe\r !important;
+}
+.bg-blue {
+  background-color: #4095C6;
+}
+.text-blue {
+  color: #4095C6;
+}
+p {
+  text-align: right;
+}

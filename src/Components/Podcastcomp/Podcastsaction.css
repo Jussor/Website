@@ -1,0 +1,57 @@
+.Podcast_card{
+    position: relative;
+    background-color:#F5F6FA;
+    padding: 30px 0px;
+  }
+  .podcast-hero-content{
+    width: 715px;
+    min-height: 257px;
+    
+
+}
+.Podcast_main .card{
+  background: #F5F6FA;
+  border-radius: 0;
+}
+.podcast-hero-content .content{
+    border-right: 2px solid white;
+    padding-right: 20px;
+}
+
+  
+  
+  .Podcast_card_desk {
+  padding: 0px 0px;
+    text-align: right;
+    color:#1D1D1D ;
+    font-weight: 900;
+
+}
+  .Podcast_card_date {
+    text-align: right;
+    padding: 10px;
+    color: #615959;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 18px;
+    color : #615959;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 5px;
+  }
+     .calender-icon{
+      font-size: 30px;
+      color : #615959;
+    }
+      
+
+  
+  .Podcast_card_para{
+    font-size: 12px;
+    padding: 0px 0px;
+    color: #615959;
+    font-weight: 400;
+
+  
+  }

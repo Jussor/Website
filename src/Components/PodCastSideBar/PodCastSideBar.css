@@ -1,0 +1,137 @@
+.podcast-sidebar-main{
+    background: #F5F6FA;
+    padding: 15px 10px;
+    
+}
+
+.podcast-sidebar h1{
+    font-family: "Cairo", sans-serif;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 34.5px;
+    text-align: right;
+    color: #000;
+}
+.podcast-sidebar-main .news-img{
+    width: 100%;
+    height: 90px;
+}
+.podcast-sidebar-main .title{
+    font-family: "Cairo", sans-serif;
+     font-size: 15px;
+    font-weight: 900;
+    line-height: 22.5px;
+    text-align: right;
+    color: #1D1D1D;
+    margin-bottom: 0;
+}
+.podcast-sidebar-main .descr{
+    color : #615959;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 18px;
+    text-align: right;
+    
+}
+.podcast-sidebar-main .date{
+
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 18px;
+    color : #615959;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 5px;
+}
+.podcast-sidebar-main .calender-icon{
+    font-size: 20px;
+    color : #615959;
+}
+
+
+
+@media screen and (max-width : 576px) {
+    .podcast-sidebar-main .news-img{
+        margin-bottom: 10px;
+        width: 100%;
+        height: auto;
+
+    }
+    .podcast-sidebar-main{
+       
+        padding: 10px;
+    }
+}
+@media (min-width : 576px) and (max-width : 768px) {
+    
+
+    .podcast-sidebar-main .news-img{
+        margin-bottom: 10px;
+        width: 100%;
+        height: auto;
+    }
+    .podcast-sidebar-main{
+       
+        padding: 10px;
+    }
+}
+@media (min-width : 768px) and (max-width : 992px) {
+    .podcast-sidebar-main .news-img{
+        margin-bottom: 10px;
+        width: 100%;
+        height: auto;
+    }
+    .podcast-sidebar-main{
+       
+        padding: 10px;
+    }
+}
+@media (min-width : 992px) and (max-width : 1200px) {
+    .podcast-sidebar-main .news-img{
+        margin-bottom: 10px;
+        width: 100%;
+        height: auto;
+    }
+    .podcast-sidebar-main .title{
+        font-size: 12px;  
+    }
+    .podcast-sidebar-main .descr{ 
+        font-size: 10px; 
+        line-height: 12px;
+        margin-bottom: 2px;
+    }
+    .podcast-sidebar-main .date{
+        font-size: 11px;  
+    }
+    .podcast-sidebar-main .calender-icon{
+        font-size: 20px;
+        
+    }
+}
+@media (min-width : 1200px) and (max-width : 1400px) {
+    .podcast-sidebar-main .news-img{
+        width: 100%;
+        height: 85px;
+    }
+    .podcast-sidebar-main .title{
+        font-size: 14px;  
+    }
+    .podcast-sidebar-main .descr{ 
+        font-size: 11px; 
+        line-height: 13px;
+       
+    }
+    .podcast-sidebar-main .date{
+        font-size: 11px;  
+    }
+    .podcast-sidebar-main .calender-icon{
+        font-size: 20px;
+        
+    }
+}
+@media screen and (min-width : 1400px) {
+    .podcast-sidebar-main .news-img{
+        height: 96px;
+    }
+}

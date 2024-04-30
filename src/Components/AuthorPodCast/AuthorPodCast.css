@@ -1,0 +1,56 @@
+
+
+.author-podcast h1{
+    font-family: "Cairo", sans-serif;
+    
+    font-size: 35px;
+    font-weight: 900;
+    line-height: 52.5px;
+    text-align: right;
+    color: #4095C6;
+    border-right: 3px solid #4095C6;
+    padding-right: 10px;
+}  
+.author-podcast .card{
+    background: #F5F6FA;
+    border-radius: 0;
+
+}
+.author-podcast .card .podcast-img{
+    width: 100%;
+}
+.author-podcast .title{
+    font-family: "Cairo", sans-serif;
+    
+    
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 20px;
+    text-align: right;
+    color: #1D1D1D;
+}
+.author-podcast .descr{
+    color : #615959;
+    
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 14px;
+    text-align: right;
+    margin-bottom: 8px;
+    
+}
+.author-podcast .date{
+
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 18px;
+    color : #615959;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 5px;
+}
+.author-podcast .calender-icon{
+    font-size: 20px;
+    color : #615959;
+}
