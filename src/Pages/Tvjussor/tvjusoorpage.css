@@ -1,0 +1,12 @@
+.tvjusoor-banner{
+    background-image: url("../../assets/Rectangle 43.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    min-height: 300px;
+}
+
+.tvjusoor{
+    height: 100vh;
+}

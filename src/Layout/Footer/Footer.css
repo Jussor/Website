@@ -2,7 +2,9 @@
   background-color: #000;
   padding: 1.5rem 0;
   
-  }
+
+  width: 100%;
+}
 
 .left-footer {
   padding-bottom: 5px;

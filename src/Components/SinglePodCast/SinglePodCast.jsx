@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./SinglePodCast.css";
 import { CgCalendarDates } from "react-icons/cg";
 import { LuEye } from "react-icons/lu";
@@ -15,6 +15,7 @@ import img6 from "../../assets/thumbnails/img6.jpg";
 import video from "../../assets/myvideo.mp4";
 import { useParams } from "react-router-dom";
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
+
 const SinglePodCast = () => {
   const params = useParams();
   const posts = [
@@ -240,7 +241,14 @@ const SinglePodCast = () => {
       category: "سياسة",
     },
   ];
+  // const dispatch = useDispatch();
+  // const { Main } = useSelector((state) => state.home);
 
+  // useEffect(() => {
+  //   dispatch(Home());
+  // }, []);
+  // console.log(params.id)
+  // console.log(Main.filter(post => post._id===params.id))
   return (
     <div className="single-post">
       {posts
