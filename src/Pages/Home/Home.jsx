@@ -16,10 +16,10 @@ const Home = () => {
       <HeadLine/>
       <Hero/>
       <Gallerysaction/>
-      <Categorysaction/>
-      <Jusoortv/>
-      <Offersaction/> 
-      <Newsletter/> 
+        <Categorysaction/>
+        <Jusoortv/>
+        <Offersaction/> 
+        <Newsletter/> 
     </div>
   );
 };

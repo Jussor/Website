@@ -8,10 +8,7 @@ const index = () => {
      <div className="podcasts">
       <div className="container">
         <div className="row gx-3 gy-3">
-          <div className="col-xl-4 order-1 order-xl-0">
-            <PodCastSideBar />
-          </div>
-          <div className="col-xl-8">
+          <div className="col-xl-12">
             <Singletvpost/>
           </div>
         </div>

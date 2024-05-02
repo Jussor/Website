@@ -93,9 +93,7 @@ function Contactfield(props) {
                 
                     <button
                       type="submit"
-                      className="btn  inside-textarea-button"
-                      
-                    >
+                      className="btn  inside-textarea-button">
                      Send Message
                     </button>
                   </div>

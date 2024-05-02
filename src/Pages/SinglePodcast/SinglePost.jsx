@@ -14,7 +14,7 @@ const SinglePost = () => {
     <div>
       <Path route={path}/>
       <SinglePodCastMain/>
-      <Offersaction/>
+      {/* <Offersaction/> */}
     </div>
   )
 }
