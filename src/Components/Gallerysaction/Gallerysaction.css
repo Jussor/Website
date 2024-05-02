@@ -51,10 +51,7 @@
   padding: 14px 10px;
   }
   @media (max-width: 768px) {
-    .blog_card_img .blog_img, .blog_card_img .center_img{
-    
-    
-     
+    .blog_card_img .blog_img, .blog_card_img .center_img{    
       height: auto;
       
     }
