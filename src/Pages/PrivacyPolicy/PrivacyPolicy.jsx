@@ -15,7 +15,7 @@ const PrivacyPolicy = () => {
          image ={Contactmage}
         />
       <Privacycontent/>
-      <Offersaction/>
+      {/* <Offersaction/> */}
     </div>
   )
 }

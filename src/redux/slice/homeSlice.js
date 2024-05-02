@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice, } from '@reduxjs/toolkit';
 import { apiRequest } from '../../Utils/utils';
 
 export const Home= createAsyncThunk("Home", async () => {
-    console.log('ssssssssssssss')
+    
     const result = await apiRequest('get', 'api/contentPost/getHomeContent', null,null)
     return result;
 });

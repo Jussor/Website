@@ -1,34 +1,39 @@
-import React from 'react'
-import img from "../../assets/gallery-3.png";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { about } from '../../redux/slice/aboutSlice';
+import { IMAGE_PATH } from "../../Utils/utils";
+
 const Mainsection = () => {
+  const dispatch = useDispatch();
+  const { aboutJusoor } = useSelector((state) => state.about);
+
+  useEffect(() => {
+    dispatch(about());
+  }, []);
+
+  
+  const title = aboutJusoor.length > 0 ? aboutJusoor[0].title : '';
+  const description = aboutJusoor.length > 0 ? aboutJusoor[0].description : '';
+  const image = aboutJusoor.length > 0 ? `${IMAGE_PATH}${aboutJusoor[0].image}` : '';
+
   return (
     <div className='container pt-5'>
       <div className='row'>
         <div className='col-md-6'>
-          <h1 className='text-end'
-          style={{
-            fontFamily: "Cairo, sans-serif"
-          }}
-          >
-          من هي "جسور"؟
+          {/* Render the title */}
+          <h1 className='text-end' style={{ fontFamily: "Cairo, sans-serif" }}>
+            {title}
           </h1>
-          <p style={{
-  fontFamily: "Noto Naskh Arabic, serif"
-}}>
-          "جسور" هي منصة إعلامية مستقلة، تبحث عن القصص الفريدة والمتميزة، التي تثري عقل القارئ، وتعبر عن نبض جميع المجتمعات والشعوب. نحاول اكتشاف الظواهر الفريدة والقصص المؤثرة لنخبركم من خلالها عما وراء كل حدث سياسي و اجتماعي وإنساني، تشهده المنطقة والعالم بأسلوب مصور سهل ومفهوم يجذب عين المتابع. 
-
-في شبكة "جسور"، نؤمن بأن المشتركات الإنسانية والثقافية في الشرق الأوسط وشمال أفريقيا، أكثر من الخلافات التي أشعلت المنطقة بالحروب والأزمات السياسية على مر العصور، لذلك نعمل على تعزيز هذه المشتركات وتجاوز الخلافات، مع الإيمان بعمق بأحقية كل فرد ومجتمع في التعبير عن اختلافه وتميزه. 
-
-"جسور" غير تابعة لأي جهة سياسية، وتقف على مسافة واحدة من مختلف الآراء، ولكننا ننحاز وبقوة لقيم حرية التعبير، وحقوق الإنسان، ومختلف مكونات المجتمع، كما نؤمن بأن مجتمع أكثر تسامحاً مع الآخر، أيا كان جنسه ودينه وانتماءه العرقي أو السياسي، هو مكان أفضل للجميع.
-          </p>
-          
+          {/* Render the description as formatted HTML */}
+          <div dangerouslySetInnerHTML={{ __html: description }}></div>
         </div>
+        {/* Render the image */}
         <div className='col-md-6'>
-        <img src={img} alt="" className='w-100'/>
+          <img src={image} alt="Jusoor" className='w-100'/>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Mainsection
+export default Mainsection;
