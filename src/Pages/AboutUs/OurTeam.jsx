@@ -7,6 +7,7 @@ import img1 from "../../assets/person1.jpeg"
 import img2 from "../../assets/person2.jpeg"
 import img3 from "../../assets/person3.jpeg"
 import img4 from "../../assets/person4.jpeg"
+import img5 from "../../assets/person5.jpeg"
 import { Link } from "react-router-dom";
 import "./OurTeam.css"
 import { useDispatch, useSelector } from "react-redux";
@@ -50,6 +51,39 @@ const OurTeam = () => {
 
   //     }
   // ];
+  const team = [
+    {
+      imgurl:img1,
+      name: "هديل عويس ",
+      status: "رئيس التحرير",
+      icon: "/https://twitter.com/hadeelOueiss",
+      socialicon:<FaXTwitter/>
+    },
+    {
+        imgurl:img2,
+        name: "رئيس التحرير",
+        status: "كاتب ومحلل سياسي",
+        icon: "/",
+      },
+      {
+        imgurl:img3,
+        name: "حمادة عبدالوهاب ",
+        status: "محرر وصحفي ",
+        icon: "/",
+      },
+      {
+        imgurl:img4,
+        name: "أبانوب نبيل فكري حبيب",
+        status: "محرر فيديو",
+        icon: "/",
+      },
+      {
+        imgurl:img5,
+        name: "فيصل الذبحاني ",
+        status: "صحفي",
+        icon: "/",
+         }
+  ];
   return (
     <div className="our-team">
         <div className="container-fluid d-flex justify-content-center align-items-center mt-5 mb-3">

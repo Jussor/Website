@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useDispatch, useSelector } from "react-redux";
 import { banner } from "../../redux/slice/bannerSlice";
-import { IMAGE_PATH } from "../../Utils/utils";
+import { IMAGE_PATH ,VIDEO_PATH} from "../../Utils/utils";
 import "./Hero.css"
 const SimpleSlider = ({ settings, sliderRef }) => {
   const dispatch = useDispatch();
@@ -12,19 +12,17 @@ const SimpleSlider = ({ settings, sliderRef }) => {
   useEffect(() => {
     dispatch(banner());
   }, [dispatch]);
-  if (bannerError) {
-    return <div>Error: {bannerError}</div>;
-  }
+
   return (
       <Slider {...settings} ref={sliderRef}>
       {bannerSuccess.map((banner, index) => (
         <div key={index} className="hero">
           {banner.image ? (
-              <img src={`${IMAGE_PATH}${banner.image}`} alt="Banner Image" className="w-100" style={{height : "500px"}}/>
+              <img src={`${IMAGE_PATH}${banner.image}`} alt="Banner Image" className="w-100" style={{height :"500px"}}/>
           ) : (
-            <video controls>
-              <source src={banner.video} type="video/mp4" />
-            </video>
+            <video muted autoPlay className="bg-video" style={{height: "500px"}}>
+            <source src={`${VIDEO_PATH}${banner.video}`} type="video/mp4"/>
+          </video>
             )}
           <div className="container">
             <div className="row">

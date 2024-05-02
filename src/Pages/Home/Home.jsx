@@ -18,9 +18,7 @@ const Home = () => {
       <Gallerysaction/>
       <Categorysaction/>
       <Jusoortv/>
-      {/* <OfferBanner/> */}
       <Offersaction/> 
-   {/* <Podcastcomp/>*/}
       <Newsletter/> 
     </div>
   );
