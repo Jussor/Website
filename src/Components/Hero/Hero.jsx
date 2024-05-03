@@ -28,7 +28,8 @@ const SimpleSlider = ({ settings, sliderRef }) => {
             <div className="row">
               <div className="col-md-12 home-hero-main">
                 <h2 className="title">{banner.title}</h2>
-                <p className="descr">{banner.description}</p>
+                <div dangerouslySetInnerHTML={{ __html: banner.description }}></div>
+
               </div>
             </div>
           </div>

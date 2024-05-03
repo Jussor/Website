@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "./Gallerysaction.css";
-import Gallerydata from "../Gallerydata/Gallerydata";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
@@ -35,12 +34,11 @@ const Gallerysaction = () => {
     }
     return text;
   };
-
-
   console.log(Main);
   const handleClick = () => {
     window.scrollTo(0, 0); // Scroll to top of the page
   };
+
 
   return (
     <div>

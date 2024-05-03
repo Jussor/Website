@@ -15,9 +15,9 @@ const Newsletter = () => {
     <div>
       <div>
         <div className="container mt-5 mb-5">
-          <div className="row">
+          <div className="row gy-4">
             <div
-              className=" col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6"
+              className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6"
               data-aos="fade-up"
               data-aos-duration="2000" >
               <div className=" newsletter">
@@ -28,27 +28,18 @@ const Newsletter = () => {
                   </div>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 m-auto">
-                  <div>
-                    {/* <div className="newsletter-field">
-                      <input
-                        type="text"
-                        class="custom-search-input"
-                        placeholder="انضم إلى قناة الواتساب"
-                      />
-                    </div> */}
                     <Link 
                     to="https://whatsapp.com/channel/0029VaZx00405MUcm4lcWG1Q" 
                     target="_blank" class="whatsapp-icon" rel="nofollow noopener">
                     <button>
-                      <IoLogoWhatsapp /> افتح الرابط{" "}
+                      <IoLogoWhatsapp /> افتح الرابط
                     </button>
                     </Link>
-                  </div>
                 </div>
               </div>
             </div>
             <div
-              className="col-md-6"
+             className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6"
               data-aos="fade-up"
               data-aos-duration="2000" >
                 <div className="newsletter-right">
@@ -59,21 +50,11 @@ const Newsletter = () => {
                   </div>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 m-auto">
-                  <div>
-                    <div className="newsletter-field">
-                      {/* <input
-                        type="text"
-                        class="custom-search-input" 
-                        placeholder="انضم إلى قناة الواتساب"
-                      /> */}
-                    </div>
-                    <button className="newsletter-right-button">
+                  <button className="newsletter-right-button">
                       <FaTelegramPlane/> 
                     </button>
-                  </div>
-                </div>
-              
-            </div>
+                 </div>
+              </div>
             </div>
           </div>
         </div>
