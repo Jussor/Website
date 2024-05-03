@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice, } from '@reduxjs/toolkit';
 import { apiRequest } from '../../Utils/utils';
 
-export const about = createAsyncThunk("about", async () => {
+export const privacy = createAsyncThunk("privacy", async () => {
     
     const result = await apiRequest('get', 'api/about/getAllAbouts', null)
     
@@ -10,28 +10,28 @@ export const about = createAsyncThunk("about", async () => {
 });
 
 const initialState = {
-    aboutJusoor: [],
+    privacyJusoor: [],
     aboutLoading: false,
     aboutError: null,
 }
 
-const aboutSlice = createSlice({
-    name: "about",
+const privacySlice = createSlice({
+    name: "privacy",
     initialState,
     reducers: {
-        aboutResetOption: () => {
+        privacyResetOption: () => {
             return initialState;
         }
     },
     extraReducers: (builder) => {
-        builder.addCase(about.pending, (state) => {
+        builder.addCase(privacy.pending, (state) => {
             
             state.aboutLoading = true;
-        }).addCase(about.fulfilled, (state, action) => {
+        }).addCase(privacy.fulfilled, (state, action) => {
             state.aboutLoading = false;
-            state.aboutJusoor = action.payload.data.About
+            state.privacyJusoor = action.payload.data.About
             
-        }).addCase(about.rejected, (state, action) => {
+        }).addCase(privacy.rejected, (state, action) => {
             state.aboutLoading = false;
             state.aboutError = action.payload
         })
@@ -40,5 +40,5 @@ const aboutSlice = createSlice({
 });
 
 
-export const { aboutResetOption } = aboutSlice.actions
-export default aboutSlice.reducer
+export const { privacyResetOption } = privacySlice.actions
+export default privacySlice.reducer

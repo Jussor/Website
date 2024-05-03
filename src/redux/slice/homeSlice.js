@@ -26,7 +26,7 @@ const HomeSlice = createSlice({
         builder.addCase(Home.pending, (state) => {
             state.loading = true;
         }).addCase(Home.fulfilled, (state, action) => {
-          console.log(action.payload.data,'hhhhhhhhhhh')
+          
             state.loading = false;
             state.Main = action.payload.data.Main
             state. JusoorTv= action.payload.data.JusoorTv

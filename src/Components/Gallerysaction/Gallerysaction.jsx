@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "./Gallerysaction.css";
-import Gallerydata from "../Gallerydata/Gallerydata";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
@@ -31,7 +30,7 @@ const Gallerysaction = () => {
   const truncateWords = (text, maxWords) => {
     const words = text.split(' ');
     if (words.length > maxWords) {
-      return words.slice(0, maxWords).join(' ') + '...';
+      return '...' + words.slice(0, maxWords).join(' ');
     }
     return text;
   };

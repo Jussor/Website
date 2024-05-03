@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./LowerNavbar.css";
 import { Container, Offcanvas } from "react-bootstrap";
 import { CiSearch } from "react-icons/ci";
@@ -11,17 +11,18 @@ const LowerNavbar = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-    //GET DATA FROM REDUX
-  const { categorySuccess, categoryError } = useSelector(state => state.category)
+  //GET DATA FROM REDUX
+  const { categorySuccess, categoryError } = useSelector(
+    (state) => state.category
+  );
   //VARIABLE
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   //useEffect
   useEffect(() => {
-  dispatch(category())
-  }, [])
-
+    dispatch(category());
+  }, []);
   const handleSearch = () => {
-    return ;
+    return;
   };
   return (
     <div className="lower-navbar">
@@ -35,50 +36,37 @@ const LowerNavbar = () => {
               <input type="text" placeholder="أخبار البحث" />
             </div>
           </div>
-          <div className="middle-lower-nav d-none d-lg-flex  gap-4">
-            <Link to={"/Tvjussor/"}>جسور TV </Link>
-            <Link to={"/Funoonpage/"}>فنون</Link>
-            <Link to={"/geetkpage/"}>جيبَك</Link>
-            <Link>
-             <li class="dropdown dropdown-5 p-0">
+          <div className="middle-lower-nav d-none d-lg-flex gap-4">
+            {categorySuccess &&
+              categorySuccess.map((item, index) => (
+                <li className="dropdown dropdown-5 p-0" key={index}>
                   <div className="iconDrop">
-                    <div className="dropText"> نبض المجتمع</div>
+                    <div className="dropText">
+                      <Link to={`/podcast/${item._id}`}>
+                        {item.categoryName}
+                      </Link>
+                    </div>
                   </div>
                   <ul className="dropdown_menu dropdown_menu-5 p-0">
-                  {categorySuccess &&
-                  categorySuccess.map((item, index) => {
-                    if (item.categoryName === "نبض المجتمع") {
-                      return item.childCategories.map((item2, index2) => (
-                        <Link to="Postcategorypage" key={index2}>
-                          <li className="dropdown_item-1">{item2.categoryName}</li>
+                    {item.categoryName === "سياسة" &&
+                      item.childCategories.map((item2, index2) => (
+                        <Link to={`/podcast/${item._id}-${item2._id}`} key={index2}>
+                          <li className="dropdown_item-1">
+                            {item2.categoryName}
+                          </li>
                         </Link>
-                      ));
-                    }
-                    return null;
-                  })}
-              </ul>
-                </li>
-            </Link>
-            <Link>
-            <li class="dropdown dropdown-5 p-0">
-                  <div className="iconDrop">
-                    <div className="dropText"> سياسة</div>
-                  </div>
-                  <ul className="dropdown_menu dropdown_menu-5 p-0">
-                {categorySuccess &&
-                  categorySuccess.map((item, index) => {
-                    if (item.categoryName === "سياسة") {
-                      return item.childCategories.map((item2, index2) => (
-                        <Link to="" key={index2}>
-                          <li className="dropdown_item-1">{item2.categoryName}</li>
+                      ))}
+                    {item.categoryName === "نبض المجتمع" &&
+                      item.childCategories.map((item2, index2) => (
+                        <Link to={`/podcast/${item._id}-${item2._id}`} key={index2}>
+                          <li className="dropdown_item-1">
+                            {item2.categoryName}
+                          </li>
                         </Link>
-                      ));
-                    }
-                    return null;
-                  })}
-              </ul>
+                      ))}
+                  </ul>
                 </li>
-            </Link>
+              ))}
           </div>
           <div className="right-lower-nav d-flex align-items-center gap-2">
             <Link to="/">
@@ -88,7 +76,7 @@ const LowerNavbar = () => {
               <IoIosMenu />
             </span>
           </div>
-           <Offcanvas
+          <Offcanvas
             show={show}
             className="h-100"
             onHide={handleClose}
@@ -97,12 +85,24 @@ const LowerNavbar = () => {
             <Offcanvas.Header closeButton></Offcanvas.Header>
             <Offcanvas.Body>
               <div className="offcanvas-links">
-                <Link to="/" onClick={handleClose}>بودكاست</Link>
-                <Link to="/contactUs/" onClick={handleClose}>جسور TV</Link>
-                <Link to="/podCast/" onClick={handleClose}>فنون</Link>
-                <Link to="/Post/" onClick={handleClose}>جيبَك</Link>
-                <Link to="/News/" onClick={handleClose}>نبض المجتمع</Link>
-                <Link to="/PrivacyPolicy/" onClick={handleClose}>سياسة</Link>
+                <Link to="/" onClick={handleClose}>
+                  بودكاست
+                </Link>
+                <Link to="/contactUs/" onClick={handleClose}>
+                  جسور TV
+                </Link>
+                <Link to="/podCast/" onClick={handleClose}>
+                  فنون
+                </Link>
+                <Link to="/Post/" onClick={handleClose}>
+                  جيبَك
+                </Link>
+                <Link to="/News/" onClick={handleClose}>
+                  نبض المجتمع
+                </Link>
+                <Link to="/PrivacyPolicy/" onClick={handleClose}>
+                  سياسة
+                </Link>
               </div>
             </Offcanvas.Body>
           </Offcanvas>
@@ -111,5 +111,4 @@ const LowerNavbar = () => {
     </div>
   );
 };
-
 export default LowerNavbar;

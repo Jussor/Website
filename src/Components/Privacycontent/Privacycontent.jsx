@@ -1,21 +1,21 @@
 import React, { useEffect } from "react";
 import "./Privacycontent.css";
 import { useDispatch, useSelector } from "react-redux";
-import { about } from "../../redux/slice/privacySlice";
+import { privacy } from "../../redux/slice/privacySlice";
 import { IMAGE_PATH } from "../../Utils/utils";
 
 const Privacycontent = () => {
   const dispatch = useDispatch();
-  const { aboutJusoor } = useSelector((state) => state.about);
+  const { privacyJusoor } = useSelector((state) => state.privacy);
 
   useEffect(() => {
-    dispatch(about());
+    dispatch(privacy());
   }, []);
 
   
-  const title = aboutJusoor.length > 0 ? aboutJusoor[0].title : '';
-  const description = aboutJusoor.length > 0 ? aboutJusoor[0].description : '';
-  const image = aboutJusoor.length > 0 ? `${IMAGE_PATH}${aboutJusoor[0].image}` : '';
+  const title = privacyJusoor.length > 0 ? privacyJusoor[0].title : '';
+  const description = privacyJusoor.length > 0 ? privacyJusoor[0].description : '';
+  const image = privacyJusoor.length > 0 ? `${IMAGE_PATH}${privacyJusoor[0].image}` : '';
   
   return (
     <div>

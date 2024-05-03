@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./UperNavbar.css";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -8,21 +8,75 @@ import { FaInstagram } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa6";
 import { TbBrandYoutube } from "react-icons/tb";
 import { FaTiktok } from "react-icons/fa";
+import axios from "axios";
 const UperNavbar = () => {
   const currentDate = new Date();
-const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-const arabicDate = currentDate.toLocaleDateString('ar', options);
-console.log(arabicDate);
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  
 
-const daysInArabic = ["الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"];
-const monthsInArabic = ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"];
- const dayIndex = currentDate.getDay();
-const dayName = daysInArabic[dayIndex];
-const date = currentDate.getDate();
-const monthIndex = currentDate.getMonth();
-const monthName = monthsInArabic[monthIndex];
 
-const formattedDate = `${dayName} ${date} ${monthName}`;
+  const daysInArabic = [
+    "الأحد",
+    "الاثنين",
+    "الثلاثاء",
+    "الأربعاء",
+    "الخميس",
+    "الجمعة",
+    "السبت",
+  ];
+  const monthsInArabic = [
+    "يناير",
+    "فبراير",
+    "مارس",
+    "أبريل",
+    "مايو",
+    "يونيو",
+    "يوليو",
+    "أغسطس",
+    "سبتمبر",
+    "أكتوبر",
+    "نوفمبر",
+    "ديسمبر",
+  ];
+  const dayIndex = currentDate.getDay();
+  const dayName = daysInArabic[dayIndex];
+  const date = currentDate.getDate();
+  const monthIndex = currentDate.getMonth();
+  const monthName = monthsInArabic[monthIndex];
+
+  const formattedDate = `${dayName} ${date} ${monthName}`;
+
+  const [lat, setLat] = useState(0);
+  const [long, setLong] = useState(0);
+  const [temp, setTemp] = useState(0);
+
+  const [city, setCity] = useState("");
+
+  const getWeather = async () => {
+    try {
+      navigator.geolocation.getCurrentPosition((position) => {
+        setLat(position.coords.latitude);
+        setLong(position.coords.longitude);
+      });
+      const response = await axios.get(
+        `http://api.weatherapi.com/v1/current.json?key=6e6263afb84f44279f731543222510&q=${lat},${long}&aqi=no`
+      );
+
+      setCity(response.data.location.name);
+      setTemp(response.data.current.temp_c);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    getWeather();
+  }, [lat, long, city, temp]);
 
   return (
     <div className="uper-navbar">
@@ -39,23 +93,27 @@ const formattedDate = `${dayName} ${date} ${monthName}`;
             <Link to="https://www.instagram.com/jusoornews/">
               <FaInstagram />
             </Link>
-            <Link to="https://whatsapp.com/channel/0029VaZx00405MUcm4lcWG1Q" >
+            <Link to="https://whatsapp.com/channel/0029VaZx00405MUcm4lcWG1Q">
               <FaWhatsapp />
             </Link>
             <Link to="https://www.youtube.com/@Jusoor_News">
               <TbBrandYoutube />
-            </Link >
+            </Link>
             <Link to="https://www.tiktok.com/@jusoornews">
               <FaTiktok />
             </Link>
           </div>
           <div className="right-uper-nav">
             <div className="right-links">
-              <Link 
-              to="tel:+923026469153" target="_blank">اتصل بنا</Link>
+              <Link to="tel:+923026469153" target="_blank">
+                اتصل بنا
+              </Link>
             </div>
 
-            <div className="d-flex align-items-center gap-2"><img src="/Home/image1.png"></img>28.5° دبي</div>
+            <div className="d-flex align-items-center gap-2">
+              <img src="/Home/image1.png"></img>
+              {`${Math.round(temp)}°`} {city}
+            </div>
           </div>
         </nav>
       </Container>
