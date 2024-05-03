@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Footer.css";
-import { Container } from "react-bootstrap";
 import { IoIosArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 import logo from "../../../public/Home/logo.png";
@@ -33,6 +32,7 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="أدخل عنوان البريد الإلكتروني"
+                  required
                 />
               </div>
             </form>
@@ -51,7 +51,7 @@ const Footer = () => {
               </p>
             </div>
             <div className="footer-logo">
-              <Link className="logo" to={"/"}>
+              <Link className="logo" to={"/"} onClick={handleClick}>
                 <img src={logo} alt="Logo" />
               </Link>
             </div>

@@ -12,14 +12,15 @@ const LowerNavbar = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   //GET DATA FROM REDUX
-  const { categorySuccess, categoryError } = useSelector(state => state.category)
+  const { categorySuccess, categoryError } = useSelector(
+    (state) => state.category
+  );
   //VARIABLE
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   //useEffect
   useEffect(() => {
-    dispatch(category())
-  }, [])
-
+    dispatch(category());
+  }, []);
   const handleSearch = () => {
     return;
   };
@@ -39,30 +40,34 @@ const LowerNavbar = () => {
             {categorySuccess &&
               categorySuccess.map((item, index) => (
                 <li className="dropdown dropdown-5 p-0" key={index}>
-                <div className="iconDrop">
-                  <div className="dropText">{item.categoryName}</div>
-                </div>
-                <ul className="dropdown_menu dropdown_menu-5 p-0">
-                  {item.categoryName === "سياسة" &&
-                    item.childCategories.map((item2, index2) => (
-                      <Link to={`/podcast/`} key={index2}>
-                        <li className="dropdown_item-1">{item2.categoryName}</li>
+                  <div className="iconDrop">
+                    <div className="dropText">
+                      <Link to={`/podcast/${item._id}`}>
+                        {item.categoryName}
                       </Link>
-                    ))
-                  }
-                  {item.categoryName === "نبض المجتمع" &&
-                    item.childCategories.map((item2, index2) => (
-                      <Link to={`/podcast/`} key={index2}>
-                        <li className="dropdown_item-1">{item2.categoryName}</li>
-                      </Link>
-                    ))
-                  }
-                </ul>
-              </li>
-              ))
-            }
+                    </div>
+                  </div>
+                  <ul className="dropdown_menu dropdown_menu-5 p-0">
+                    {item.categoryName === "سياسة" &&
+                      item.childCategories.map((item2, index2) => (
+                        <Link to={`/podcast/${item._id}-${item2._id}`} key={index2}>
+                          <li className="dropdown_item-1">
+                            {item2.categoryName}
+                          </li>
+                        </Link>
+                      ))}
+                    {item.categoryName === "نبض المجتمع" &&
+                      item.childCategories.map((item2, index2) => (
+                        <Link to={`/podcast/${item._id}-${item2._id}`} key={index2}>
+                          <li className="dropdown_item-1">
+                            {item2.categoryName}
+                          </li>
+                        </Link>
+                      ))}
+                  </ul>
+                </li>
+              ))}
           </div>
-
           <div className="right-lower-nav d-flex align-items-center gap-2">
             <Link to="/">
               <img src={logo}></img>
@@ -80,12 +85,24 @@ const LowerNavbar = () => {
             <Offcanvas.Header closeButton></Offcanvas.Header>
             <Offcanvas.Body>
               <div className="offcanvas-links">
-                <Link to="/" onClick={handleClose}>بودكاست</Link>
-                <Link to="/contactUs/" onClick={handleClose}>جسور TV</Link>
-                <Link to="/podCast/" onClick={handleClose}>فنون</Link>
-                <Link to="/Post/" onClick={handleClose}>جيبَك</Link>
-                <Link to="/News/" onClick={handleClose}>نبض المجتمع</Link>
-                <Link to="/PrivacyPolicy/" onClick={handleClose}>سياسة</Link>
+                <Link to="/" onClick={handleClose}>
+                  بودكاست
+                </Link>
+                <Link to="/contactUs/" onClick={handleClose}>
+                  جسور TV
+                </Link>
+                <Link to="/podCast/" onClick={handleClose}>
+                  فنون
+                </Link>
+                <Link to="/Post/" onClick={handleClose}>
+                  جيبَك
+                </Link>
+                <Link to="/News/" onClick={handleClose}>
+                  نبض المجتمع
+                </Link>
+                <Link to="/PrivacyPolicy/" onClick={handleClose}>
+                  سياسة
+                </Link>
               </div>
             </Offcanvas.Body>
           </Offcanvas>
@@ -94,5 +111,4 @@ const LowerNavbar = () => {
     </div>
   );
 };
-
 export default LowerNavbar;

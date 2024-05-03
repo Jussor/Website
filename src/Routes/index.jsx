@@ -24,13 +24,13 @@ const Index = () => {
             <Route path="contactus" element={<ContactUs />} />
             <Route path="podcast" element={<PodCast />}> </Route>
             <Route path="Singletvpost" element={<Singletvpost />}></Route>
-            <Route path="podcast/:id" element={<SinglePost />} />
+            {/* <Route path="podcast/:id" element={<SinglePost />} /> */}
             <Route path="privacypolicy" element={<PrivacyPolicy />} />
             <Route path="Aboutus" element={<Aboutus />} />
             <Route path="Tvjussor" element={<Tvjussor />} />
             <Route path="geetkpage" element={<Geetkpage />} />
             <Route path="Funoonpage" element={< Funoonpage />} />
-            <Route path="Postcategorypage" element={< Postcategorypage />} />
+            <Route path="podcast/:id" element={< Postcategorypage />} />
 
           </Route>
         </Routes>
