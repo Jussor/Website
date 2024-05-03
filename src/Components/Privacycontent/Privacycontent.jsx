@@ -24,7 +24,7 @@ const Privacycontent = () => {
           <div className="row gy-4">
             <div className="col-lg-6 order-1 order-lg-0">
             <h3 className="heading">{title}</h3>
-            <div dangerouslySetInnerHTML={{ __html: description }}></div>
+            <div dangerouslySetInnerHTML={{ __html: description }} className="text-end"></div>
             </div>
             <div className="col-lg-6">
               <img src={image} alt="" />

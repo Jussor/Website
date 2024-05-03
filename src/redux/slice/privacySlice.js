@@ -3,7 +3,7 @@ import { apiRequest } from '../../Utils/utils';
 
 export const privacy = createAsyncThunk("privacy", async () => {
     
-    const result = await apiRequest('get', 'api/about/getAllAbouts', null)
+    const result = await apiRequest('get', 'api/privacy/getAllPrivacies', null)
     
     
     return result;
@@ -29,7 +29,7 @@ const privacySlice = createSlice({
             state.aboutLoading = true;
         }).addCase(privacy.fulfilled, (state, action) => {
             state.aboutLoading = false;
-            state.privacyJusoor = action.payload.data.About
+            state.privacyJusoor = action.payload.data.Privacy
             
         }).addCase(privacy.rejected, (state, action) => {
             state.aboutLoading = false;

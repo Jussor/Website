@@ -9,69 +9,36 @@ import { SlSocialTwitter } from "react-icons/sl";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { FormGroup } from "react-bootstrap";
+import {contactus} from "../../redux/slice/contactusSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 AOS.init();
 
 function Contactfield() {
-  // const fields = {
-  //   sections: [
-  //     [
-  //       {
-  //         label: "بريدك الالكتروني",
-  //         name: "name",
-  //         elementName: "input",
-  //         type: "email",
-  //         placeholder: "nafeesurrehman5566@gmail,com",
-  //       },
-  //       {
-  //         label: "اسمك",
-  //         name: "email",
-  //         elementName: "input",
-  //         type: "text",
-  //         placeholder: "طلحة تحير",
-  //       },
-  //       {
-  //         label: "رقم الهاتف",
-  //         name: "phone",
-  //         elementName: "input",
-  //         type: "number",
-  //         placeholder: "+923092000816",
-  //       },
-  //       {
-  //         label: "موضوع",
-  //         name: "phone2",
-  //         elementName: "input",
-  //         type: "number",
-  //         placeholder: "أخطاء في الصفحة",
-  //       },
-  //     ],
-  //   ],
-  // };
-
+  
+  
+  const dispatch = useDispatch();
+  
   const formik = useFormik({
-    initialValues: { name: "", email: "", phone: 0, subject: "", message: "" },
+    initialValues: { fullName: "", email: "", phoneNumber: 0, subject: "", query: "" },
     validationSchema: Yup.object().shape({
-      name: Yup.string().required("يجب أن تعطينا اسمك"),
+      fullName: Yup.string().required("يجب أن تعطينا اسمك"),
       email: Yup.string().required("يجب عليك تقديم البريد الإلكتروني الخاص بك"),
-      phone: Yup.string()
+      phoneNumber: Yup.string()
         .min(11, "يرجى تقديم رقم هاتفك المكون من 11 رقمًا")
         .required("يجب عليك تقديم رقم هاتفك")
         .max(15, "رقم هاتفك طويل جدًا"),
       subject: Yup.string()
       .required("يرجى تقديم الموضوع"),
-      message: Yup.string()
+      query: Yup.string()
         .min(100, "يرجى تقديم 100 حرف على الأقل")
         .required("أدرج رسالتك من فضلك"),
     }),
     onSubmit: (values, { resetForm }) => {
-      console.log("values__________", values);
-      // const formData = new FormData();
-      // for (let value in values) {
-      //     if (values[value] !== null) {
-      //       formData.append(value, values[value]);
-      //     }
-      // }
-      // dispatch(AddBanner(formData));
+      
+      
+      
+      dispatch(contactus(values));
     },
   });
 
@@ -121,16 +88,16 @@ function Contactfield() {
                         </label>
                         <input
                           className="form-control rounded-0 text-end mb-2"
-                          name="name"
+                          name="fullName"
                           type="text"
                           placeholder="طلحة تحير"
                           onBlur={formik.handleBlur}
                           onChange={formik.handleChange}
-                          value={formik.values.name}
+                          value={formik.values.fullName}
                         />
                         <small style={{ color: "red" }} className="float-end">
                           {" "}
-                          {formik.touched.name && formik.errors.name}
+                          {formik.touched.fullName && formik.errors.fullName}
                         </small>
                       </FormGroup>
                     </div>
@@ -168,16 +135,16 @@ function Contactfield() {
                         </label>
                         <input
                           className="form-control rounded-0 text-end mb-2"
-                          name="phone"
+                          name="phoneNumber"
                           type="number"
                           placeholder="+40 737 136 767"
                           onBlur={formik.handleBlur}
                           onChange={formik.handleChange}
-                          value={formik.values.phone1}
+                          value={formik.values.phoneNumber}
                         />
                         <small style={{ color: "red" }} className="float-end">
                           {" "}
-                          {formik.touched.phone && formik.errors.phone}
+                          {formik.touched.phoneNumber && formik.errors.phoneNumber}
                         </small>
                       </FormGroup>
                     </div>
@@ -190,18 +157,18 @@ function Contactfield() {
                           رسالتك
                         </label>
                         <textarea
-                          name="message"
+                          name="query"
                           id="message"
                           placeholder="قم بوصف مشكلتك أو إذا كنت تريد أن تسأل عن أي تفاصيل"
                           rows={5}
                           onBlur={formik.handleBlur}
                           onChange={formik.handleChange}
-                          value={formik.values.message}
+                          value={formik.values.query}
                           className="form-control rounded-0 mb-3 text-end"
                         ></textarea>
                         <small style={{ color: "red" }} className="float-end">
                           {" "}
-                          {formik.touched.message && formik.errors.message}
+                          {formik.touched.query && formik.errors.query}
                         </small>
                       </FormGroup>
                       <button type="submit" className="btn btn-dark mb-3">

@@ -5,6 +5,7 @@ import homeSlice from './slice/homeSlice';
 import teamSlice from './slice/teamSlice';
 import aboutSlice from './slice/aboutSlice';
 import privacySlice from './slice/privacySlice';
+import contactusSlice  from './slice/contactusSlice';
 
 export const store = configureStore({
     reducer: {
@@ -13,7 +14,8 @@ export const store = configureStore({
         home:homeSlice,
         team : teamSlice,
         about : aboutSlice,
-        privacy : privacySlice
+        privacy : privacySlice,
+        contact : contactusSlice,
     }
 
 });
