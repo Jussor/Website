@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./LowerNavbar.css";
 import { Container, Offcanvas } from "react-bootstrap";
 import { CiSearch } from "react-icons/ci";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { IoIosMenu } from "react-icons/io";
 import logo from "../../../public/Home/logo.png";
 import { useDispatch, useSelector } from "react-redux";
@@ -21,21 +21,25 @@ const LowerNavbar = () => {
   useEffect(() => {
     dispatch(category());
   }, []);
-  const handleSearch = () => {
-    return;
+  const navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate("/searchPost")
   };
+
+  
   return (
     <div className="lower-navbar">
       <Container>
         <nav className="d-flex justify-content-between align-items-center">
-          <div className="left-lower-nav">
+          <form className="left-lower-nav" onSubmit={handleSubmit}>
             <div className="d-flex gap-2 ">
-              <span className="search-btn" onClick={handleSearch}>
+              <button type="submit" onClick={()=> handleSubmit} style={{border : "none",background : "transparent", color : "white" }}>
                 <CiSearch />
-              </span>
-              <input type="text" placeholder="أخبار البحث" />
+              </button>
+              <input type="text" placeholder="أخبار البحث" required />
             </div>
-          </div>
+          </form>
           <div className="middle-lower-nav d-none d-lg-flex gap-4">
             {categorySuccess &&
               categorySuccess.map((item, index) => (
@@ -50,7 +54,10 @@ const LowerNavbar = () => {
                   <ul className="dropdown_menu dropdown_menu-5 p-0">
                     {item.categoryName === "سياسة" &&
                       item.childCategories.map((item2, index2) => (
-                        <Link to={`/podcast/${item._id}-${item2._id}`} key={index2}>
+                        <Link
+                          to={`/podcast/${item2._id}`}
+                          key={index2}
+                        >
                           <li className="dropdown_item-1">
                             {item2.categoryName}
                           </li>
@@ -58,7 +65,10 @@ const LowerNavbar = () => {
                       ))}
                     {item.categoryName === "نبض المجتمع" &&
                       item.childCategories.map((item2, index2) => (
-                        <Link to={`/podcast/${item._id}-${item2._id}`} key={index2}>
+                        <Link
+                          to={`/podcast/${item2._id}`}
+                          key={index2}
+                        >
                           <li className="dropdown_item-1">
                             {item2.categoryName}
                           </li>

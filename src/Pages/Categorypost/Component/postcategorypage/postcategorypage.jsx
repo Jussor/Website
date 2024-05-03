@@ -3,20 +3,24 @@ import "./postcategorypage.css";
 import { CgCalendarDates } from "react-icons/cg";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import Home from "../../../Home/Home";
 import { IMAGE_PATH } from "../../../../Utils/utils";
+import { getPostsByCategory } from "../../../../redux/slice/categorySlice";
+import { useParams } from 'react-router-dom';
 
 const postcategorypage = () => {
   const dispatch = useDispatch();
-  const { Main } = useSelector((state) => state.home);
+  const { postsByCategorySuccess } = useSelector((state) => state.category);
+  const { id } = useParams();
 
   useEffect(() => {
-    dispatch(Home());
-  }, []);
+    dispatch(getPostsByCategory(id));
+  }, [id]);
+
+  console.log(postsByCategorySuccess, "hdkashdjsa")
   const handleClick = () => {
     window.scrollTo(0, 0);
   };
-  console.log(Main);
+  
   const truncateWords = (text, maxWords) => {
     const words = text.split(" ");
     if (words.length > maxWords) {
@@ -33,7 +37,7 @@ const postcategorypage = () => {
   return (
     <div className="container mt-5 mb-5">
       <div className="row gy-3 gx-3 justify-content-end">
-        {Main.map((podcast) => (
+        {postsByCategorySuccess.map((podcast) => (
           <div className="col-sm-6 col-lg-4 col-xl-3">
             <div class="card ">
               <Link to={`/podcast/${podcast._id}`} onClick={handleClick}>
