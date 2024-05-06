@@ -28,8 +28,8 @@ const Tvcomp = () => {
                     </iframe>
                     <div className="tv_img">
                       <Link to="Singletvpost" style={{ color: "inherit" }}>
-                        <p>{item.title}</p>
-                        <span> {item.createdAt} </span> <FaCalendarAlt />
+                        <p>{item.title}</p><FaCalendarAlt />
+                        <span> {item.createdAt} </span> 
                       </Link>
                     </div>
                   </div>

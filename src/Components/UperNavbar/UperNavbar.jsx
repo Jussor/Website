@@ -11,13 +11,8 @@ import { FaTiktok } from "react-icons/fa";
 import axios from "axios";
 const UperNavbar = () => {
   const currentDate = new Date();
-  const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
   
+
   const daysInArabic = [
     "الأحد",
     "الاثنين",
@@ -79,11 +74,22 @@ const UperNavbar = () => {
     <div className="uper-navbar">
       <Container>
         <nav>
+          <div className="right-uper-nav">
+            <div className="d-flex align-items-center gap-2">
+              <span>{city}</span> <span>{`${Math.round(temp)}°`}</span>
+              <img src="/Home/image1.png"></img>
+            </div>
+            <div className="right-links">
+              <Link to="tel:+923026469153" target="_blank">
+                اتصل بنا
+              </Link>
+            </div>
+          </div>
           <div className="left-uper-nav ">
-            <button className="uper-nav-btn bg-blue">{formattedDate}</button>
-            <Link to="https://www.facebook.com/JusoorNews/">
-              <FaFacebookF />
+            <Link to="https://www.tiktok.com/@jusoornews">
+              <FaTiktok />
             </Link>
+
             <Link to="https://twitter.com/JusoorNews">
               <FaXTwitter />
             </Link>
@@ -96,21 +102,10 @@ const UperNavbar = () => {
             <Link to="https://www.youtube.com/@Jusoor_News">
               <TbBrandYoutube />
             </Link>
-            <Link to="https://www.tiktok.com/@jusoornews">
-              <FaTiktok />
+            <Link to="https://www.facebook.com/JusoorNews/">
+              <FaFacebookF />
             </Link>
-          </div>
-          <div className="right-uper-nav">
-            <div className="right-links">
-              <Link to="tel:+923026469153" target="_blank">
-                اتصل بنا
-              </Link>
-            </div>
-
-            <div className="d-flex align-items-center gap-2">
-              <img src="/Home/image1.png"></img>
-              {`${Math.round(temp)}°`} {city}
-            </div>
+            <button className="uper-nav-btn bg-blue">{formattedDate}</button>
           </div>
         </nav>
       </Container>

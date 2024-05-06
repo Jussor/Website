@@ -1,52 +1,46 @@
 .category-position {
   position: relative;
-
 }
-.blog_card{
+.blog_card {
   position: relative;
   margin-bottom: 30px;
 }
 .blog_card_desk {
-  text-align: right;
   font-size: 15px;
   font-family: "Cairo", sans-serif;
   font-weight: 700;
- text-align: right;
- padding: 10px 0px;
+
+  padding: 10px 0px;
 }
 .blog_card_date {
-  text-align: right;
   font-size: 12px;
   font-weight: 400;
   line-height: 18px;
-  color : #615959;
+  color: #615959;
   font-family: "Noto Naskh Arabic", serif;
   display: flex;
-  justify-content: end;
+
   align-items: center;
   gap: 5px;
 }
-.blog_card_para{
+.blog_card_para {
   font-family: "Noto Naskh Arabic", serif;
   font-size: 12px;
   padding: 0px 0px;
-
-
 }
-.blog-icon{
+.blog-icon {
   font-family: "Noto Naskh Arabic", serif;
   font-size: 20px;
-  color : #615959;
+  color: #615959;
 }
-  
 
 .button_img {
- position: absolute;
- top: 5px;
- right: 20px;
-cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  cursor: pointer;
 }
-.button_img button{
+.button_img button {
   background-color: #4095c6;
   color: white;
   font-family: "Noto Naskh Arabic", serif;
@@ -76,48 +70,40 @@ cursor: pointer;
 }
 .card h6 {
   font-family: "Noto Naskh Arabic", serif;
-  text-align: end;
+
   font-size: 20px;
 }
 .card p {
   font-family: "Noto Naskh Arabic", serif;
-  text-align: end;
+
   font-size: 15px;
 }
 .category-header {
   color: #4095c6;
-  text-align: right;
+
   font-family: "Noto Naskh Arabic", serif;
   border-right: 5px solid #4095c6;
   padding-right: 5px;
 }
 @media (max-width: 1192px) {
-  .blog_card{
+  .blog_card {
     margin-bottom: 20px;
   }
-
- 
 }
-   @media (max-width: 992px) {
-    .blog_card{
-      margin-bottom: 20px;
-    }
+@media (max-width: 992px) {
+  .blog_card {
+    margin-bottom: 20px;
+  }
+}
 
-    
-  } 
+@media (max-width: 767.98px) {
+  .blog_card {
+    margin-bottom: 20px;
+  }
+}
 
-   @media (max-width: 767.98px) {
-    .blog_card{
-      margin-bottom: 20px;
-    }
-  } 
-
-   @media (max-width: 575px) {
-    .blog_card{
-      margin-bottom: 20px;
-    }
-
- 
-
-  } 
-
+@media (max-width: 575px) {
+  .blog_card {
+    margin-bottom: 20px;
+  }
+}

@@ -1,11 +1,10 @@
-.not-found-message{
-  font-family: "Cairo", sans-serif;
-}
-.post-title{
- width: 100%;
- overflow: hidden;
- text-overflow: ellipsis;  
-}
+
+.post-title {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+  }
 .post-descr{
 white-space: nowrap;
  width: 100%;
@@ -60,7 +59,6 @@ white-space: nowrap;
 
 @media screen and (max-width : 576px){
     .card-img{
-        
-        height: auto;
+     height: auto;
     }
 }

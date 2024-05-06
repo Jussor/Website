@@ -16,28 +16,8 @@ const Newsletter = () => {
       <div>
         <div className="container mt-5 mb-5">
           <div className="row gy-4">
-            <div
-              className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6"
-              data-aos="fade-up"
-              data-aos-duration="2000" >
-              <div className=" newsletter">
-                <div className="container">
-                  <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                    <h1>انضم إلى مجتمع جسور في تلغرام </h1>
-                    <p>اقرأ أخبارنا يوميًا من خلال إشعار البريد الإلكتروني </p>
-                  </div>
-                </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 m-auto">
-                    <Link 
-                    to="https://whatsapp.com/channel/0029VaZx00405MUcm4lcWG1Q" 
-                    target="_blank"  rel="nofollow noopener">
-                    <button>
-                      <IoLogoWhatsapp /> افتح الرابط
-                    </button>
-                    </Link>
-                </div>
-              </div>
-            </div>
+ 
+           
             <div
              className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6"
               data-aos="fade-up"
@@ -61,6 +41,29 @@ const Newsletter = () => {
                  </div>
               </div>
             </div>
+            <div
+              className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6"
+              data-aos="fade-up"
+              data-aos-duration="2000" >
+              <div className=" newsletter">
+                <div className="container">
+                  <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <h1>انضم إلى مجتمع جسور في تلغرام </h1>
+                    <p>اقرأ أخبارنا يوميًا من خلال إشعار البريد الإلكتروني </p>
+                  </div>
+                </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 m-auto">
+                    <Link 
+                    to="https://whatsapp.com/channel/0029VaZx00405MUcm4lcWG1Q" 
+                    target="_blank"  rel="nofollow noopener">
+                    <button>
+                      <IoLogoWhatsapp /> افتح الرابط
+                    </button>
+                    </Link>
+                </div>
+              </div>
+            </div>
+            
           </div>
         </div>
       </div>

@@ -5,18 +5,16 @@ import { IoIosArrowDropleft } from "react-icons/io";
 
 const Header = (props) => {
   return (
-    <div className="podcast-hero" style={{ backgroundImage: `url(${props.image})`}}>
+    <div className="header-hero" style={{ backgroundImage: `url(${props.image})`}}>
       <div className="container">
-        <div className="row">
+        <div className="row " >
           <div className="col-lg-6">
-            <div className="date">
-              <span className="">{props.date}</span>
-            </div>
+            
             <div className="content">
               <h1>{props.title}</h1>
               <p>{props.paragraph}</p>
               {props.showButton && (
-                <div className="podcast-hero-btns">
+                <div className="header-hero-btns">
                   <button className="btn-1">
                     <span className="">
                       <IoIosArrowDropleft />
