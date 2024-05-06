@@ -14,7 +14,7 @@ import DeatailPost from '../Pages/Detail/index.jsx'
 const Index = () => {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter>         
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route path="" element={<Home />} />

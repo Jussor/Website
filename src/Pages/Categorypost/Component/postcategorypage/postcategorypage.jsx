@@ -43,7 +43,7 @@ const postcategorypage = () => {
           <Spinner />
         </div>
         :
-    <div className="row gy-3 gx-3 justify-content-end">
+    <div className="row gy-3 gx-3 ">
 {/* Check if posts exist */}
 {postsByCategorySuccess && postsByCategorySuccess.length > 0 ? (
     // If posts exist, map through them
@@ -70,8 +70,9 @@ const postcategorypage = () => {
                             <div class="card-body">
                                 <h6 class="post-title">{truncateWords(podcast.title, 4)}</h6>
                                 <p class="post-date">
+                                <span className="calender-icon"><CgCalendarDates /></span>
                                     {truncateText(podcast.updatedAt, 10)}
-                                    <span className="calender-icon"><CgCalendarDates /></span>
+                                   
                                 </p>
                             </div>
                         </Link>
@@ -88,8 +89,7 @@ const postcategorypage = () => {
         <h6 className="not-found-message m-auto">لم يتم العثور على آخر</h6>
     </div>
 )}
-
-        </div>
+ </div>
       }
     </div>
   );
