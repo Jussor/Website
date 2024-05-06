@@ -1,5 +1,4 @@
 import React from 'react';
-import PodCastSideBar from "../../Components/PodCastSideBar/PodCastSideBar";
 import Singletvpost from '../Singletvpost/Singletvpost';
 
 const index = () => {

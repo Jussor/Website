@@ -31,8 +31,7 @@ const CategoryAction = () => {
                             src={categoryItem.image}
                             className="img-fluid blog_img"
                             alt={categoryItem.title}
-                            loading="lazy"
-                          />
+                            loading="lazy"/>
                           </Link>
                         </div>
                         <div className="button_img">

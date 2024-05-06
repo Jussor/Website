@@ -56,7 +56,7 @@ const Offersaction = () => {
               key={post.id}
             >
               <h6 className="offer-header">{post.category}</h6>
-              <Link to={`/podcast/${post.id}`} class="card" onClick={handleClick}>
+              <Link  class="card" onClick={handleClick}>
                 <img src={post.img_url} class="podcast-img" alt="..." />
                 <div class="card-body">
                   <h5 class="title">{post.title}</h5>

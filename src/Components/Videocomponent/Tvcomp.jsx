@@ -6,16 +6,15 @@ import "./jusoortv.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 AOS.init();
 
 const Tvcomp = () => {
-  // const dispatch = useDispatch();
   const { JusoorTv } = useSelector((state) => state.home);
 
   return (
-    <div className="tv-bg">
+    <div className="tv-bg" id="Tvjusoor">
       <div className="container mt-5">
         <br />
         <h1 className="tv_header"> TV جسور  </h1>

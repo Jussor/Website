@@ -1,47 +1,41 @@
 import React from 'react';
 import "./Singletvpost.css"
-import pic from "../../assets/Tv-back.png";
 import { CgCalendarDates } from "react-icons/cg";
-import VideoPlayer from '../../Components/VideoPlayer/VideoPlayer';
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { DetailPost } from "../../redux/slice/postSlice";
 
 
 const Singletvpost = () => {
+
+  const { id } = useParams();
+
+  const dispatch = useDispatch();
+  const { Success } = useSelector((state) => state.post);
+
+  React.useEffect(() => {
+    dispatch(DetailPost(id));
+  }, []);
+console.log(Success)
   return (
     <div>
       <div className="card rounded-0">
-        <VideoPlayer />
+      <iframe src={`${Success.video}` } width="100%" height="400">
+       </iframe>
         <div className="card-body">
           <div className="post-info">
             <p className="post-date" style={{textAlign: 'right'}}>
-              14 أبريل 2024
+            {Success.createdAt}
               <span className="calender-icon">
                 <CgCalendarDates />
               </span>
             </p>
           </div>
           <h6 className="descr" style={{textAlign: 'right'}}>
-            التحالفات الاستراتيجية: القادة السياسيون وتوازن القوى
+          {Success.title}
           </h6>
-          <p className="sub-descr" style={{textAlign: 'right'}}>
-            لقد كان لوريم إيبسوم هو النص الوهمي القياسي في هذه الصناعة منذ القرن السادس عشر، عندما أخذت طابعة غير معروفة لوح الكتابة وخلطته لصناعة نموذج كتاب.
-            <br />
-            لوريم إيبسوم هو ببساطة نص وهمي من صناعة الطباعة والتنضيد.
-            <br />
-            لقد كان لوريم إيبسوم هو النص الوهمي القياسي في هذه الصناعة منذ القرن السادس عشر، عندما أخذت طابعة غير معروفة لوح الكتابة وخلطته لصناعة نموذج كتاب.
-            <br />
-            لوريم إيبسوم هو ببساطة نص وهمي من صناعة الطباعة والتنضيد.
-            <br />
-            وهكذا
-          </p>
-          <div className="row gy-3 gx-3">
-            <div className="col-md-6">
-              <img className="descr-img" src={pic} alt="Image Description" />
-            </div>
-            <div className="col-md-6">
-              <img className="descr-img" src={pic} alt="Image Description" />
-            </div>
-          </div>
-        </div>
+         <div dangerouslySetInnerHTML={{ __html: Success.description }} style={{textAlign: 'right'}}></div>
+         </div>
       </div>
     </div>
   );

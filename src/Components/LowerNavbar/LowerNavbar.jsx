@@ -35,13 +35,13 @@ const LowerNavbar = () => {
           <form className="left-lower-nav" onSubmit={handleSubmit}>
             <div className="d-flex gap-2 ">
               <button type="submit" onClick={()=> handleSubmit} style={{border : "none",background : "transparent", color : "white" }}>
-                <CiSearch />
+                {/* <CiSearch /> */}
               </button>
-              <input type="text" placeholder="أخبار البحث" required />
+              {/* <input type="text" placeholder="أخبار البحث" required /> */}
             </div>
           </form>
           <div className="middle-lower-nav d-none d-lg-flex gap-4">
-            {categorySuccess &&
+          {categorySuccess &&
               categorySuccess.map((item, index) => (
                 <li className="dropdown dropdown-5 p-0" key={index}>
                   <div className="iconDrop">
@@ -56,8 +56,7 @@ const LowerNavbar = () => {
                       item.childCategories.map((item2, index2) => (
                         <Link
                           to={`/podcast/${item2._id}`}
-                          key={index2}
-                        >
+                          key={index2} >
                           <li className="dropdown_item-1">
                             {item2.categoryName}
                           </li>

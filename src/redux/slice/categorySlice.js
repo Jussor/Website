@@ -49,7 +49,7 @@ const categorySlice = createSlice({
       });
     builder
       .addCase(getPostsByCategory.pending, (state) => {
-        state.postsByCategoryError = true;
+        state.postsByCategoryLoading = true;
       })
       .addCase(getPostsByCategory.fulfilled, (state, action) => {
         state.postsByCategoryLoading = false;
