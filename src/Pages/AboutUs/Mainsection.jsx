@@ -19,17 +19,18 @@ const Mainsection = () => {
   return (
     <div className='container pt-5'>
       <div className='row'>
+       
+        
         <div className='col-md-6'>
-          {/* Render the title */}
+          <img src={image} alt="Jusoor" className='w-100'/>
+        </div>
+        <div className='col-md-6'>
+          
           <h1 className='text-end' style={{ fontFamily: "Cairo, sans-serif" }}>
             {title}
           </h1>
-          {/* Render the description as formatted HTML */}
+         
           <div dangerouslySetInnerHTML={{ __html: description }}></div>
-        </div>
-        {/* Render the image */}
-        <div className='col-md-6'>
-          <img src={image} alt="Jusoor" className='w-100'/>
         </div>
       </div>
     </div>

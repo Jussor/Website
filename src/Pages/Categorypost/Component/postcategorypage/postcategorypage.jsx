@@ -24,7 +24,7 @@ const postcategorypage = () => {
   const truncateWords = (text, maxWords) => {
     const words = text.split(" ");
     if (words.length > maxWords) {
-      return "..." + words.slice(0, maxWords).join(" ");
+      return words.slice(0, maxWords).join(" ") +"..."  ;
     }
     return text;
   };
@@ -35,8 +35,9 @@ const postcategorypage = () => {
     return text;
   };
   return (
-    <div className="container mt-5 mb-5">
-      <div className="row gy-3 gx-3 justify-content-end">
+    <div className="post-category-page">
+      <div className="container mt-5 mb-5">
+      <div className="row gy-3 gx-3">
         {postsByCategorySuccess.map((podcast) => (
           <div className="col-sm-6 col-lg-4 col-xl-3">
             <div class="card ">
@@ -54,13 +55,14 @@ const postcategorypage = () => {
                   style={{ color: "inherit" }}
                   onClick={handleClick}
                 >
-                  <h6 class="post-title">{truncateWords(podcast.title, 4)}</h6>
+                  <h6 class="post-title " >{truncateWords(podcast.title, 3)}</h6>
                   
                   <p class="post-date">
-                  {truncateText(podcast.updatedAt, 10)}
-                    <span className="calender-icon">
+                  <span className="calender-icon">
                       <CgCalendarDates />
                     </span>
+                  {truncateText(podcast.updatedAt, 10)}
+                    
                   </p>
                 </Link>
               </div>
@@ -68,6 +70,7 @@ const postcategorypage = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };

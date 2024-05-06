@@ -16,6 +16,24 @@ const Newsletter = () => {
       <div>
         <div className="container mt-5 mb-5">
           <div className="row gy-4">
+          <div
+             className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6"
+              data-aos="fade-up"
+              data-aos-duration="2000" >
+                <div className="newsletter-right">
+                <div className="container">
+                  <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <h4 className="text-end">انضم إلى مجتمع جسور في واتساب</h4>
+                    <p>اقرأ أخبارنا يوميًا من خلال إشعار البريد الإلكتروني </p>
+                  </div>
+                </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 m-auto">
+                  <button className="newsletter-right-button">
+                      <FaTelegramPlane/> 
+                    </button>
+                 </div>
+              </div>
+            </div>
             <div
               className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6"
               data-aos="fade-up"
@@ -38,24 +56,7 @@ const Newsletter = () => {
                 </div>
               </div>
             </div>
-            <div
-             className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6"
-              data-aos="fade-up"
-              data-aos-duration="2000" >
-                <div className="newsletter-right">
-                <div className="container">
-                  <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                    <h4 className="text-end">انضم إلى مجتمع جسور في واتساب</h4>
-                    <p>اقرأ أخبارنا يوميًا من خلال إشعار البريد الإلكتروني </p>
-                  </div>
-                </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 m-auto">
-                  <button className="newsletter-right-button">
-                      <FaTelegramPlane/> 
-                    </button>
-                 </div>
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>

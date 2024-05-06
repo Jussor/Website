@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Galleryimage from "../../assets/Rectangle 19.png";
-import { FaCalendarAlt } from "react-icons/fa";
-import cakeimage from "../../assets/cakes.png";
+
 import "./categorysaction.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import categorydata from "../data/Categorydata";
+import { CgCalendarDates } from "react-icons/cg";
 
 AOS.init();
 
@@ -43,8 +42,9 @@ const CategoryAction = () => {
                         <div className="blog_card_desk">{categoryItem.title}</div>
                         <p className="blog_card_para">{categoryItem.paragraph}</p>
                         <div className="blog_card_date">
+                        <CgCalendarDates className="blog-icon" />
                           <span>14 أبريل 2024</span>{" "}
-                          <FaCalendarAlt className="blog-icon" />
+                         
                         </div>
                       </div>
                     

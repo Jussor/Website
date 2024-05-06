@@ -62,7 +62,7 @@ const HeadLine = () => {
           <Slider ref={(slider) => setSliderRef(slider)} {...settings}>
             {headlines.map((headline, index) => (
               <div className="d-flex flex-column gap-3 flex-lg-row justify-content-lg-between align-items-lg-center" key={index}>
-                <div className="d-flex justify-content-center gap-2 order-1 order-lg-0">
+                <div className="d-flex justify-content-center gap-2">
                   <button
                     className={`btn-arrow-left d-flex justify-content-center align-items-center backward ${
                       backwardClicked ? "clicked" : ""
@@ -82,7 +82,7 @@ const HeadLine = () => {
                 </div>
 
                 <div className="headline d-flex flex-column align-items-end flex-lg-row gap-lg-4">
-                  <div  className="news-section order-1 order-lg-0">
+                  <div  className="news-section">
                     <p className="font-bold mb-0">{headline.news}</p>
                   </div>
                   <div className="title-section">

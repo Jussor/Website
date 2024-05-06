@@ -62,10 +62,12 @@ const Offersaction = () => {
                   <h5 class="title">{post.title}</h5>
                   <p class="descr">{post.descr}</p>
                   <p class="date">
-                    {post.date}
-                    <span className="calender-icon">
+                  
+                  <span className="calender-icon">
                       <CgCalendarDates />
                     </span>
+                    {post.date}
+                    
                   </p>
                 </div>
               </Link>

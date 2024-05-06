@@ -3,7 +3,7 @@
 }
 .offer-header{
   font-family: "Cairo", sans-serif;
-    text-align: right;
+    
     color: #4095C6;
     font-weight: 900;
     font-size: 30px;
@@ -20,7 +20,7 @@
    font-size: 18px;
   font-weight: 900;
   line-height: 16px;
-  text-align: right;
+  
   color: #1D1D1D;
 }
 .offer-podcast .descr{
@@ -29,7 +29,7 @@
   font-size: 13px;
   font-weight: 600;
   line-height: 18px;
-  text-align: right;
+  
 
   
 }
@@ -40,7 +40,7 @@
   line-height: 18px;
   color : #615959;
   display: flex;
-  justify-content: end;
+  
   align-items: center;
   gap: 5px;
 }
@@ -52,7 +52,7 @@
   
 @media (max-width: 575.98px) {
   .offer-header{
-    text-align: right;
+    
     color: #4095C6;
     font-weight: 900;
     font-size: 30px;
