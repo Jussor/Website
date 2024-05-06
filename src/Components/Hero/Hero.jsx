@@ -61,7 +61,7 @@ const Parent = () => {
   let b = window.innerWidth;
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     speed: 1000,
     slidesToShow: slidetoshow,
     slidesToScroll: 1,
