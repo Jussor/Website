@@ -53,7 +53,7 @@ const categorySlice = createSlice({
       })
       .addCase(getPostsByCategory.fulfilled, (state, action) => {
         state.postsByCategoryLoading = false;
-        state.postsByCategorySuccess = action.payload.data.Content;
+        state.postsByCategorySuccess = action.payload.data?.Content;
       })
       .addCase(getPostsByCategory.rejected, (state, action) => {
         state.postsByCategoryLoading = false;

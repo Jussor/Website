@@ -1,4 +1,6 @@
-
+.not-found-message{
+  font-family: "Cairo", sans-serif;
+}
 .post-title{
  width: 100%;
  overflow: hidden;
