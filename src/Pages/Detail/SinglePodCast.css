@@ -3,7 +3,7 @@
      font-size: 29px;
     font-weight: 900;
     line-height: 43.5px;
-    text-align: right;
+    
     
 }
 .single-post .descr, .single-post .sub-descr, .single-post .last-descr{
@@ -11,7 +11,7 @@
     font-size: 18px;
     font-weight: 400;
     line-height: 36px;
-    text-align: right;
+    
 
 }
 .single-post .post-date, .single-post .post-views, .single-post .post-category{
@@ -21,13 +21,13 @@
     line-height: 18px;
     color : #615959;
     display: flex;
-    justify-content: end;
+    
     align-items: center;
     gap: 5px;
 }
 .single-post .post-info{
     display: flex;
-    justify-content: end;
+    
     gap: 10px;
 }
 .single-post span{
@@ -42,7 +42,7 @@
 }
 .single-post .tags{
     display: flex;
-    justify-content: end;
+    
     align-items: center;
     gap: 10px;
 }
@@ -51,7 +51,7 @@
     margin-bottom: 0;
     font-size: 22px;
     font-weight: 600;
-    text-align: right;
+    
 
 }
 .single-post .tags button{

@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "./postcategorypage.css";
-import { CgCalendarDates } from "react-icons/cg";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { IMAGE_PATH } from "../../../../Utils/utils";
@@ -26,7 +25,7 @@ const postcategorypage = () => {
   const truncateWords = (text, maxWords) => {
     const words = text.split(" ");
     if (words.length > maxWords) {
-      return "..." + words.slice(0, maxWords).join(" ");
+      return words.slice(0, maxWords).join(" ")+"...";
     }
     return text;
   };
@@ -43,7 +42,7 @@ const postcategorypage = () => {
           <Spinner />
         </div>
         :
-    <div className="row gy-3 gx-3 justify-content-end">
+    <div className="row gy-3 gx-3">
 {/* Check if posts exist */}
 {postsByCategorySuccess && postsByCategorySuccess.length > 0 ? (
     // If posts exist, map through them
@@ -52,17 +51,17 @@ const postcategorypage = () => {
         return (
             <div className="col-sm-6 col-lg-4 col-xl-3">
                 {id === '662b85fb3455a992d8489da7' ? (
-                    <div class="wrapper">
-                        <div class="box">
+                    <Link to={`/Singletvpost/${podcast._id}`} style={{ color: "inherit" }}>
+                        <div  class="box">
                             <iframe className="iframe-element-post" src={`${podcast.video}`}></iframe>
                             <div className="tv_img_post">
-                                <Link to={`/Singletvpost/${podcast._id}`} style={{ color: "inherit" }}>
-                                    <p>{truncateWords(podcast.title, 2)}</p>
-                                    <span>{truncateText(podcast.updatedAt, 10)}</span> <FaCalendarAlt />
-                                </Link>
+                                
+                                    <p className="mb-0">{truncateWords(podcast.title, 4)}</p>
+                                    <span className="d-flex align-items-center gap-2"><FaCalendarAlt />{truncateText(podcast.updatedAt, 10)}</span> 
+                               
                             </div>
                         </div>
-                    </div>
+                    </Link>
                 ) : podcast.category ? ( 
                     <div class="card">
                         <Link to={`/detailpost/${podcast._id}`} style={{ color: "inherit" }} onClick={handleClick}>
@@ -70,8 +69,9 @@ const postcategorypage = () => {
                             <div class="card-body">
                                 <h6 class="post-title">{truncateWords(podcast.title, 4)}</h6>
                                 <p class="post-date">
+                                <span className="calender-icon"><FaCalendarAlt /></span>
                                     {truncateText(podcast.updatedAt, 10)}
-                                    <span className="calender-icon"><CgCalendarDates /></span>
+                                    
                                 </p>
                             </div>
                         </Link>

@@ -17,6 +17,18 @@ const index = () => {
     dispatch(DetailPost(id));
   }, []);
   console.log(Success)
+  const truncateText = (text, maxLength) => {
+    if (typeof text !== 'string' || text.length === 0) {
+      return ''; 
+    }
+    
+    if (text.length > maxLength) {
+      return text.substring(0, maxLength);
+    }
+    
+    return text;
+  };
+  
   return (
     <div className="main-podcast">
       <div className="container mt-5">
@@ -24,24 +36,27 @@ const index = () => {
           <div className="col-lg-12">
             <div className="single-post">
           <div className="card rounded-0" >
-            <img src={`${IMAGE_PATH}${Success.primaryImage}`} style={{marginLeft:"auto",height:"00px"}} className="post-img" alt="..." />
+            <img src={`${IMAGE_PATH}${Success.primaryImage}`} style={{height : "400px"}} alt="..." />
                 <div className="card-body">
                   <div className="post-info">
-                    <p className="post-date">
-                      {Success.createdAt}
-                      <span className="calender-icon">
-                        <CgCalendarDates />
-                      </span>
-                    </p>
-                    <p className="post-category">
-                      اض
-                      <span className="category-icon">
+                  <p className="post-category">
+                  <span className="category-icon">
                         <BiCategory />
                       </span>
+                      اض
+                      
                     </p>
+                    <p className="post-date">
+                    <span className="calender-icon">
+                        <CgCalendarDates />
+                      </span>
+                      {truncateText(Success.updatedAt, 10)}
+                      
+                    </p>
+                    
                   </div>
                   <h5 className="title">{Success.title}</h5>
-                  <div className="descr" dangerouslySetInnerHTML={{ __html: Success.description }} style={{textAlign: 'right'}}></div>
+                  <div className="descr" dangerouslySetInnerHTML={{ __html: Success.description }}></div>
                   <div className="row gy-3 gx-3">
                     {Success.galleryImages?.map((item) => (
                       <div className="col-md-6">

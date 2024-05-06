@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { banner } from "../../redux/slice/bannerSlice";
 import { IMAGE_PATH ,VIDEO_PATH} from "../../Utils/utils";
 import "./Hero.css"
+import { Link } from "react-router-dom";
 const SimpleSlider = ({ settings, sliderRef }) => {
   const dispatch = useDispatch();
   const { bannerSuccess, bannerError } = useSelector((state) => state.banner);
@@ -27,8 +28,10 @@ const SimpleSlider = ({ settings, sliderRef }) => {
           <div className="container">
             <div className="row">
               <div className="col-md-12 home-hero-main">
+                <Link to={`/podcast/${banner.post_id}`} style={{color : "inherit"}}>
                 <h2 className="title">{banner.title}</h2>
                 <div dangerouslySetInnerHTML={{ __html: banner.description }}></div>
+                </Link>
 
               </div>
             </div>
@@ -64,9 +67,9 @@ const Parent = () => {
         setslidetoshow(1);
       }
     });
-  }, []);
+  }, [slidetoshow]);
   return (
-    <div className="container-fluid p-0" style={{ overflow: "hidden" }}>
+    <div className="container-fluid p-0">
       <SimpleSlider settings={{ ...settings }} sliderRef={sliderRef} />
     </div>
   );
