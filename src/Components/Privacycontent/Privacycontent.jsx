@@ -24,7 +24,7 @@ const Privacycontent = () => {
         <div className="container">
           <div className="row gy-4">
             <div className="col-lg-6">
-              <img src={image} alt="" />
+              <img src={image} alt="" className="img-fluid" />
             </div>
             <div className="col-lg-6 order-1 order-lg-0">
               <h3 className="heading">{title}</h3>
