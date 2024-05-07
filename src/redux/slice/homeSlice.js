@@ -10,6 +10,8 @@ export const Home= createAsyncThunk("Home", async () => {
 const initialState = {
     Main: [],
     JusoorTv:[],
+    WeeklyPosts:[],
+    MonthlyPosts:[],
     loading: false,
     error: null,
 }
@@ -30,6 +32,8 @@ const HomeSlice = createSlice({
             state.loading = false;
             state.Main = action.payload.data.Main
             state. JusoorTv= action.payload.data.JusoorTv
+            state. WeeklyPosts= action.payload.data.WeeklyPosts
+            state. MonthlyPosts= action.payload.data.MonthlyPosts
 
         }).addCase(Home.rejected, (state, action) => {
             state.loading = false;

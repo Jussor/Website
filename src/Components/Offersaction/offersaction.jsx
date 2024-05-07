@@ -1,46 +1,39 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-import offercard from "../../assets/Rectangle 37.png";
-import offercard1 from "../../assets/Rectangle 36.png";
-import offercard2 from "../../assets/Rectangle 35.png";
+
 import "./offersaction.css";
 import { CgCalendarDates } from "react-icons/cg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
-
+import { useDispatch, useSelector } from "react-redux";
+import { Home } from "../../redux/slice/homeSlice";
+import { IMAGE_PATH } from "../../Utils/utils";
+import img from "../../assets/gallery-3.png"
 AOS.init();
 
 const Offersaction = () => {
-  const posts = [
-    {
-      id: 3,
-      category: "الفنون",
-      img_url: offercard,
-      title: "التأمل الفني: مشاركة اللحظات في المعرض",
-      descr:
-        "يقف زوجان بالقرب من معرض فني، ومنغمسين في لحظة مشتركة من التقدير الثقافي والتأمل الصامت في العمل الفني المعروض أمامهما.",
-      date: "14 أبريل 2024",
-    },
-    {
-      id: 4,
-      category: "سياسة",
-      img_url: offercard,
-      title: "التأمل الفني: مشاركة اللحظات في المعرض",
-      descr:
-        "يقف زوجان بالقرب من معرض فني، ومنغمسين في لحظة مشتركة من التقدير الثقافي والتأمل الصامت في العمل الفني المعروض أمامهما.",
-      date: "14 أبريل 2024",
-    },
-    {
-      id: 5,
-      category: "أخبار مميزة",
-      img_url: offercard2,
-      title: "التأمل الفني: مشاركة اللحظات في المعرض",
-      descr:
-        "يقف زوجان بالقرب من معرض فني، ومنغمسين في لحظة مشتركة من التقدير الثقافي والتأمل الصامت في العمل الفني المعروض أمامهما.",
-      date: "14 أبريل 2024",
-    },
-  ];
+  const dispatch = useDispatch();
+  const { MonthlyPosts } = useSelector((state) => state.home);
+
+
+  useEffect(() => {
+    dispatch(Home());
+  }, []);
+  const truncateText = (text, maxLength) => {
+    if (text.length > maxLength) {
+      return text.substring(0, maxLength);
+    }
+    return text;
+  };
+  const truncateWords = (text, maxWords) => {
+    const words = text.split(" ");
+    if (words.length > maxWords) {
+      return words.slice(0, maxWords).join(" ")+"...";
+    }
+    return text;
+  };
+  
   const handleClick = () => {
     window.scrollTo(0, 0); 
   };
@@ -48,69 +41,32 @@ const Offersaction = () => {
     <div className="offer-saction">
       <div className="container">
         <div className="row">
-          {posts.map((post) => (
+          {MonthlyPosts && MonthlyPosts?.map((post) => (
             <div
               className=" col-xs-12 col-sm-12 col-md-4  offer-podcast"
               data-aos="fade-up"
               data-aos-duration="2000"
-              key={post.id}
+              key={post?._id}
             >
-              <h6 className="offer-header">{post.category}</h6>
+              <h6 className="offer-header">{post?.category?.categoryName}</h6>
               <Link  class="card" onClick={handleClick}>
-                <img src={post.img_url} class="podcast-img" alt="..." />
+                <img src={post?.primaryImage? `${IMAGE_PATH}${post?.primaryImage}` : `${img}`} class="podcast-img" alt="..." />
                 <div class="card-body">
-                  <h5 class="title">{post.title}</h5>
-                  <p class="descr">{post.descr}</p>
+                  <h5 class="title">{truncateWords(post?.title, 4)}</h5>
+                  <div dangerouslySetInnerHTML={{ __html: post?.description }}></div>
                   <p class="date">
                   
                   <span className="calender-icon">
                       <CgCalendarDates />
                     </span>
-                    {post.date}
+                    {truncateText(post?.updatedAt, 10)}
                     
                   </p>
                 </div>
               </Link>
             </div>
           ))}
-          {/* <div className=" col-xs-12 col-sm-12 col-md-4 offer-podcast" data-aos="fade-up" data-aos-duration="2000" >
-            <h6 className='offer-header'>أخبار مميزة</h6>
-            <div class="card">
-              <img src={offercard} class="podcast-img" alt="..." />
-              <div class="card-body">
-                <h5 class="title">أصوات مرفوعة: نسيج من الاحتجاجات</h5>
-                <p class="descr">شارك شخصان في تسجيل بودكاست مفعم بالحيوية، يتبادلان
-                      الأفكار في مكان تلتقي</p>
-                <p class="date">
-                14 أبريل 2024
-                  <span className="calender-icon">
-                    <CgCalendarDates />
-                  </span>
-                </p>
-           
-              </div>
-            </div>
-
-            </div>
-            <div className=" col-xs-12 col-sm-12 col-md-4 offer-podcast" data-aos="fade-up" data-aos-duration="2000" >
-            <h6 className='offer-header'>أخبار مميزة</h6>
-            <div class="card ">
-              <img src={offercard} class="podcast-img" alt="..." />
-              <div class="card-body">
-                <h5 class="title">أصوات مرفوعة: نسيج من الاحتجاجات</h5>
-                <p class="descr">شارك شخصان في تسجيل بودكاست مفعم بالحيوية، يتبادلان
-                      الأفكار في مكان تلتقي</p>
-                <p class="date">
-                14 أبريل 2024
-                  <span className="calender-icon">
-                    <CgCalendarDates />
-                  </span>
-                </p>
-           
-              </div>
-            </div>
-
-            </div> */}
+          
         </div>
       </div>
     </div>
