@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice, } from '@reduxjs/toolkit';
 import { apiRequest } from '../../Utils/utils';
 
 export const contactus = createAsyncThunk("conatctus", async (data) => {
-    console.log(data,'kkkkkkkkkkkkk')
+    
     const result = await apiRequest('post', 'api/query/createQueryPost', data)
     
     
