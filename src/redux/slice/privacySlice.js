@@ -29,7 +29,7 @@ const privacySlice = createSlice({
             state.aboutLoading = true;
         }).addCase(privacy.fulfilled, (state, action) => {
             state.aboutLoading = false;
-            state.privacyJusoor = action.payload.data.privacy
+            state.privacyJusoor = action.payload.data.Privacy
             
         }).addCase(privacy.rejected, (state, action) => {
             state.aboutLoading = false;

@@ -83,9 +83,9 @@ const LowerNavbar = () => {
           <form className="left-lower-nav" onSubmit={handleSubmit}>
             <div className="d-flex gap-2 ">
 
-              <input type="text" placeholder="أخبار البحث" required />
+              {/* <input type="text" placeholder="أخبار البحث" required /> */}
               <button type="submit" onClick={() => handleSubmit} style={{ border: "none", background: "transparent", color: "white" }}>
-                <CiSearch />
+                {/* <CiSearch /> */}
               </button>
             </div>
           </form>

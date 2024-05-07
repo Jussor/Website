@@ -39,7 +39,7 @@ white-space: nowrap;
     font-family: "Noto Naskh Arabic", serif;
     background-color: #4095c6;
     color: white;
-    padding: 10px;
+    
     border: none;
   }
  
@@ -51,7 +51,7 @@ white-space: nowrap;
     bottom: 0px;
     left: 0;
     right: 0;
-    padding: 20px;
+    padding: 10px;
     text-align: right;
     color: white;
     font-family: "Cairo", sans-serif;
