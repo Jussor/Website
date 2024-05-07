@@ -13,7 +13,6 @@ import OfferBanner from '../../Components/OfferBanner/OfferBanner';
 const Home = () => {
   return (
     <div>
-      
       <Hero />
       <Gallerysaction />
       <Categorysaction />
