@@ -48,17 +48,19 @@ const SimpleSlider = ({ settings, sliderRef }) => {
 };
 const Parent = () => {
   const [slidetoshow, setslidetoshow] = useState(2);
+  const { bannerSuccess } = useSelector((state) => state.banner);
   const sliderRef = useRef(null);
   let b = window.innerWidth;
   const settings = {
     dots: false,
-    infinite: false,
+    infinite: bannerSuccess.length > 1 ? true : false,
     speed: 1000,
-    slidesToShow: slidetoshow,
+    slidesToShow: bannerSuccess.length > 1 ? slidetoshow : 1, 
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
   };
+  
   useEffect(() => {
     if (window.innerWidth > 700) {
       setslidetoshow(1);

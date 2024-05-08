@@ -15,9 +15,9 @@ const Home = () => {
     <div>
       <Hero />
       <Gallerysaction />
-      <Categorysaction />
+      {/* <Categorysaction /> */}
       <Jusoortv />
-      <Offersaction />
+      {/* <Offersaction /> */}
       <Newsletter />
     </div>
   );

@@ -48,13 +48,13 @@ const postcategorypage = () => {
     // If posts exist, map through them
     postsByCategorySuccess.map((podcast,index) => {
         return (
-            <div className="col-sm-6 col-lg-4 col-xl-3" key={index}>
+            <div className="col-sm-6 col-lg-4" key={index}>
                 {id === '662b85fb3455a992d8489da7' ? (
                     <Link to={`/Singletvpost/${podcast._id}`} style={{ color: "inherit" }}>
                         <div  className="box">
                             <iframe className="iframe-element-post" src={`${podcast.video}`}></iframe>
                             <div className="tv_img_post">
-                                <p className="mb-0">{truncateWords(podcast.title, 4)}</p>
+                                <p className="mb-0">{podcast.title}</p>
                                   <span className="d-flex align-items-center gap-2"><FaCalendarAlt />{truncateText(podcast.updatedAt, 10)}</span> 
                                  </div>
                                    </div>                    
@@ -64,7 +64,7 @@ const postcategorypage = () => {
                         <Link to={`/detailpost/${podcast._id}`} style={{ color: "inherit" }} onClick={handleClick}>
                             <img src={`${IMAGE_PATH}${podcast.primaryImage}`} className="card-img" alt="..." />
                             <div class="card-body">
-                                <h6 className="post-title">{truncateWords(podcast.title, 4)}</h6>
+                                <h6 className="post-title">{podcast.title}</h6>
                                 <p className="post-date">
                                 <span className="calender-icon"><CgCalendarDates /></span>
                                     {truncateText(podcast.updatedAt, 10)}

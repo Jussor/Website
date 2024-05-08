@@ -67,7 +67,7 @@ const Gallerysaction = () => {
                             <button>{item.category.categoryName}</button>
                         </div>
                     </div>
-                    <div className="bottom_img">{truncateWords(item.title, 4)}</div>
+                    <div className="bottom_img">{item.title}</div>
                 </div>
             </Link>
         </div>
@@ -96,7 +96,7 @@ const Gallerysaction = () => {
                         <button>{item.category.categoryName}</button>
                       </div>
                     </div>
-                    <div className="bottom_img">{truncateWords(item.title, 4)}</div>
+                    <div className="bottom_img">{item.title}</div>
                   </div>
                 </Link>
                   </div>
@@ -128,7 +128,7 @@ const Gallerysaction = () => {
 
                       </div>
                     </div>
-                 <div className="bottom_img">{truncateWords(item.title, 10)}</div>
+                 <div className="bottom_img">{item.title}</div>
                   </div>
                 </Link>
               </div>
@@ -159,7 +159,7 @@ const Gallerysaction = () => {
                         <button>{item.category.categoryName}</button>
                       </div>
                     </div>
-                    <div className="bottom_img">{truncateWords(item.title, 4)}</div>
+                    <div className="bottom_img">{item.title}</div>
                   </div>
                 </Link>
                   </div>
@@ -187,7 +187,7 @@ const Gallerysaction = () => {
                         <button>{item.category.categoryName}</button>
                       </div>
                     </div>
-                    <div className="bottom_img">{truncateWords(item.title, 4)}</div>
+                    <div className="bottom_img">{item.title}</div>
                   </div>
                 </Link>
                   </div>

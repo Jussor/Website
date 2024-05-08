@@ -1,26 +1,26 @@
-import React from 'react'
-import ContactUscomp from '../../Components/Contactus/Contactfield'
+import React from "react";
+import ContactUscomp from "../../Components/Contactus/Contactfield";
 import Header from "../../Components/Common/Header/Header";
-import Contactmage from '../../assets/AboutPic.png'
+import Contactmage from "../../assets/AboutPic.png";
 import Faqsaction from "../../Components/Faq/Faq";
-import Mainsection from './Mainsection';
-import OurTeam from './OurTeam';
-
+import Mainsection from "./Mainsection";
+import OurTeam from "./OurTeam";
 
 const AboutUs = () => {
   return (
     <>
-        <Header
+      <Header
         title=" من هي جسور"
-        paragraph="أبرمت شركة نيوم للهيدروجين الأخضر (NGHC) مؤخرًا اتفاقيات مالية مع 23 بنكًا وشركة استثمارية محلية وإقليمية ودولية، مما يمثل علامة بارزة في المشروع."
-        buttontext="للصحافة والإعلام"
-         image ={Contactmage}
-        />
-      <Mainsection/>
-      <OurTeam/>
+        paragraph="هي منصة جسور
+        إعلامية مستقلة، تبحث عن القصص الفريدة والمتميزة، التي تثري عقل القارئ، وتعبر عن نبض جميع
+المجتمعات والشعوب"
+        image={Contactmage}
+      />
+      <Mainsection />
+      <OurTeam />
       {/* <Faqsaction/> */}
     </>
-  )
-}
+  );
+};
 
-export default AboutUs
+export default AboutUs;

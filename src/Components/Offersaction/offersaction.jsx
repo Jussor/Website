@@ -52,7 +52,7 @@ const Offersaction = () => {
               <Link  class="card" onClick={handleClick}>
                 <img src={post?.primaryImage? `${IMAGE_PATH}${post?.primaryImage}` : `${img}`} class="podcast-img" alt="..." />
                 <div class="card-body">
-                  <h5 class="title">{truncateWords(post?.title, 4)}</h5>
+                  <h5 class="title">{post.title}</h5>
                   <div dangerouslySetInnerHTML={{ __html: post?.description }}></div>
                   <p class="date">
                   

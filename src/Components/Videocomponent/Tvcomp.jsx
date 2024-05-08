@@ -37,7 +37,7 @@ const Tvcomp = () => {
     <div className="tv-bg" id="Tvjusoor">
       <div className="container mt-5">
         <br />
-        <h1 className="tv_header"> TV جسور  </h1>
+        <Link to={"/podcast/662b85fb3455a992d8489da7"} className="tv_header"> TV جسور  </Link>
         <div className="row gy-4">
           {JusoorTv &&
             JusoorTv.map((item, index) => (
@@ -48,7 +48,7 @@ const Tvcomp = () => {
                     </iframe>
                     <div className="tv_img">
                       <Link to={`/Singletvpost/${item._id}`} style={{ color: "inherit" }}>
-                        <p>{truncateWords(item?.title, 6)}</p><FaCalendarAlt />
+                        <p>{item?.title}</p><FaCalendarAlt />
                         <span> {truncateText(item?.updatedAt, 10)} </span> 
                       </Link>
                     </div>

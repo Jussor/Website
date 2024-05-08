@@ -11,7 +11,6 @@ import { FaTiktok } from "react-icons/fa";
 import axios from "axios";
 const UperNavbar = () => {
   const currentDate = new Date();
-  
 
   const daysInArabic = [
     "الأحد",
@@ -76,11 +75,11 @@ const UperNavbar = () => {
         <nav>
           <div className="right-uper-nav">
             <div className="d-flex align-items-center gap-2">
-              <span>{city}</span> <span>{`${Math.round(temp)}°`}</span>
+              {/* <span>{city}</span> <span>{`${Math.round(temp)}°`}</span> */}
               <img src="/Home/image1.png"></img>
             </div>
             <div className="right-links">
-              <Link to="tel:+923026469153" target="_blank">
+              <Link to="contactus" >
                 اتصل بنا
               </Link>
             </div>
