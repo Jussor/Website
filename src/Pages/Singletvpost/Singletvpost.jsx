@@ -1,6 +1,5 @@
 import React from "react";
 import "./Singletvpost.css";
-
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { DetailPost } from "../../redux/slice/postSlice";
@@ -15,7 +14,6 @@ const Singletvpost = () => {
   React.useEffect(() => {
     dispatch(DetailPost(id));
   }, []);
-  console.log(Success);
   const truncateText = (text, maxLength) => {
     if (typeof text !== "string" || text.length === 0) {
       return "";

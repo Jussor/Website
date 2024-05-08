@@ -1,15 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import "./categorysaction.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import categorydata from "../data/Categorydata";
+import img from "../../assets/gallery-3.png"
 import { CgCalendarDates } from "react-icons/cg";
+import { useDispatch, useSelector } from "react-redux";
+import { Home } from "../../redux/slice/homeSlice";
+import { IMAGE_PATH } from "../../Utils/utils";
 
 AOS.init();
 
 const CategoryAction = () => {
+  const dispatch = useDispatch();
+  const { WeeklyPosts } = useSelector((state) => state.home);
+
+
+  useEffect(() => {
+    dispatch(Home());
+  }, []);
+  const truncateText = (text, maxLength) => {
+    if (text.length > maxLength) {
+      return text.substring(0, maxLength);
+    }
+    return text;
+  };
+  const truncateWords = (text, maxWords) => {
+    const words = text.split(" ");
+    if (words.length > maxWords) {
+      return words.slice(0, maxWords).join(" ")+"...";
+    }
+    return text;
+  };
   return (
 
     <div className="my-5">
@@ -20,29 +43,29 @@ const CategoryAction = () => {
             <div className="container">
               <h1 className="category-header">الأكثر شعبية</h1>
               <div className="row">
-                {categorydata.category.map((categoryItem) => (
-                  <div className="col-md-4" data-aos="fade-up" data-aos-duration="2000" key={`podcast-${categoryItem.id}`}>
+                {WeeklyPosts && WeeklyPosts?.map((post) => (
+                  <div className="col-md-4" data-aos="fade-up" data-aos-duration="2000" key={post?._id}>
                    
                       <div className="blog_card">
                         <div className="blog_card_img">
-                        <Link to={`/podcast/${categoryItem.id}`}>
+                        <Link to={`/detailpost/${post?._id}`}>
                           <img
-                            src={categoryItem.image}
+                            src={post.primaryImage? `${IMAGE_PATH}${post?.primaryImage}` : `${img}`}
                             className="img-fluid blog_img"
-                            alt={categoryItem.title}
+                            alt={post.title}
                             loading="lazy"/>
                           </Link>
                         </div>
                         <div className="button_img">
-                          <div className="category-image">
-                            <button>{categoryItem.category}</button>
-                          </div>
+                          
+                            <button>{post?.category?.categoryName}</button>
+                          
                         </div>
-                        <div className="blog_card_desk">{categoryItem.title}</div>
-                        <p className="blog_card_para">{categoryItem.paragraph}</p>
+                        <div className="blog_card_desk">{truncateWords(post?.title, 4)}</div>
+                        <div dangerouslySetInnerHTML={{ __html: post?.description }}></div>
                         <div className="blog_card_date">
-                        <CgCalendarDates className="blog-icon" />
-                          <span>14 أبريل 2024</span>{" "}
+                        <span><CgCalendarDates className="blog-icon" /></span>
+                          <span>{truncateText(post.updatedAt, 10)}</span>{" "}
                          
                         </div>
                       </div>
@@ -53,13 +76,7 @@ const CategoryAction = () => {
 
             </div>
           </div>
-          {/* <div
-            className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-3"
-            data-aos="fade-up"
-            data-aos-duration="2000"
-          >
-            <img src={cakeimage} alt="" style={{ width: "100%" }} />
-          </div> */}
+          
         </div>
       </div>
     </div>

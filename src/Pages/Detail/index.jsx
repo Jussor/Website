@@ -16,7 +16,7 @@ const index = () => {
   useEffect(() => {
     dispatch(DetailPost(id));
   }, []);
-  console.log(Success)
+  // console.log(Success)
   const truncateText = (text, maxLength) => {
     if (typeof text !== 'string' || text.length === 0) {
       return ''; 

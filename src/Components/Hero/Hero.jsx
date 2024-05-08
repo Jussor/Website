@@ -36,15 +36,9 @@ const SimpleSlider = ({ settings, sliderRef }) => {
           <div className="container">
             <div className="row">
               <div className="col-md-12 home-hero-main">
-                <Link
-                  to={`/detailpost/${banner.post_id}`}
-                  style={{ color: "inherit" }} >
-                  <h2 className="title">{banner.title}</h2>
-                  <div
-                    dangerouslySetInnerHTML={{ __html: banner.description }}
-                  ></div>
-                </Link>
-              </div>
+                <h2 className="title">{banner.title}</h2>
+                <div dangerouslySetInnerHTML={{ __html: banner.description }}></div>
+                 </div>
             </div>
           </div>
         </div>

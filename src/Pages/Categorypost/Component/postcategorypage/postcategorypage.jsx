@@ -7,6 +7,7 @@ import { getPostsByCategory } from "../../../../redux/slice/categorySlice";
 import { useParams } from 'react-router-dom';
 import { FaCalendarAlt } from "react-icons/fa";
 import { Spinner } from "react-bootstrap";
+import { CgCalendarDates } from "react-icons/cg";
 
 const postcategorypage = () => {
   const dispatch = useDispatch();
@@ -17,7 +18,6 @@ const postcategorypage = () => {
     dispatch(getPostsByCategory(id));
   }, [id]);
 
-  // console.log(postsByCategorySuccess, "hdkashdjsa")
   const handleClick = () => {
     window.scrollTo(0, 0);
   };
@@ -46,28 +46,27 @@ const postcategorypage = () => {
 {/* Check if posts exist */}
 {postsByCategorySuccess && postsByCategorySuccess.length > 0 ? (
     // If posts exist, map through them
-    postsByCategorySuccess.map((podcast) => {
-        console.log(podcast); // Print the post to the console
+    postsByCategorySuccess.map((podcast,index) => {
         return (
-            <div className="col-sm-6 col-lg-4 col-xl-3">
+            <div className="col-sm-6 col-lg-4 col-xl-3" key={index}>
                 {id === '662b85fb3455a992d8489da7' ? (
                     <Link to={`/Singletvpost/${podcast._id}`} style={{ color: "inherit" }}>
-                        <div  class="box">
+                        <div  className="box">
                             <iframe className="iframe-element-post" src={`${podcast.video}`}></iframe>
                             <div className="tv_img_post">
                                 <p className="mb-0">{truncateWords(podcast.title, 4)}</p>
-                                <span className="d-flex align-items-center gap-2"><FaCalendarAlt />{truncateText(podcast.updatedAt, 10)}</span> 
+                                  <span className="d-flex align-items-center gap-2"><FaCalendarAlt />{truncateText(podcast.updatedAt, 10)}</span> 
                                  </div>
-                        </div>
-                    </Link>
+                                   </div>                    
+                                    </Link>
                 ) : podcast.category ? ( 
-                    <div class="card">
+                    <div className="card">
                         <Link to={`/detailpost/${podcast._id}`} style={{ color: "inherit" }} onClick={handleClick}>
-                            <img src={`${IMAGE_PATH}${podcast.primaryImage}`} class="card-img" alt="..." />
+                            <img src={`${IMAGE_PATH}${podcast.primaryImage}`} className="card-img" alt="..." />
                             <div class="card-body">
-                                <h6 class="post-title">{truncateWords(podcast.title, 4)}</h6>
-                                <p class="post-date">
-                                <span className="calender-icon"><FaCalendarAlt /></span>
+                                <h6 className="post-title">{truncateWords(podcast.title, 4)}</h6>
+                                <p className="post-date">
+                                <span className="calender-icon"><CgCalendarDates /></span>
                                     {truncateText(podcast.updatedAt, 10)}
                                    </p>
                             </div>
@@ -86,7 +85,7 @@ const postcategorypage = () => {
     </div>
 )}
  </div>
-      }
+}
     </div>
   );
 };
