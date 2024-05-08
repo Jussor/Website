@@ -23,15 +23,13 @@ const SimpleSlider = ({ settings, sliderRef }) => {
               src={`${IMAGE_PATH}${banner.image}`}
               alt="Banner Image"
               className="w-100"
-              style={{ height: "500px" }}
-            />
+              style={{ height: "500px" }} />
           ) : (
             <video
               muted
               autoPlay
               className="bg-video"
-              style={{ height: "500px" }}
-            >
+              style={{ height: "500px" }}>
               <source src={`${VIDEO_PATH}${banner.video}`} type="video/mp4" />
             </video>
           )}

@@ -34,7 +34,7 @@ const Gallerysaction = () => {
     }
     return text;
   };
-  console.log(Main);
+  // console.log(Main);
   const handleClick = () => {
     window.scrollTo(0, 0); // Scroll to top of the page
   };
@@ -44,8 +44,7 @@ const Gallerysaction = () => {
     <div>
       <div className="container mt-4">
         <div className="row gy-4">
-
-          <div className="col-lg-3">
+            <div className="col-lg-3">
             <div className="row gy-4">
             {Main &&
     Main.filter((post, index) => index == 0).map((item, index) => (
@@ -53,12 +52,9 @@ const Gallerysaction = () => {
             className="col-lg-12 col-md-6"
             data-aos="fade-up"
             data-aos-duration="2000"
-            key={index}
-        >
-
-            <Link to={`/detailpost/${item._id}`} onClick={handleClick}>
-
-                <div className="blog_card">
+            key={index}>
+             <Link to={`/detailpost/${item._id}`} onClick={handleClick}>
+                   <div className="blog_card">
                     <div className="blog_card_img">
                         <img
                             src={`${IMAGE_PATH}${item.primaryImage}`}
@@ -71,8 +67,6 @@ const Gallerysaction = () => {
                             <button>{item.category.categoryName}</button>
                         </div>
                     </div>
-                    {/* Use truncateText or truncateWords function here */}
-                    {/* <div className="bottom_img">{truncateText(item.title, 20)}</div> */}
                     <div className="bottom_img">{truncateWords(item.title, 4)}</div>
                 </div>
             </Link>
@@ -85,8 +79,7 @@ const Gallerysaction = () => {
                     className="col-lg-12 col-md-6"
                     data-aos="fade-up"
                     data-aos-duration="2000"
-                    key={index}
-                  >
+                    key={index}>
 
                     <Link to={`/detailpost/${item._id}`}  onClick={handleClick}>
 
@@ -103,8 +96,6 @@ const Gallerysaction = () => {
                         <button>{item.category.categoryName}</button>
                       </div>
                     </div>
-                    {/* Use truncateText or truncateWords function here */}
-                    {/* <div className="bottom_img">{truncateText(item.title, 20)}</div> */}
                     <div className="bottom_img">{truncateWords(item.title, 4)}</div>
                   </div>
                 </Link>
@@ -137,10 +128,7 @@ const Gallerysaction = () => {
 
                       </div>
                     </div>
-                    {/* Use truncateText or truncateWords function here */}
-                    {/* <div className="bottom_img">{truncateText(item.title, 20)}</div> */}
-
-                    <div className="bottom_img">{truncateWords(item.title, 10)}</div>
+                 <div className="bottom_img">{truncateWords(item.title, 10)}</div>
                   </div>
                 </Link>
               </div>
@@ -171,8 +159,6 @@ const Gallerysaction = () => {
                         <button>{item.category.categoryName}</button>
                       </div>
                     </div>
-                    {/* Use truncateText or truncateWords function here */}
-                    {/* <div className="bottom_img">{truncateText(item.title, 20)}</div> */}
                     <div className="bottom_img">{truncateWords(item.title, 4)}</div>
                   </div>
                 </Link>
@@ -201,16 +187,12 @@ const Gallerysaction = () => {
                         <button>{item.category.categoryName}</button>
                       </div>
                     </div>
-                    {/* Use truncateText or truncateWords function here */}
-                    {/* <div className="bottom_img">{truncateText(item.title, 20)}</div> */}
                     <div className="bottom_img">{truncateWords(item.title, 4)}</div>
                   </div>
                 </Link>
                   </div>
                 ))}
-
-
-            </div>
+               </div>
           </div>
         </div>
       </div>
