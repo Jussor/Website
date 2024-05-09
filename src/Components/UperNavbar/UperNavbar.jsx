@@ -43,31 +43,31 @@ const UperNavbar = () => {
 
   const formattedDate = `${dayName} ${date} ${monthName}`;
 
-  const [lat, setLat] = useState(0);
-  const [long, setLong] = useState(0);
-  const [temp, setTemp] = useState(0);
-  const [city, setCity] = useState("");
+  // const [lat, setLat] = useState(0);
+  // const [long, setLong] = useState(0);
+  // const [temp, setTemp] = useState(0);
+  // const [city, setCity] = useState("");
 
-  const getWeather = async () => {
-    try {
-      navigator.geolocation.getCurrentPosition((position) => {
-        setLat(position.coords.latitude);
-        setLong(position.coords.longitude);
-      });
-      const response = await axios.get(
-        `http://api.weatherapi.com/v1/current.json?key=6e6263afb84f44279f731543222510&q=${lat},${long}&aqi=no`
-      );
+  // const getWeather = async () => {
+  //   try {
+  //     navigator.geolocation.getCurrentPosition((position) => {
+  //       setLat(position.coords.latitude);
+  //       setLong(position.coords.longitude);
+  //     });
+  //     const response = await axios.get(
+  //       `http://api.weatherapi.com/v1/current.json?key=6e6263afb84f44279f731543222510&q=${lat},${long}&aqi=no`
+  //     );
 
-      setCity(response.data.location.name);
-      setTemp(response.data.current.temp_c);
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  //     setCity(response.data.location.name);
+  //     setTemp(response.data.current.temp_c);
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
 
-  useEffect(() => {
-    getWeather();
-  }, [lat, long, city, temp]);
+  // useEffect(() => {
+  //   getWeather();
+  // }, [lat, long, city, temp]);
 
   return (
     <div className="uper-navbar">
@@ -76,7 +76,7 @@ const UperNavbar = () => {
           <div className="right-uper-nav">
             <div className="d-flex align-items-center gap-2">
               {/* <span>{city}</span> <span>{`${Math.round(temp)}°`}</span> */}
-              <img src="/Home/image1.png"></img>
+              {/* <img src="/Home/image1.png"></img> */}
             </div>
             <div className="right-links">
               <Link to="contactus" >

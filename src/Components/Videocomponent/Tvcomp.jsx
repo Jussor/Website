@@ -15,11 +15,10 @@ const Tvcomp = () => {
   const dispatch = useDispatch();
   const { JusoorTv } = useSelector((state) => state.home);
 
-
   useEffect(() => {
     dispatch(Home());
   }, []);
-  
+
   const truncateText = (text, maxLength) => {
     if (text.length > maxLength) {
       return text.substring(0, maxLength);
@@ -29,7 +28,7 @@ const Tvcomp = () => {
   const truncateWords = (text, maxWords) => {
     const words = text.split(" ");
     if (words.length > maxWords) {
-      return words.slice(0, maxWords).join(" ")+"...";
+      return words.slice(0, maxWords).join(" ") + "...";
     }
     return text;
   };
@@ -37,26 +36,40 @@ const Tvcomp = () => {
     <div className="tv-bg" id="Tvjusoor">
       <div className="container mt-5">
         <br />
-        <Link to={"/podcast/662b85fb3455a992d8489da7"} className="tv_header"> TV جسور  </Link>
+        <Link to={"/podcast/662b85fb3455a992d8489da7"} className="tv_header">
+          {" "}
+          TV جسور{" "}
+        </Link>
         <div className="row gy-4">
           {JusoorTv &&
-            JusoorTv.map((item, index) => (
-         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6" data-aos="fade-up" data-aos-duration="2000">
-                <div class="wrapper">
-                  <div class="box">
-                    <iframe className="iframe-element" src={`${item.video}`}>
-                    </iframe>
-                    <div className="tv_img">
-                      <Link to={`/Singletvpost/${item._id}`} style={{ color: "inherit" }}>
-                        <p>{item?.title}</p><FaCalendarAlt />
-                        <span> {truncateText(item?.updatedAt, 10)} </span> 
-                      </Link>
-                    </div>
+            JusoorTv.map((item) => (
+              <div
+                className="col-md-6"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+                key={item._id}
+              >
+                <div className="video-box">
+                  <iframe
+                    className="iframe-element"
+                    src={`${item.video}`}
+                  ></iframe>
+                  <div className="tv_img">
+                    <Link
+                      to={`/Singletvpost/${item._id}`}
+                      style={{ color: "inherit" }}
+                    >
+                      <p>{item?.title}</p>
+                      <FaCalendarAlt />
+                      <span> {truncateText(item?.updatedAt, 10)} </span>
+                    </Link>
                   </div>
-                  <div className="button-tv">
-                    <button className="play-button" style={{cursor: "pointer"}}>{item.category.categoryName}</button>
-                  </div>
-                   </div>
+                </div>
+                <div className="button-tv">
+                  <button className="play-button">
+                    {item.category.categoryName}
+                  </button>
+                </div>
               </div>
             ))}
         </div>

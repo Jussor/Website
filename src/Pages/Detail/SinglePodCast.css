@@ -6,10 +6,10 @@
     
     
 }
-.single-post .descr, .single-post .sub-descr, .single-post .last-descr{
+.main-podcast .descr{
     font-family: "Noto Naskh Arabic", serif;
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 40px;
+    font-weight: 700;
     line-height: 36px;
     
 
@@ -35,9 +35,9 @@
     font-size: 30px;
     color : #615959;
 }
-.single-post .descr-img, .single-post .post-img{
+.descr-img{
     width: 100%;
-    height: 100%;
+    /* height: 300px; */
     
 }
 .single-post .tags{
@@ -66,6 +66,11 @@
     
 
 }
+
+.card p{
+    font-size: 20px;
+}
+
 
 @media screen and (max-width : 576px) {
     .single-post span{

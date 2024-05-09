@@ -12,7 +12,7 @@ const LowerNavbar = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   //GET DATA FROM REDUX
-  const { categorySuccess, categoryError } = useSelector(
+  const { categorySuccess } = useSelector(
     (state) => state.category
   );
   //VARIABLE
@@ -35,12 +35,13 @@ const LowerNavbar = () => {
           
 
           <div className="right-lower-nav d-flex align-items-center gap-2">
+          <span className="toggle-btn d-lg-none" onClick={handleShow}>
+              <IoIosMenu />
+            </span>
             <Link to="/">
               <img src={logo}></img>
             </Link>
-            <span className="toggle-btn d-lg-none" onClick={handleShow}>
-              <IoIosMenu />
-            </span>
+            
           </div>
           <div className="middle-lower-nav d-none d-lg-flex gap-4">
             {categorySuccess &&

@@ -9,13 +9,13 @@ import OurTeam from "./OurTeam";
 const AboutUs = () => {
   return (
     <>
-      <Header
+      {/* <Header
         title=" من هي جسور"
         paragraph="هي منصة جسور
         إعلامية مستقلة، تبحث عن القصص الفريدة والمتميزة، التي تثري عقل القارئ، وتعبر عن نبض جميع
 المجتمعات والشعوب"
         image={Contactmage}
-      />
+      /> */}
       <Mainsection />
       <OurTeam />
       {/* <Faqsaction/> */}
