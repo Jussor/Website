@@ -28,6 +28,8 @@ const index = () => {
     return text;
   };
 
+  console.log(Success,"data");
+
   return (
     <div className="main-podcast">
       <div className="container mt-5">
@@ -37,7 +39,7 @@ const index = () => {
               <div className="card rounded-0">
                 <img
                   src={`${IMAGE_PATH}${Success.primaryImage}`}
-                  style={{ height: "400px" }}
+                  className="primary-img"
                   alt="..."
                 />
                 <div className="card-body">
@@ -64,7 +66,7 @@ const index = () => {
                     {Success.galleryImages?.map((item) => (
                       <div className="col-md-6">
                         <img
-                          className="descr-img"
+                          className="w-100 "
                           src={`${IMAGE_PATH}${item}`}
                         />
                       </div>
