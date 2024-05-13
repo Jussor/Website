@@ -1,8 +1,6 @@
-import "./Contactfield.css";
-import { React, useRef, useState } from "react";
+import React  from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { SlSocialTwitter } from "react-icons/sl";
@@ -10,7 +8,8 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { FormGroup } from "react-bootstrap";
 import { contactus } from "../../redux/slice/contactusSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import "./Contactfield.css"
 
 AOS.init();
 
@@ -43,7 +42,7 @@ function Contactfield() {
   });
 
   return (
-    <div style={{ backgroundColor: "#F5F6FA" }}>
+    <div style={{ backgroundColor:"#F5F6FA"}}>
       <div className="container  py-5">
         <div className="container contact-page">
           <div className="row calendly-card-responsive gy-4">
@@ -51,7 +50,6 @@ function Contactfield() {
               <h1 className="right-contact-text">
                 أي سؤال؟ لا تتردد في الاتصال بنا
               </h1>
-
               <p className="text-lead">
                 هل لديك أسئلة؟ هل تحتاج إلى المساعدة بشأن منتجاتنا أو خدماتنا؟
                 فريقنا ملتزم بضمان حصولك على كل الدعم الذي تحتاجه
@@ -75,21 +73,18 @@ function Contactfield() {
                 </div>
               </div>
             </div>
-            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-7 ">
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-7">
               <form onSubmit={formik.handleSubmit}>
                 <div
                   data-aos="flip-left"
                   data-aos-easing="ease-out-cubic"
-                  data-aos-duration="2000"
-                >
+                  data-aos-duration="2000">
                   <div className="row">
-                    
                     <div className="col-md-6">
                       <FormGroup>
                         <label
                           htmlFor="exampleFormControlInput1"
-                          className="mb-2 fw-bold"
-                        >
+                          className="mb-2 fw-bold">
                           اسمك
                         </label>
                         <input
@@ -99,10 +94,8 @@ function Contactfield() {
                           placeholder="طلحة تحير"
                           onBlur={formik.handleBlur}
                           onChange={formik.handleChange}
-                          value={formik.values.fullName}
-                        />
-                        <small style={{ color: "red" }} className="float-end">
-                          {" "}
+                          value={formik.values.fullName}/>
+                        <small style={{color: "red"}} className="float-end">
                           {formik.touched.fullName && formik.errors.fullName}
                         </small>
                       </FormGroup>
@@ -111,34 +104,27 @@ function Contactfield() {
                       <FormGroup>
                         <label
                           htmlFor="exampleFormControlInput1"
-                          className=" mb-2 fw-bold"
-                        >
+                          className=" mb-2 fw-bold">
                           بريدك الالكتروني
                         </label>
                         <input
                           className="form-control rounded-0 text-start mb-2"
-                          
                           name="email"
                           type="email"
                           placeholder="talhatahir@gmail.com"
                           onBlur={formik.handleBlur}
                           onChange={formik.handleChange}
-                          value={formik.values.email}
-                        />
+                          value={formik.values.email}/>
                         <small style={{ color: "red" }}>
-                          {" "}
                           {formik.touched.email && formik.errors.email}
                         </small>
                       </FormGroup>
                     </div>
-
-                    
-                    <div className="col-md-6">
+                     <div className="col-md-6">
                       <FormGroup>
                         <label
                           htmlFor="exampleFormControlInput1"
-                          className="mb-2 fw-bold"
-                        >
+                          className="mb-2 fw-bold">
                           رقم الهاتف
                         </label>
                         <input
@@ -148,21 +134,18 @@ function Contactfield() {
                           placeholder="+40 737 136 767"
                           onBlur={formik.handleBlur}
                           onChange={formik.handleChange}
-                          value={formik.values.phoneNumber}
-                        />
-                        <small style={{ color: "red" }}>
-                          {" "}
-                          {formik.touched.phoneNumber &&
+                          value={formik.values.phoneNumber}/>
+                        <small style={{ color:"red" }}>
+                     {formik.touched.phoneNumber &&
                             formik.errors.phoneNumber}
                         </small>
                       </FormGroup>
                     </div>
-                    <div className="col-md-6">
+                   <div className="col-md-6">
                       <FormGroup>
                         <label
                           htmlFor="exampleFormControlInput1"
-                          className="mb-2 fw-bold"
-                        >
+                          className="mb-2 fw-bold" >
                           موضوع
                         </label>
                         <input
@@ -175,7 +158,7 @@ function Contactfield() {
                           value={formik.values.subject}
                         />
                         <small style={{ color: "red" }}>
-                          {" "}
+                        
                           {formik.touched.subject && formik.errors.subject}
                         </small>
                       </FormGroup>
@@ -184,8 +167,7 @@ function Contactfield() {
                       <FormGroup>
                         <label
                           htmlFor="exampleFormControlInput1"
-                          className="mb-2 fw-bold"
-                        >
+                          className="mb-2 fw-bold" >
                           رسالتك
                         </label>
                         <textarea
@@ -196,10 +178,9 @@ function Contactfield() {
                           onBlur={formik.handleBlur}
                           onChange={formik.handleChange}
                           value={formik.values.query}
-                          className="form-control rounded-0 mb-3"
-                        ></textarea>
+                          className="form-control rounded-0 mb-3"></textarea>
                         <small style={{ color: "red" }}>
-                          {" "}
+
                           {formik.touched.query && formik.errors.query}
                         </small>
                       </FormGroup>

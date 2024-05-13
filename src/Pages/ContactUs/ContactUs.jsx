@@ -11,10 +11,8 @@ const ContactUs = () => {
         title="تواصل مع جسور"
         paragraph="هل لديك أسئلة؟ هل تحتاج إلى المساعدة بشأن
         منتجاتنا أو خدماتنا؟ فريقنا ملتزم بضمان حصولك على كل الدعم الذي تحتاجه"
-        image={Contactmage}
-      />
-      <ContactUscomp />
-      {/* <Faqsaction/> */}
+        image={Contactmage} />
+      <ContactUscomp/>
     </>
   );
 };

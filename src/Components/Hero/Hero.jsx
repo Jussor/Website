@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { banner } from "../../redux/slice/bannerSlice";
 import { IMAGE_PATH, VIDEO_PATH } from "../../Utils/utils";
 import "./Hero.css";
-import { Link } from "react-router-dom";
+
 const SimpleSlider = ({ settings, sliderRef }) => {
   const dispatch = useDispatch();
   const { bannerSuccess, bannerError } = useSelector((state) => state.banner);
