@@ -57,11 +57,13 @@ const Index = () => {
           <div className="col-lg-12">
             <div className="single-post">
               <div className="card rounded-0">
+                
                 <img
                   src={`${IMAGE_PATH}${Success.primaryImage}`}
                   className="primary-img"
                   alt="..."
                 />
+               
                 <div className="card-body">
                   <div className="d-flex align-items-center gap-3">
                     <FacebookShareButton
@@ -96,7 +98,7 @@ const Index = () => {
                     {Success.galleryImages?.map((item) => (
                       <div className="col-md-6">
                         <img
-                          className="w-100"
+                          className="descr-img"
                           src={`${IMAGE_PATH}${item}`}
                           alt="gallery"
                         />
