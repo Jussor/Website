@@ -12,7 +12,7 @@ const SimpleSlider = ({ settings, sliderRef }) => {
   const { bannerSuccess, bannerError } = useSelector((state) => state.banner);
   useEffect(() => {
     dispatch(banner());
-  }, [dispatch]);
+  }, []);
   
   return (
     <Slider {...settings} ref={sliderRef}>
@@ -37,7 +37,7 @@ const SimpleSlider = ({ settings, sliderRef }) => {
           <div className="container">
             <div className="row">
               <div className="col-md-12 home-hero-main">
-              <Link to={banner.post_id === "66390f559823b367336bb913" ? `/Singletvpost/${banner.post_id}` : `/detailpost/${banner.post_id}`} style={{color: "inherit"}}>
+              <Link to={`/detailpost/${banner.post_id}`} style={{color: "inherit"}}>
 
                   <h2 className="title">{banner.title}</h2>
                   <div

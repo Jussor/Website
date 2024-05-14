@@ -26,21 +26,29 @@ const Singletvpost = () => {
     return text;
   };
   return (
-    <div>
+    <div className="my-5">
       <div className="card rounded-0">
-        <iframe src={`${Success.video}`} width="100%" height="400px"></iframe>
+        {Success?.video && (
+          <iframe
+            src={`${Success?.video}`}
+            width="100%"
+            height="400px"
+          ></iframe>
+        )}
         <div className="card-body">
           <div className="post-info">
             <p className="post-date d-flex align-items-center gap-2">
               <span className="calender-icon">
                 <FaCalendarAlt />
               </span>
-              {truncateText(Success.updatedAt, 10)}
+              {truncateText(Success?.updatedAt, 10)}
             </p>
-            <h6 className="descr">{Success.title}</h6>
-            <div
-              dangerouslySetInnerHTML={{ __html: Success.description }}
-            ></div>
+            {Success?.title && <h6 className="descr">{Success?.title}</h6>}
+            {Success?.description && (
+              <div
+                dangerouslySetInnerHTML={{ __html: Success?.description }}
+              ></div>
+            )}
           </div>
         </div>
       </div>
