@@ -1,5 +1,5 @@
-import React from 'react';
-import './Preloader.css'; // Import CSS for styling
+import React, { useEffect, useState } from "react";
+import "./Preloader.css"; 
 import img from "../../assets/logo.png";
 const Preloader = () => {
   return (

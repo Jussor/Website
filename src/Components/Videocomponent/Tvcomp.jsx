@@ -8,16 +8,23 @@ import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Home } from "../../redux/slice/homeSlice";
+import { Spinner } from 'react-bootstrap'; // Import Spinner from React Bootstrap
 
 AOS.init();
 
 const Tvcomp = () => {
   const dispatch = useDispatch();
   const { JusoorTv } = useSelector((state) => state.home);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    dispatch(Home());
-  }, []);
+    const fetchData = async () => {
+      await dispatch(Home());
+      setLoading(false); // Set loading to false after data is fetched
+    };
+
+    fetchData();
+  }, [dispatch]);
 
   const truncateText = (text, maxLength) => {
     if (text.length > maxLength) {
@@ -25,6 +32,7 @@ const Tvcomp = () => {
     }
     return text;
   };
+
   const truncateWords = (text, maxWords) => {
     const words = text.split(" ");
     if (words.length > maxWords) {
@@ -32,6 +40,7 @@ const Tvcomp = () => {
     }
     return text;
   };
+
   return (
     <div className="tv-bg" id="Tvjusoor">
       <div className="container mt-5">
@@ -41,7 +50,14 @@ const Tvcomp = () => {
           TV جسور{" "}
         </Link>
         <div className="row gy-4">
-          {JusoorTv &&
+          {loading ? (
+            <div className="spinner-container">
+              <Spinner animation="border" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </Spinner>
+            </div>
+          ) : (
+            JusoorTv &&
             JusoorTv.map((item) => (
               <div
                 className="col-md-6"
@@ -53,6 +69,8 @@ const Tvcomp = () => {
                   <iframe
                     className="iframe-element"
                     src={`${item.video}`}
+                    title={item.title}
+                    allowFullScreen
                   ></iframe>
                   <div className="tv_img">
                     <Link
@@ -71,7 +89,8 @@ const Tvcomp = () => {
                   </button>
                 </div>
               </div>
-            ))}
+            ))
+          )}
         </div>
       </div>
     </div>

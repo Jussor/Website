@@ -12,20 +12,22 @@ import DeatailPost from "../Pages/Detail/index.jsx";
 import Loader from "../Components/Preloader/Preloader.jsx";
 
 const Index = () => {
-  const [screenLoading, setScreenLoading] = useState(false);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
-    setScreenLoading(true);
-    setTimeout(() => {
-      setScreenLoading(false);
+    const timeout = setTimeout(() => {
+      setShow(true);
     }, 3000);
+
+    return () => {
+      clearTimeout(timeout);
+    };
   }, []);
+
   return (
     <>
-      {screenLoading ? (
-        <Loader />
-      ) : (
-        <BrowserRouter>
+      {show ? (
+        <BrowserRouter basename={"/"}>
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route path="" element={<Home />} />
@@ -39,6 +41,8 @@ const Index = () => {
             </Route>
           </Routes>
         </BrowserRouter>
+      ) : (
+        <Loader />
       )}
     </>
   );

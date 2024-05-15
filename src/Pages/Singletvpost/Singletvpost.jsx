@@ -30,10 +30,11 @@ const Singletvpost = () => {
       <div className="card rounded-0">
         {Success?.video && (
           <iframe
-            src={`${Success?.video}`}
-            width="100%"
-            height="400px"
-          ></iframe>
+          src={`${Success?.video}`}
+          height="400px"
+          allowFullScreen  // Add allowFullScreen attribute here
+        ></iframe>
+        
         )}
         <div className="card-body">
           <div className="post-info">
