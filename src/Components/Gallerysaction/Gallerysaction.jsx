@@ -12,93 +12,73 @@ const Gallerysaction = () => {
   const dispatch = useDispatch();
   const { Main } = useSelector((state) => state.home);
 
-
   useEffect(() => {
     dispatch(Home());
   }, []);
 
-
-  // Function to truncate text to a certain number of letters
-  // const truncateText = (text, maxLength) => {
-  //   if (text.length > maxLength) {
-  //     return text.substring(0, maxLength) + '...';
-  //   }
-  //   return text;
-  // };
-
-  // Function to truncate text to a certain number of words
-  const truncateWords = (text, maxWords) => {
-    const words = text.split(' ');
-    if (words.length > maxWords) {
-      return words.slice(0, maxWords).join(' ')+'...';
-    }
-    return text;
-  };
-  // console.log(Main);
   const handleClick = () => {
-    window.scrollTo(0, 0); // Scroll to top of the page
+    window.scrollTo(0, 0); 
   };
-
 
   return (
     <div>
       <div className="container mt-4">
         <div className="row gy-4">
-            <div className="col-lg-3">
+          <div className="col-lg-3">
             <div className="row gy-4">
-            {Main &&
-    Main.filter((post, index) => index == 0).map((item, index) => (
-        <div
-            className="col-lg-12 col-md-6"
-            data-aos="fade-up"
-            data-aos-duration="2000"
-            key={index}>
-             <Link to={`/detailpost/${item._id}`} onClick={handleClick}>
-                   <div className="blog_card">
-                    <div className="blog_card_img">
-                        <img
-                            src={`${IMAGE_PATH}${item.primaryImage}`}
-                            className="img-fluid blog_img"
-                            alt=""
-                            loading="lazy"
-                            style={{ width: '100%', objectFit: 'cover' }}
-                        />
-                        <div className="button-div">
-                            <button>{item.category.categoryName}</button>
-                        </div>
-                    </div>
-                    <div className="bottom_img">{item.title}</div>
-                </div>
-            </Link>
-        </div>
-    ))}
-
               {Main &&
-                 Main.filter((post, index) => index == 1).map((item, index) => (
+                Main.filter((post, index) => index == 0).map((item, index) => (
                   <div
                     className="col-lg-12 col-md-6"
                     data-aos="fade-up"
                     data-aos-duration="2000"
-                    key={index}>
-
-                    <Link to={`/detailpost/${item._id}`}  onClick={handleClick}>
-
-                  <div className="blog_card">
-                    <div className="blog_card_img">
-                      <img
-                        src={`${IMAGE_PATH}${item.primaryImage}`}
-                        className="img-fluid blog_img"
-                        alt=""
-                        loading="lazy"
-                        style={{ width: '100%', objectFit: 'cover' }}
-                      />
-                      <div className="button-div">
-                        <button>{item.category.categoryName}</button>
+                    key={index}
+                  >
+                    <Link to={`/detailpost/${item._id}`} onClick={handleClick}>
+                      <div className="blog_card">
+                        <div className="blog_card_img">
+                          <img
+                            src={`${IMAGE_PATH}${item.primaryImage}`}
+                            className="blog_img"
+                            alt=""
+                            loading="lazy"
+                            style={{ width: "100%", objectFit: "cover" }}
+                          />
+                          <div className="button-div">
+                            <button>{item.category.categoryName}</button>
+                          </div>
+                        </div>
+                        <div className="bottom_img">{item.title}</div>
                       </div>
-                    </div>
-                    <div className="bottom_img">{item.title}</div>
+                    </Link>
                   </div>
-                </Link>
+                ))}
+
+              {Main &&
+                Main.filter((post, index) => index == 1).map((item, index) => (
+                  <div
+                    className="col-lg-12 col-md-6"
+                    data-aos="fade-up"
+                    data-aos-duration="2000"
+                    key={index}
+                  >
+                    <Link to={`/detailpost/${item._id}`} onClick={handleClick}>
+                      <div className="blog_card">
+                        <div className="blog_card_img">
+                          <img
+                            src={`${IMAGE_PATH}${item.primaryImage}`}
+                            className="blog_img"
+                            alt=""
+                            loading="lazy"
+                            style={{ width: "100%", objectFit: "cover" }}
+                          />
+                          <div className="button-div">
+                            <button>{item.category.categoryName}</button>
+                          </div>
+                        </div>
+                        <div className="bottom_img">{item.title}</div>
+                      </div>
+                    </Link>
                   </div>
                 ))}
             </div>
@@ -111,49 +91,15 @@ const Gallerysaction = () => {
                 data-aos-duration="2000"
                 key={index}
               >
-
                 <Link to={`/detailpost/${item._id}`} onClick={handleClick}>
-
                   <div className="blog_card">
                     <div className="blog_card_img">
                       <img
                         src={`${IMAGE_PATH}${item.primaryImage}`}
-                        className="img-fluid center_img"
+                        className="center_img"
                         alt=""
                         loading="lazy"
-                        style={{ width: '100%', objectFit: 'cover' }}
-                      />
-                      <div className="button-div">
-                        <button>{item.category.categoryName}</button>
-
-                      </div>
-                    </div>
-                 <div className="bottom_img">{item.title}</div>
-                  </div>
-                </Link>
-              </div>
-            ))}
-          <div className="col-lg-3">
-            <div className="row gy-4">
-              {Main &&
-                Main.filter((post, index) => index == 3).map((item, index) => (
-
-                  <div
-                    className="col-lg-12 col-md-6"
-                    data-aos="fade-up"
-                    data-aos-duration="2000"
-                    key={index}>
-
-                    <Link to={`/detailpost/${item._id}`}  onClick={handleClick}>
-
-                  <div className="blog_card">
-                    <div className="blog_card_img">
-                      <img
-                        src={`${IMAGE_PATH}${item.primaryImage}`}
-                        className="img-fluid blog_img"
-                        alt=""
-                        loading="lazy"
-                        style={{  width: '100%', objectFit: 'cover' }}
+                        style={{ width: "100%", objectFit: "cover" }}
                       />
                       <div className="button-div">
                         <button>{item.category.categoryName}</button>
@@ -162,6 +108,35 @@ const Gallerysaction = () => {
                     <div className="bottom_img">{item.title}</div>
                   </div>
                 </Link>
+              </div>
+            ))}
+          <div className="col-lg-3">
+            <div className="row gy-4">
+              {Main &&
+                Main.filter((post, index) => index == 3).map((item, index) => (
+                  <div
+                    className="col-lg-12 col-md-6"
+                    data-aos="fade-up"
+                    data-aos-duration="2000"
+                    key={index}
+                  >
+                    <Link to={`/detailpost/${item._id}`} onClick={handleClick}>
+                      <div className="blog_card">
+                        <div className="blog_card_img">
+                          <img
+                            src={`${IMAGE_PATH}${item.primaryImage}`}
+                            className="blog_img"
+                            alt=""
+                            loading="lazy"
+                            style={{ width: "100%", objectFit: "cover" }}
+                          />
+                          <div className="button-div">
+                            <button>{item.category.categoryName}</button>
+                          </div>
+                        </div>
+                        <div className="bottom_img">{item.title}</div>
+                      </div>
+                    </Link>
                   </div>
                 ))}
 
@@ -173,26 +148,26 @@ const Gallerysaction = () => {
                     data-aos-duration="2000"
                     key={index}
                   >
-                    <Link to={`/detailpost/${item._id}`}  onClick={handleClick}>
-                  <div className="blog_card">
-                    <div className="blog_card_img">
-                      <img
-                        src={`${IMAGE_PATH}${item.primaryImage}`}
-                        className="img-fluid blog_img"
-                        alt=""
-                        loading="lazy"
-                        style={{ width: '100%', objectFit: 'cover' }}
-                      />
-                      <div className="button-div">
-                        <button>{item.category.categoryName}</button>
+                    <Link to={`/detailpost/${item._id}`} onClick={handleClick}>
+                      <div className="blog_card">
+                        <div className="blog_card_img">
+                          <img
+                            src={`${IMAGE_PATH}${item.primaryImage}`}
+                            className="img-fluid blog_img"
+                            alt=""
+                            loading="lazy"
+                            style={{ width: "100%", objectFit: "cover" }}
+                          />
+                          <div className="button-div">
+                            <button>{item.category.categoryName}</button>
+                          </div>
+                        </div>
+                        <div className="bottom_img">{item.title}</div>
                       </div>
-                    </div>
-                    <div className="bottom_img">{item.title}</div>
-                  </div>
-                </Link>
+                    </Link>
                   </div>
                 ))}
-               </div>
+            </div>
           </div>
         </div>
       </div>

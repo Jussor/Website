@@ -45,7 +45,7 @@ const Index = () => {
 
   return (
     <div className="main-podcast">
-      <div className="container mt-5">
+      <div className="container my-5">
         <div className="row gy-3 gx-3">
           <div className="col-lg-12">
             <div className="single-post">
@@ -83,12 +83,12 @@ const Index = () => {
                           <FaTwitter />
                         </span>
                       </TwitterShareButton>
-                      <p className="post-date mb-0">
+                      <div className="post-date">
                         <span className="">
                           <CgCalendarDates />
                         </span>
                         {truncateText(Success?.updatedAt, 10)}
-                      </p>
+                      </div>
                     </div>
                     {Success?.title && (
                       <h5 className="title">{Success?.title}</h5>

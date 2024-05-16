@@ -1,48 +1,50 @@
-.hero{
+.hero {
   position: relative;
-  
 }
- .bg-video {
-   width: 100%;
- }
+.bg-video {
+  width: 100%;
+}
 
 .hero video {
-   object-fit: cover;
+  object-fit: cover;
 }
 
-.home-hero-main{
+.home-hero-main {
   padding: 20px;
-  background-color: #F5F6FA;
+  background-color: #f5f6fa;
   border-radius: 18px;
   color: black !important;
   margin-top: -80px !important;
   margin: auto;
   min-height: 100px;
-
 }
-.news-img{
+.news-img {
   border-radius: 10px;
 }
-.bg-color{
-  background-color: #F5F6FA;
+.bg-color {
+  background-color: #f5f6fa;
 }
 
-.hero .title{
-  color: black;
-font-family: "Cairo", sans-serif;
-  font-weight: 700;
-  line-height: 40px;
-  
+.home-hero-main .title {
+  font-family: "Cairo", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 35px;
 }
-.hero .descr{
-  color:black;
+.home-hero-main .descr p,
+.home-hero-main .descr h3,
+.home-hero-main .descr h1,
+.home-hero-main .descr h2,
+.home-hero-main .descr h3,
+.home-hero-main .descr h4,
+.home-hero-main .descr h5,
+.home-hero-main .descr h6 {
   font-family: "Noto Naskh Arabic", serif;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 31px;
- 
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 30px;
 }
-.hero .banner-img{
+.hero .banner-img {
   width: 100%;
   height: 500px;
 }
@@ -50,46 +52,89 @@ font-family: "Cairo", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full viewport height to center vertically */
+  height: 100vh;
 }
-/* @media (min-aspect-ratio:16/9){
-  .bg-video{
+
+@media (max-aspect-ratio: 16/9) {
+  .bg-video {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .home-hero-main .title {
+    font-family: "Cairo", sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 20px;
+  }
+  .home-hero-main .descr p,
+  .home-hero-main .descr h3,
+  .home-hero-main .descr h1,
+  .home-hero-main .descr h2,
+  .home-hero-main .descr h3,
+  .home-hero-main .descr h4,
+  .home-hero-main .descr h5,
+  .home-hero-main .descr h6 {
+    font-family: "Noto Naskh Arabic", serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+  }
+  .hero .banner-img {
     height: auto;
   }
-} */
-@media (max-aspect-ratio:16/9){
-  .bg-video{
-    width: 100%;
+  .home-hero-main {
+    padding: 10px;
+
+    margin-top: -40px !important;
   }
 }
-
-@media screen and (max-width : 576px){
-
-  .hero .banner-img{
-  
-  height: 350px;
+@media (min-width: 576px) and (max-width: 768px) {
+  .home-hero-main .title {
+    font-family: "Cairo", sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 25px;
+  }
+  .home-hero-main .descr p,
+  .home-hero-main .descr h3,
+  .home-hero-main .descr h1,
+  .home-hero-main .descr h2,
+  .home-hero-main .descr h3,
+  .home-hero-main .descr h4,
+  .home-hero-main .descr h5,
+  .home-hero-main .descr h6 {
+    font-family: "Noto Naskh Arabic", serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25px;
+  }
+  .hero .banner-img {
+    height: auto;
+  }
 }
-.hero .title{
-  font-size: 20px;
+@media (min-width: 768px) and (max-width: 992px) {
+  .home-hero-main .title {
+    font-family: "Cairo", sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 30px;
+  }
+  .home-hero-main .descr p,
+  .home-hero-main .descr h3,
+  .home-hero-main .descr h1,
+  .home-hero-main .descr h2,
+  .home-hero-main .descr h3,
+  .home-hero-main .descr h4,
+  .home-hero-main .descr h5,
+  .home-hero-main .descr h6 {
+    font-family: "Noto Naskh Arabic", serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25px;
+  }
+  .hero .banner-img {
+    height: auto;
+  }
 }
-.hero .descr{
-  font-size: 12px;
-}
-.home-hero-main{
-  padding: 10px;
-  
-  margin-top: -40px !important;
- 
-
-}
-}
-@media (min-width : 576px) and (max-width : 768px){
-
-  .hero .banner-img{
-  
-  height: 400px;
-}
-}
-
-

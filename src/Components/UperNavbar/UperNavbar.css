@@ -1,4 +1,4 @@
-.uper-navbar nav{
+.uper-navbar nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,32 +9,26 @@
   font-size: 13px;
   font-family: "Noto Naskh Arabic", serif;
   color: #fff;
-  
-
-
 }
-.left-uper-nav{
+.left-uper-nav {
   display: flex;
   align-items: center;
   gap: 15px;
 }
-.left-uper-nav a
-{
+.left-uper-nav a {
   font-family: "Noto Naskh Arabic", serif;
-  color: #3E3939;
+  color: #3e3939;
   font-size: 18px;
 }
-.left-uper-nav a:hover
-{
-  color: #4095C6;
-  
+.left-uper-nav a:hover {
+  color: #4095c6;
 }
-.right-uper-nav{
+.right-uper-nav {
   display: flex;
-  
+
   gap: 15px;
 }
-.right-uper-nav .right-links{
+.right-uper-nav .right-links {
   display: flex;
   gap: 15px;
   /* border-right: 1px solid black; */
@@ -42,63 +36,40 @@
 }
 .right-uper-nav a {
   font-family: "Noto Naskh Arabic", serif;
-  color: #3E3939;
+  color: #3e3939;
   font-size: 16px;
 }
 
-@media screen and (max-width : 576px) {
-  .uper-navbar nav{
+@media screen and (max-width: 576px) {
+  .uper-navbar nav {
     flex-direction: column;
+    padding-top: 5px;
+  }
+  .left-uper-nav {
     gap: 10px;
-    align-items: center;
-    padding-top: 10px;
-  }
-  .left-uper-nav{
     
-    gap: 10px;
-  }
-  .right-uper-nav{
-    flex-direction: column;
-    align-items: center;
-    
-  }
-  .right-uper-nav .right-links{
-    
-    border-right: none;
-    padding-right: 0;
   }
 
-  .left-uper-nav a, .right-uper-nav a
-  {
-    
+  .left-uper-nav a,
+  .right-uper-nav a {
     font-size: 14px;
   }
   .uper-nav-btn {
-    
     padding: 8px 10px;
     font-size: 10px;
-    
-    
-  
-  
   }
 }
-@media (min-width : 576px) and (max-width : 768px) {
+/* @media (min-width : 576px) and (max-width : 768px) {
   .uper-navbar nav{
     flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    padding-top: 10px;
+    gap: 5px;
+    
   }
   .left-uper-nav{
     
     gap: 10px;
   }
-  .right-uper-nav{
-    flex-direction: column;
-    align-items: center;
-    
-  }
+  
   .right-uper-nav .right-links{
     
     border-right: none;
@@ -106,14 +77,4 @@
   }
 
   
-}
-@media (min-width : 768px) and (max-width : 992px) {
-  .uper-navbar nav{
-    flex-direction: column;
-    gap: 10px;
-    padding-top: 10px;
-    align-items: center;
-  }
-  
-}
-
+} */

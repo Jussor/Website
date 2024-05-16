@@ -24,13 +24,6 @@ const postcategorypage = () => {
     window.scrollTo(0, 0);
   };
 
-  const truncateWords = (text, maxWords) => {
-    const words = text.split(" ");
-    if (words.length > maxWords) {
-      return words.slice(0, maxWords).join(" ") + "...";
-    }
-    return text;
-  };
   const truncateText = (text, maxLength) => {
     if (text.length > maxLength) {
       return text.substring(0, maxLength);
@@ -38,23 +31,21 @@ const postcategorypage = () => {
     return text;
   };
   return (
-    <div className="container mt-5 mb-5">
+    <div className="container my-5 posts">
       {postsByCategoryLoading ? (
         <div
           style={{
-            flex: 1,
             display: "flex",
             justifyContent: "center",
-            alignItems: "center",
           }}
         >
           <Spinner />
         </div>
       ) : (
         <div className="row gy-3 gx-3">
-          {/* Check if posts exist */}
+          
           {postsByCategorySuccess && postsByCategorySuccess.length > 0 ? (
-            // If posts exist, map through them
+            
             postsByCategorySuccess.map((podcast, index) => {
               return (
                 <div className="col-sm-6 col-lg-4" key={index}>
@@ -69,11 +60,13 @@ const postcategorypage = () => {
                           src={`${podcast.video}`}
                         ></iframe>
                         <div className="tv_img">
-                          <p className="mb-0 title">{podcast.title}</p>
-                          <span className="d-flex align-items-center gap-2">
-                            <FaCalendarAlt />
+                          <div className="title">{podcast.title}</div>
+                          <div className="d-flex align-items-center">
+                            <span className="calender-icon">
+                              <CgCalendarDates />
+                            </span>
                             {truncateText(podcast.updatedAt, 10)}
-                          </span>
+                          </div>
                         </div>
                       </div>
                     </Link>
@@ -90,13 +83,13 @@ const postcategorypage = () => {
                           alt="..."
                         />
                         <div className="card-body">
-                          <h6 className="post-title">{podcast.title}</h6>
-                          <p className="post-date">
+                          <h6 className="title">{podcast.title}</h6>
+                          <div className="d-flex align-items-center">
                             <span className="calender-icon">
                               <CgCalendarDates />
                             </span>
                             {truncateText(podcast.updatedAt, 10)}
-                          </p>
+                          </div>
                         </div>
                       </Link>
                     </div>
@@ -105,7 +98,7 @@ const postcategorypage = () => {
               );
             })
           ) : (
-            // If no posts exist, display "Post not found" message
+            
             <div className="card p-2">
               <h6 className="not-found-message m-auto">
                 لم يتم العثور على آخر

@@ -1,23 +1,22 @@
 .tv-bg {
   background-color: black;
   margin-top: 3rem;
-  padding-bottom: 1rem;
+  padding: 3rem 0;
 }
-.video-box { 
-  position: relative; 
+.video-box {
+  position: relative;
   display: flex;
   flex-direction: column;
-} 
+}
 
-.iframe-element { 
-  
-  width: 100%; 
-  height: 300px; 
-  border: none; 
+.iframe-element {
+  width: 100%;
+  height: 300px;
+  border: none;
 }
 .button-tv {
   position: absolute;
-  top: 20px;
+  top: 10px;
   right: 20px;
 }
 .button-tv button {
@@ -27,62 +26,66 @@
   padding: 10px;
   border: none;
 }
-.tv_header{
+.tv_header {
   font-family: "Cairo", sans-serif;
   color: #4095c6;
-  text-align: right;
+
   border-right: 5px solid #4095c6;
   padding-right: 5px;
-  margin-top: 20px;
+
   font-size: 2.5rem;
-  margin-bottom: 50px;
-} 
+}
 .tv_img {
   background: url("../../assets/galleryback.png");
   background-repeat: no-repeat;
   background-size: cover;
-  
+
   padding: 10px;
- 
+
   color: white;
   font-family: "Cairo", sans-serif;
 }
-.tv_img p{
-  margin-bottom: 0;
-  font-size: 22px;
+.tv_img .title {
+  font-family: "Cairo", sans-serif;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 33px;
-  text-align: right;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+.tv_img .calender-icon {
+  font-family: "Noto Naskh Arabic", serif;
+  font-size: 30px;
+  
 }
 
-@media screen and (max-width : 576px){
-  
-  .iframe-element { 
-    
-    height: 250px; 
-    
+@media screen and (max-width: 576px) {
+  .iframe-element {
+    height: 180px;
   }
-  .tv_img p{
-    
+  .tv_img p {
     font-size: 14px;
-    
-    line-height: 24px;
-    
-  }
-  
-}
-@media (min-width : 576px) and (max-width : 992px){
 
-  .iframe-element { 
-    
-    height: 250px; 
-    
+    line-height: 24px;
   }
-  .tv_img p{
-    
+}
+@media (min-width: 576px) and (max-width: 992px) {
+  .iframe-element {
+    height: 200px;
+  }
+  .tv_img p {
     font-size: 18px;
-    
+
     line-height: 28px;
-    
+  }
+  .button-tv {
+    top: 20px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .iframe-element {
+    height: 220px;
+  }
+  .button-tv {
+    top: 20px;
   }
 }

@@ -146,5 +146,10 @@
   font-size: 30px;
 }
 
-
+@media screen and (max-width : 576px) {
+  .lower-navbar{
+    padding: 10px 0;
+  }
+  
+}
 

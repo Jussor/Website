@@ -8,7 +8,8 @@ import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Home } from "../../redux/slice/homeSlice";
-import { Spinner } from 'react-bootstrap'; // Import Spinner from React Bootstrap
+import { Spinner } from "react-bootstrap"; // Import Spinner from React Bootstrap
+import { CgCalendarDates } from "react-icons/cg";
 
 AOS.init();
 
@@ -33,23 +34,16 @@ const Tvcomp = () => {
     return text;
   };
 
-  const truncateWords = (text, maxWords) => {
-    const words = text.split(" ");
-    if (words.length > maxWords) {
-      return words.slice(0, maxWords).join(" ") + "...";
-    }
-    return text;
-  };
+ 
 
   return (
     <div className="tv-bg" id="Tvjusoor">
-      <div className="container mt-5">
-        <br />
+      <div className="container">
         <Link to={"/podcast/662b85fb3455a992d8489da7"} className="tv_header">
           {" "}
           TV جسور{" "}
         </Link>
-        <div className="row gy-4">
+        <div className="row gy-4 mt-0">
           {loading ? (
             <div className="spinner-container">
               <Spinner animation="border" role="status">
@@ -77,9 +71,13 @@ const Tvcomp = () => {
                       to={`/Singletvpost/${item._id}`}
                       style={{ color: "inherit" }}
                     >
-                      <p>{item?.title}</p>
-                      <FaCalendarAlt />
-                      <span> {truncateText(item?.updatedAt, 10)} </span>
+                      <div>{item?.title}</div>
+                      <div className="d-flex align-items-center gap-2">
+                        <span className="calender-icon">
+                          <CgCalendarDates />
+                        </span>
+                        {truncateText(item?.updatedAt, 10)}
+                      </div>
                     </Link>
                   </div>
                 </div>

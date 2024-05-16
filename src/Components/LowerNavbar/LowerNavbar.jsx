@@ -3,7 +3,7 @@ import "./LowerNavbar.css";
 import { Container, Offcanvas, Spinner } from "react-bootstrap";
 import { CiSearch } from "react-icons/ci";
 import { Link, useNavigate } from "react-router-dom";
-import { IoIosMenu } from "react-icons/io";
+import { IoIosArrowDown, IoIosMenu } from "react-icons/io";
 import logo from "../../../public/Home/logo.png";
 import { useDispatch, useSelector } from "react-redux";
 import { category } from "../../redux/slice/categorySlice";
@@ -79,6 +79,12 @@ const LowerNavbar = () => {
                   <div className="iconDrop">
                     <div className="dropText">
                       <Link to={`/podcast/${item._id}`}>
+                        {(item.categoryName === "نبض المجتمع" ||
+                          item.categoryName === "سياسة") && (
+                          <span className="sub-category-icon">
+                            <IoIosArrowDown />
+                          </span>
+                        )}
                         {item.categoryName}
                       </Link>
                     </div>
@@ -127,6 +133,12 @@ const LowerNavbar = () => {
                               to={`/podcast/${item._id}`}
                               onClick={handleClose}
                             >
+                              {(item.categoryName === "نبض المجتمع" ||
+                                item.categoryName === "سياسة") && (
+                                <span className="sub-category-icon">
+                                  <IoIosArrowDown />
+                                </span>
+                              )}
                               {item.categoryName}
                             </Link>
                           </div>

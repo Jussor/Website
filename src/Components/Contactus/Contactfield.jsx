@@ -21,7 +21,7 @@ function Contactfield() {
     initialValues: {
       fullName: "",
       email: "",
-      phoneNumber: 0,
+      phoneNumber: "",
       subject: "",
       query: "",
     },
@@ -144,7 +144,7 @@ function Contactfield() {
                         <input
                           className="form-control rounded-0 mb-2"
                           name="phoneNumber"
-                          type="number"
+                          type="text"
                           placeholder="+40 737 136 767"
                           onBlur={formik.handleBlur}
                           onChange={formik.handleChange}
