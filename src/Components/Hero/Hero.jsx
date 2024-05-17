@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { banner } from "../../redux/slice/bannerSlice";
 import { IMAGE_PATH, VIDEO_PATH } from "../../Utils/utils";
 import "./Hero.css";
+import { Link } from "react-router-dom";
 
 const SimpleSlider = ({ settings, sliderRef }) => {
   const dispatch = useDispatch();
@@ -13,6 +14,12 @@ const SimpleSlider = ({ settings, sliderRef }) => {
   useEffect(() => {
     dispatch(banner());
   }, [dispatch]);
+  const truncateText = (text, maxLength) => {
+    if (text.length > maxLength) {
+      return text.substring(0, maxLength);
+    }
+    return text;
+  };
   
   return (
     <Slider {...settings} ref={sliderRef}>
@@ -22,8 +29,7 @@ const SimpleSlider = ({ settings, sliderRef }) => {
             <img
               src={`${IMAGE_PATH}${banner.image}`}
               alt="Banner Image"
-              className="banner-img"
-            />
+              className="banner-img"/>
           ) : (
             <video
               muted
@@ -38,11 +44,11 @@ const SimpleSlider = ({ settings, sliderRef }) => {
             <div className="row">
               <div className="col-md-12 home-hero-main">
               <Link to={banner.post_id === "66390f559823b367336bb913" ? `/Singletvpost/${banner.post_id}` : `/detailpost/${banner.post_id}`} style={{color: "inherit"}}>
-
-                  <h2 className="title">{banner.title}</h2>
+               <h2 className="title">{banner.title}</h2>
                   <div
                     dangerouslySetInnerHTML={{ __html: banner.description }}
                   ></div>
+                   
                 </Link>
               </div>
             </div>

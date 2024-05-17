@@ -10,7 +10,6 @@
 } 
 
 .iframe-element { 
-  
   width: 100%; 
   height: 300px; 
   border: none; 
@@ -40,9 +39,7 @@
   background: url("../../assets/galleryback.png");
   background-repeat: no-repeat;
   background-size: cover;
-  
   padding: 10px;
- 
   color: white;
   font-family: "Cairo", sans-serif;
 }
@@ -55,33 +52,20 @@
 }
 
 @media screen and (max-width : 576px){
-  
-  .iframe-element { 
-    
+   .iframe-element { 
     height: 250px; 
-    
-  }
+   }
   .tv_img p{
-    
     font-size: 14px;
-    
     line-height: 24px;
-    
+   }
   }
-  
-}
 @media (min-width : 576px) and (max-width : 992px){
-
-  .iframe-element { 
-    
-    height: 250px; 
-    
-  }
+    .iframe-element { 
+     height: 250px; 
+    }
   .tv_img p{
-    
-    font-size: 18px;
-    
-    line-height: 28px;
-    
-  }
+     font-size: 18px;
+     line-height: 28px;
+    }
 }

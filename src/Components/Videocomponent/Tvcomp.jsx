@@ -14,7 +14,7 @@ AOS.init();
 const Tvcomp = () => {
   const dispatch = useDispatch();
   const { JusoorTv } = useSelector((state) => state.home);
-
+   
   useEffect(() => {
     dispatch(Home());
   }, []);
@@ -25,20 +25,13 @@ const Tvcomp = () => {
     }
     return text;
   };
-  const truncateWords = (text, maxWords) => {
-    const words = text.split(" ");
-    if (words.length > maxWords) {
-      return words.slice(0, maxWords).join(" ") + "...";
-    }
-    return text;
-  };
+
   return (
     <div className="tv-bg" id="Tvjusoor">
       <div className="container mt-5">
         <br />
         <Link to={"/podcast/662b85fb3455a992d8489da7"} className="tv_header">
-          {" "}
-          TV جسور{" "}
+          TV جسور
         </Link>
         <div className="row gy-4">
           {JusoorTv &&
@@ -47,18 +40,15 @@ const Tvcomp = () => {
                 className="col-md-6"
                 data-aos="fade-up"
                 data-aos-duration="2000"
-                key={item._id}
-              >
+                key={item._id}>
                 <div className="video-box">
                   <iframe
                     className="iframe-element"
-                    src={`${item.video}`}
-                  ></iframe>
+                    src={`${item.video}`}></iframe>
                   <div className="tv_img">
                     <Link
                       to={`/Singletvpost/${item._id}`}
-                      style={{ color: "inherit" }}
-                    >
+                      style={{ color: "inherit" }}>
                       <p>{item?.title}</p>
                       <FaCalendarAlt />
                       <span> {truncateText(item?.updatedAt, 10)} </span>
