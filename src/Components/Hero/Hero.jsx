@@ -13,7 +13,7 @@ const SimpleSlider = ({ settings, sliderRef }) => {
   useEffect(() => {
     dispatch(banner());
   }, [dispatch]);
-
+  
   return (
     <Slider {...settings} ref={sliderRef}>
       {bannerSuccess.map((banner, index) => (
@@ -22,23 +22,29 @@ const SimpleSlider = ({ settings, sliderRef }) => {
             <img
               src={`${IMAGE_PATH}${banner.image}`}
               alt="Banner Image"
-              className="w-100"
-              style={{ height: "500px" }} />
+              className="banner-img"
+            />
           ) : (
             <video
               muted
               autoPlay
               className="bg-video"
-              style={{ height: "500px" }}>
+              style={{ height: "500px" }}
+            >
               <source src={`${VIDEO_PATH}${banner.video}`} type="video/mp4" />
             </video>
           )}
           <div className="container">
             <div className="row">
               <div className="col-md-12 home-hero-main">
-                <h2 className="title">{banner.title}</h2>
-                <div dangerouslySetInnerHTML={{ __html: banner.description }}></div>
-                 </div>
+              <Link to={banner.post_id === "66390f559823b367336bb913" ? `/Singletvpost/${banner.post_id}` : `/detailpost/${banner.post_id}`} style={{color: "inherit"}}>
+
+                  <h2 className="title">{banner.title}</h2>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: banner.description }}
+                  ></div>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -55,12 +61,12 @@ const Parent = () => {
     dots: false,
     infinite: bannerSuccess.length > 1 ? true : false,
     speed: 1000,
-    slidesToShow: bannerSuccess.length > 1 ? slidetoshow : 1, 
+    slidesToShow: bannerSuccess.length > 1 ? slidetoshow : 1,
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
   };
-  
+
   useEffect(() => {
     if (window.innerWidth > 700) {
       setslidetoshow(1);

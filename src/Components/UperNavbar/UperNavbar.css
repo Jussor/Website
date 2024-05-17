@@ -37,8 +37,8 @@
 .right-uper-nav .right-links{
   display: flex;
   gap: 15px;
-  border-right: 1px solid black;
-  padding-right: 15px;
+  /* border-right: 1px solid black; */
+  /* padding-right: 15px; */
 }
 .right-uper-nav a {
   font-family: "Noto Naskh Arabic", serif;

@@ -70,7 +70,7 @@ const Footer = () => {
             </form>
           </div>
           {state && (
-            <small className="text-success float-end">تم الاشتراك بنجاح</small>
+            <small className="text-success">تم الاشتراك بنجاح</small>
           )}
         </div>
       </div>

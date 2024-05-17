@@ -6,7 +6,11 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { DetailPost } from "../../redux/slice/postSlice";
 import { IMAGE_PATH } from "../../Utils/utils";
-const index = () => {
+import { IoMdShare } from "react-icons/io";
+import { FaFacebook, FaShare, FaTwitter } from "react-icons/fa";
+import { FacebookShareButton, TwitterShareButton } from "react-share";
+
+const Index = () => {
   const { id } = useParams();
 
   const dispatch = useDispatch();
@@ -15,7 +19,7 @@ const index = () => {
   useEffect(() => {
     dispatch(DetailPost(id));
   }, []);
-  // console.log(Success)
+
   const truncateText = (text, maxLength) => {
     if (typeof text !== "string" || text.length === 0) {
       return "";
@@ -28,6 +32,24 @@ const index = () => {
     return text;
   };
 
+  const handleTwitterShare = () => {
+    // Construct the Twitter share URL with your post content
+    const tweetContent = `${Success.title} - ${truncateText(
+      Success.description,
+      100
+    )}\n\nRead more: your_website_link_here`;
+    const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+      tweetContent
+    )}`;
+    window.open(twitterShareUrl, "_blank");
+  };
+
+  const handleFacebookShare = () => {
+    // Construct the Facebook share URL with your post content
+    const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=your_website_link_here`;
+    window.open(facebookShareUrl, "_blank");
+  };
+
   return (
     <div className="main-podcast">
       <div className="container mt-5">
@@ -37,19 +59,29 @@ const index = () => {
               <div className="card rounded-0">
                 <img
                   src={`${IMAGE_PATH}${Success.primaryImage}`}
-                  style={{ height: "400px" }}
+                  className="primary-img"
                   alt="..."
                 />
                 <div className="card-body">
-                  <div className="post-info">
-                    <p className="post-category">
-                      <span className="category-icon">
-                        <BiCategory />
+                  <div className="d-flex align-items-center gap-3">
+                    <FacebookShareButton
+                      url={`https://jusoornews.com/detailpost/${Success._id}`}
+                    >
+                      <span>
+                        {" "}
+                        <FaFacebook />
                       </span>
-                      {/* اض category will be added*/}
-                    </p>
-                    <p className="post-date">
-                      <span className="calender-icon">
+                    </FacebookShareButton>
+                    <TwitterShareButton
+                      url={`https://jusoornews.com/detailpost/${Success._id}`}
+                    >
+                      <span>
+                        {" "}
+                        <FaTwitter />
+                      </span>
+                    </TwitterShareButton>
+                    <p className="post-date mb-0">
+                      <span className="">
                         <CgCalendarDates />
                       </span>
                       {truncateText(Success.updatedAt, 10)}
@@ -64,19 +96,22 @@ const index = () => {
                     {Success.galleryImages?.map((item) => (
                       <div className="col-md-6">
                         <img
-                          className="descr-img"
+                          className="w-100"
                           src={`${IMAGE_PATH}${item}`}
+                          alt="gallery"
                         />
                       </div>
                     ))}
                   </div>
-
-                  {Success.video && <div className="mt-5">
-                    <iframe
-                      src={Success.video}
-                      style={{ width: "100%", height: "500px" }}
-                    ></iframe>
-                  </div>}
+                  {Success.video && (
+                    <div className="mt-5">
+                      <iframe
+                        title="video"
+                        src={Success.video}
+                        style={{ width: "100%", height: "500px" }}
+                      ></iframe>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -87,4 +122,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

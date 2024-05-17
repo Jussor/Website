@@ -8,12 +8,7 @@ import Header from "../../Components/Common/Header/Header";
 const PrivacyPolicy = () => {
   return (
     <div>
-        <Header
-        title="سياسة الخصوصية لجسور"
-        paragraph="أبرمت شركة نيوم للهيدروجين الأخضر (NGHC) مؤخرًا اتفاقيات مالية مع 23 بنكًا وشركة استثمارية محلية وإقليمية ودولية، مما يمثل علامة بارزة في المشروع."
-        buttontext="للصحافة والإعلام"
-         image ={Contactmage}
-        />
+        
       <Privacycontent/>
       {/* <Offersaction/> */}
     </div>

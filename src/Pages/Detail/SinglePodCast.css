@@ -6,10 +6,10 @@
     
     
 }
-.single-post .descr, .single-post .sub-descr, .single-post .last-descr{
+.main-podcast .descr{
     font-family: "Noto Naskh Arabic", serif;
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 40px;
+    font-weight: 700;
     line-height: 36px;
     
 
@@ -25,21 +25,18 @@
     align-items: center;
     gap: 5px;
 }
-.single-post .post-info{
-    display: flex;
-    
-    gap: 10px;
-}
-.single-post span{
+
+.card-body span{
     font-family: "Noto Naskh Arabic", serif;
     font-size: 30px;
     color : #615959;
 }
-.single-post .descr-img, .single-post .post-img{
+.primary-img{
     width: 100%;
-    height: 100%;
+    height: 400px;
     
 }
+
 .single-post .tags{
     display: flex;
     
@@ -66,6 +63,11 @@
     
 
 }
+
+.card p{
+    font-size: 20px;
+}
+
 
 @media screen and (max-width : 576px) {
     .single-post span{
@@ -104,6 +106,9 @@
         height: 30px;
         font-size: 11px;  
     }
+    .primary-img{
+        height: 150px;
+    }
 }
 @media (min-width : 576px) and (max-width : 768px) {
     .single-post .title{
@@ -130,7 +135,9 @@
         height: 40px;
         font-size: 16px;  
     }
-    
+    .primary-img{
+        height: 200px;
+    }
     
 }
 @media (min-width : 768px) and (max-width : 992px) {
@@ -149,7 +156,10 @@
         line-height: 24px;
         
     
-    } 
+    }
+    .primary-img{
+        height: 250px;
+    }
 }
 @media (min-width : 992px) and (max-width : 1200px) {
     .single-post .title{
@@ -168,4 +178,7 @@
         
     
     } 
+    .primary-img{
+        height: 300px;
+    }
 }
