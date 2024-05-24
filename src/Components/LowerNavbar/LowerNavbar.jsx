@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import "./LowerNavbar.css";
-import { Container, Offcanvas, Spinner } from "react-bootstrap";
+import { Container, Dropdown, Offcanvas, Spinner } from "react-bootstrap";
 import { CiSearch } from "react-icons/ci";
 import { Link, useNavigate } from "react-router-dom";
 import { IoIosArrowDown, IoIosMenu } from "react-icons/io";
 import logo from "../../../public/Home/logo.png";
 import { useDispatch, useSelector } from "react-redux";
 import { category } from "../../redux/slice/categorySlice";
+import SearchBar from "../SearchBar/SearchBar";
 
 const LowerNavbar = () => {
   const [show, setShow] = useState(false);
@@ -30,23 +31,16 @@ const LowerNavbar = () => {
     fetchData();
   }, [dispatch]);
 
-  const navigate = useNavigate();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    navigate("/searchPost");
-  };
-
   return (
     <div className="lower-navbar">
       <Container>
-        <nav className="d-flex justify-content-between align-items-center">
+        <nav className="d-flex flex-column gap-1 flex-sm-row justify-content-sm-between align-items-sm-center">
           <div className="right-lower-nav d-flex align-items-center gap-2">
             <span className="toggle-btn d-lg-none" onClick={handleShow}>
               <IoIosMenu />
             </span>
             <Link to="/">
-              <img src={logo} alt="Logo" />
+              <img src={logo} alt="Logo" className="web-logo"/>
             </Link>
           </div>
           <div className="middle-lower-nav d-none d-lg-flex gap-4">
@@ -79,34 +73,25 @@ const LowerNavbar = () => {
                   <div className="iconDrop">
                     <div className="dropText">
                       <Link to={`/podcast/${item._id}`}>
+                        
+                        {item.categoryName}
                         {(item.categoryName === "نبض المجتمع" ||
                           item.categoryName === "سياسة") && (
                           <span className="sub-category-icon">
                             <IoIosArrowDown />
                           </span>
                         )}
-                        {item.categoryName}
                       </Link>
                     </div>
                   </div>
                 </li>
+                
               ))
             )}
           </div>
-          <form className="left-lower-nav" onSubmit={handleSubmit}>
-            {/* <div className="d-flex gap-2">
-              <button
-                type="submit"
-                style={{
-                  border: "none",
-                  background: "transparent",
-                  color: "white",
-                }}
-              >
-                <CiSearch />
-              </button>
-            </div> */}
-          </form>
+          <div className="left-lower-nav">
+            <SearchBar />
+          </div>
 
           <Offcanvas
             show={show}
@@ -133,13 +118,14 @@ const LowerNavbar = () => {
                               to={`/podcast/${item._id}`}
                               onClick={handleClose}
                             >
+                              
+                              {item.categoryName}
                               {(item.categoryName === "نبض المجتمع" ||
                                 item.categoryName === "سياسة") && (
                                 <span className="sub-category-icon">
                                   <IoIosArrowDown />
                                 </span>
                               )}
-                              {item.categoryName}
                             </Link>
                           </div>
                         </div>

@@ -135,6 +135,7 @@
   color: #fff;
   font-size: 30px;
 }
+
 .offcanvas-links{
   display: flex;
   flex-direction: column;
@@ -148,8 +149,11 @@
 
 @media screen and (max-width : 576px) {
   .lower-navbar{
-    padding: 10px 0;
+    padding: 5px 0;
+    padding-bottom: 20px;
   }
-  
+  .right-lower-nav .web-logo{
+    height: 30px;
+  }
 }
 

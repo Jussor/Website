@@ -7,6 +7,7 @@ import aboutSlice from './slice/aboutSlice';
 import privacySlice from './slice/privacySlice';
 import contactusSlice  from './slice/contactusSlice';
 import postSlice from './slice/postSlice';
+import allPostsSlice from './slice/allPostsSlice';
 
 export const store = configureStore({
     reducer: {
@@ -18,6 +19,7 @@ export const store = configureStore({
         privacy : privacySlice,
         contact : contactusSlice,
         post :postSlice,
+        allposts :allPostsSlice
     }
 
 });

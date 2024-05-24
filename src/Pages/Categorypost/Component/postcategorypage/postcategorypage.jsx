@@ -5,11 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { IMAGE_PATH } from "../../../../Utils/utils";
 import { getPostsByCategory } from "../../../../redux/slice/categorySlice";
 import { useParams } from "react-router-dom";
-import { FaCalendarAlt } from "react-icons/fa";
-import { Spinner } from "react-bootstrap";
 import { CgCalendarDates } from "react-icons/cg";
+import { Spinner } from "react-bootstrap";
 
-const postcategorypage = () => {
+const PostCategoryPage = () => {
   const dispatch = useDispatch();
   const { postsByCategorySuccess, postsByCategoryLoading } = useSelector(
     (state) => state.category
@@ -18,7 +17,7 @@ const postcategorypage = () => {
 
   useEffect(() => {
     dispatch(getPostsByCategory(id));
-  }, [id]);
+  }, [id, dispatch]);
 
   const handleClick = () => {
     window.scrollTo(0, 0);
@@ -30,6 +29,7 @@ const postcategorypage = () => {
     }
     return text;
   };
+
   return (
     <div className="container my-5 posts">
       {postsByCategoryLoading ? (
@@ -43,23 +43,23 @@ const postcategorypage = () => {
         </div>
       ) : (
         <div className="row gy-3 gx-3">
-          
           {postsByCategorySuccess && postsByCategorySuccess.length > 0 ? (
-            
-            postsByCategorySuccess.map((podcast, index) => {
-              return (
-                <div className="col-sm-6 col-lg-4" key={index}>
-                  {id === "662b85fb3455a992d8489da7" ? (
+            postsByCategorySuccess.map((podcast, index) => (
+              <div className="col-sm-6 col-lg-4" key={index}>
+                {id === "662b85fb3455a992d8489da7" ? (
+                  <div className="card rounded-0">
                     <Link
                       to={`/Singletvpost/${podcast._id}`}
                       style={{ color: "inherit" }}
                     >
-                      <div className="video-box">
-                        <iframe
-                          className="iframe-element-post"
+                      <iframe
+                          className="card-img rounded-0"
                           src={`${podcast.video}`}
+                          title={podcast.title}
                         ></iframe>
-                        <div className="tv_img">
+                      <div className="card-body">
+                        
+                        <div className="">
                           <div className="title">{podcast.title}</div>
                           <div className="d-flex align-items-center">
                             <span className="calender-icon">
@@ -70,35 +70,34 @@ const postcategorypage = () => {
                         </div>
                       </div>
                     </Link>
-                  ) : podcast.category ? (
-                    <div className="card">
-                      <Link
-                        to={`/detailpost/${podcast._id}`}
-                        style={{ color: "inherit" }}
-                        onClick={handleClick}
-                      >
-                        <img
-                          src={`${IMAGE_PATH}${podcast.primaryImage}`}
-                          className="card-img"
-                          alt="..."
-                        />
-                        <div className="card-body">
-                          <h6 className="title">{podcast.title}</h6>
-                          <div className="d-flex align-items-center">
-                            <span className="calender-icon">
-                              <CgCalendarDates />
-                            </span>
-                            {truncateText(podcast.updatedAt, 10)}
-                          </div>
+                  </div>
+                ) : podcast.category ? (
+                  <div className="card rounded-0">
+                    <Link
+                      to={`/detailpost/${podcast._id}`}
+                      style={{ color: "inherit" }}
+                      onClick={handleClick}
+                    >
+                      <img
+                        src={`${IMAGE_PATH}${podcast.primaryImage}`}
+                        className="card-img rounded-0"
+                        alt={podcast.title}
+                      />
+                      <div className="card-body">
+                        <h6 className="title">{podcast.title}</h6>
+                        <div className="d-flex align-items-center">
+                          <span className="calender-icon">
+                            <CgCalendarDates />
+                          </span>
+                          {truncateText(podcast.updatedAt, 10)}
                         </div>
-                      </Link>
-                    </div>
-                  ) : null}
-                </div>
-              );
-            })
+                      </div>
+                    </Link>
+                  </div>
+                ) : null}
+              </div>
+            ))
           ) : (
-            
             <div className="card p-2">
               <h6 className="not-found-message m-auto">
                 لم يتم العثور على آخر
@@ -111,4 +110,4 @@ const postcategorypage = () => {
   );
 };
 
-export default postcategorypage;
+export default PostCategoryPage;

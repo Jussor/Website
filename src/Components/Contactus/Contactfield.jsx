@@ -39,6 +39,7 @@ function Contactfield() {
     }),
     onSubmit: (values, { resetForm }) => {
       dispatch(contactus(values));
+      alert("Form submit Successfully");
     },
   });
 
@@ -52,7 +53,7 @@ function Contactfield() {
                 أي سؤال؟ لا تتردد في الاتصال بنا
               </h1>
 
-              <p className="text-lead">
+              {/* <p className="text-lead">
                 هل لديك أسئلة؟ هل تحتاج إلى المساعدة بشأن منتجاتنا أو خدماتنا؟
                 فريقنا ملتزم بضمان حصولك على كل الدعم الذي تحتاجه
               </p>
@@ -62,7 +63,7 @@ function Contactfield() {
                 تعليقات أو سؤال أو مشكلة تحتاج إلى مساعدة بشأنها، فنحن هنا
                 للاستماع وتقديم الحلول. يلتزم فريق خدمة العملاء لدينا بالرد على
                 جميع الاستفسارات في أسرع وقت ممكن.
-              </p>
+              </p> */}
               <div className="social-media">
                 <div className="social-icon">
                   <FaFacebookF />
