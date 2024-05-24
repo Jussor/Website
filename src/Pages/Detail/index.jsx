@@ -8,7 +8,8 @@ import { FaFacebook, FaShare, FaTwitter } from "react-icons/fa";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
 import YoutubePlayer from "../../Components/YoutubePlayer/YoutubePlayer";
 import { Spinner } from "react-bootstrap";
-import "./SinglePodCast.css"
+import "./SinglePodCast.css";
+import { Helmet } from "react-helmet";
 const Index = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -22,14 +23,16 @@ const Index = () => {
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
-        setLoading(false); 
+        setLoading(false);
       });
-  }, [id]); 
+  }, [id]);
 
   useEffect(() => {
     if (Success?.primaryImage) {
       // Set og:image meta tag dynamically
-      document.getElementById("ogImage").setAttribute("content", `${IMAGE_PATH}${Success?.primaryImage}`);
+      document
+        .getElementById("ogImage")
+        .setAttribute("content", `${IMAGE_PATH}${Success?.primaryImage}`);
     }
   }, [Success?.primaryImage]);
 
@@ -45,6 +48,37 @@ const Index = () => {
 
   return (
     <div className="main-podcast">
+      <Helmet>
+        <title>Post Details</title>
+        <meta property="og:title" content="Jusoor News" />
+        <meta
+          property="og:description"
+          content="Latest news and updates from Jusoor News."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          id="ogImage"
+          content="https://res.cloudinary.com/dx3oigwug/image/upload/v1691515895/jusoor/c0jwu83tzlsk6lbwutjt"
+        />
+        <meta property="og:image:alt" content="Jusoor News Image" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Jusoor News" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@YourTwitterHandle" />
+        <meta name="twitter:title" content="Jusoor News" />
+        <meta
+          name="twitter:description"
+          content="Latest news and updates from Jusoor News."
+        />
+        <meta
+          name="twitter:image"
+          content="https://res.cloudinary.com/dx3oigwug/image/upload/v1691515895/jusoor/c0jwu83tzlsk6lbwutjt"
+        />
+        <meta name="twitter:image:alt" content="Jusoor News Image" />
+      </Helmet>
       <div className="container my-5">
         <div className="row gy-3 gx-3">
           <div className="col-lg-12">
@@ -62,7 +96,7 @@ const Index = () => {
                       alt="..."
                     />
                   )}
-                  
+
                   <div className="card-body">
                     <div className="d-flex align-items-center gap-3">
                       <FacebookShareButton

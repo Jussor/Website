@@ -7,6 +7,7 @@ import { getPostsByCategory } from "../../../../redux/slice/categorySlice";
 import { useParams } from "react-router-dom";
 import { CgCalendarDates } from "react-icons/cg";
 import { Spinner } from "react-bootstrap";
+import { Helmet } from "react-helmet";
 
 const PostCategoryPage = () => {
   const dispatch = useDispatch();
@@ -32,6 +33,9 @@ const PostCategoryPage = () => {
 
   return (
     <div className="container my-5 posts">
+      <Helmet>
+        <title>Posts</title>
+      </Helmet>
       {postsByCategoryLoading ? (
         <div
           style={{

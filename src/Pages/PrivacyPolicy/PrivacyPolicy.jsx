@@ -1,16 +1,17 @@
 import React from 'react'
 import Privacycontent from '../../Components/Privacycontent/Privacycontent'
-import Offersaction from "../../Components/Offersaction/offersaction"
-import Contactmage from '../../assets/privacy.png'
-import Header from "../../Components/Common/Header/Header";
+
+import { Helmet } from 'react-helmet';
 
 
 const PrivacyPolicy = () => {
   return (
     <div>
-        
+        <Helmet>
+        <title>Privacy Policy</title>
+      </Helmet>
       <Privacycontent/>
-      {/* <Offersaction/> */}
+      
     </div>
   )
 }
