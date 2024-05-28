@@ -4,12 +4,13 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { DetailPost } from "../../redux/slice/postSlice";
 import { IMAGE_PATH } from "../../Utils/utils";
-import { FaFacebook, FaShare, FaTwitter } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
 import YoutubePlayer from "../../Components/YoutubePlayer/YoutubePlayer";
 import { Spinner } from "react-bootstrap";
 import "./SinglePodCast.css";
 import { Helmet } from "react-helmet";
+import { FaXTwitter } from "react-icons/fa6";
 const Index = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -115,7 +116,7 @@ const Index = () => {
                       >
                         <span>
                           {" "}
-                          <FaTwitter />
+                          <FaXTwitter />
                         </span>
                       </TwitterShareButton>
                       <div className="post-date">

@@ -1,6 +1,4 @@
-.hero {
-  position: relative;
-}
+
 .bg-video {
   width: 100%;
 }
@@ -9,14 +7,15 @@
   object-fit: cover;
 }
 
-.home-hero-main {
+.hero .home-hero-main {
   padding: 20px;
   background-color: #f5f6fa;
   border-radius: 18px;
   color: black !important;
   margin-top: -80px !important;
-  margin: auto;
-  min-height: 100px;
+  
+  
+  
 }
 .news-img {
   border-radius: 10px;

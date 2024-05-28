@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Footer.css";
 import { IoIosArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
-import logo from "../../../public/Home/logo.png";
+import logo from "/Home/logo.png";
 const Footer = () => {
   const [state, setState] = useState(false);
   const handleClick = () => {

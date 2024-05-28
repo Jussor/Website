@@ -29,8 +29,8 @@ const OurTeam = () => {
         ) : (
           <div className="row gy-4">
             {totalTeam?.map((person) => (
-              <div className="col-lg-3 col-md-4 col-sm-6" key={person.id}>
-                <Card className="p-3 d-flex justify-content-center align-items-center">
+              <div className="col-lg-3 col-md-4 col-sm-6" >
+                <Card className="p-3 d-flex justify-content-center align-items-center" key={person.id}>
                   <Card.Img
                     variant="top"
                     src={`${IMAGE_PATH}${person.profilePic}`}

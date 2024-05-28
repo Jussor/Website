@@ -4,7 +4,7 @@ import { Container, Dropdown, Offcanvas, Spinner } from "react-bootstrap";
 import { CiSearch } from "react-icons/ci";
 import { Link, useNavigate } from "react-router-dom";
 import { IoIosArrowDown, IoIosMenu } from "react-icons/io";
-import logo from "../../../public/Home/logo.png";
+import logo from "/Home/logo.png";
 import { useDispatch, useSelector } from "react-redux";
 import { category } from "../../redux/slice/categorySlice";
 import SearchBar from "../SearchBar/SearchBar";
