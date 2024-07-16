@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./postcategorypage.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -15,9 +15,11 @@ const PostCategoryPage = () => {
     (state) => state.category
   );
   const { id } = useParams();
+  const [visiblePosts, setVisiblePosts] = useState(10);
 
   useEffect(() => {
     dispatch(getPostsByCategory(id));
+    setVisiblePosts(10); // Reset visible posts to 10 on id change
   }, [id, dispatch]);
 
   const handleClick = () => {
@@ -31,24 +33,23 @@ const PostCategoryPage = () => {
     return text;
   };
 
+  const handleViewMore = () => {
+    setVisiblePosts((prev) => prev + 10);
+  };
+
   return (
     <div className="container my-5 posts">
       <Helmet>
         <title>Posts</title>
       </Helmet>
       {postsByCategoryLoading ? (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
+        <div style={{ display: "flex", justifyContent: "center" }}>
           <Spinner />
         </div>
       ) : (
         <div className="row gy-3 gx-3">
           {postsByCategorySuccess && postsByCategorySuccess.length > 0 ? (
-            postsByCategorySuccess.map((podcast, index) => (
+            postsByCategorySuccess.slice(0, visiblePosts).map((podcast, index) => (
               <div className="col-sm-6 col-lg-4" key={index}>
                 {id === "662b85fb3455a992d8489da7" ? (
                   <div className="card rounded-0">
@@ -57,12 +58,11 @@ const PostCategoryPage = () => {
                       style={{ color: "inherit" }}
                     >
                       <iframe
-                          className="card-img rounded-0"
-                          src={`${podcast.video}`}
-                          title={podcast.title}
-                        ></iframe>
+                        className="card-img rounded-0"
+                        src={`${podcast.video}`}
+                        title={podcast.title}
+                      ></iframe>
                       <div className="card-body">
-                        
                         <div className="">
                           <div className="title">{podcast.title}</div>
                           <div className="d-flex align-items-center">
@@ -108,6 +108,13 @@ const PostCategoryPage = () => {
               </h6>
             </div>
           )}
+        </div>
+      )}
+      {!postsByCategoryLoading && postsByCategorySuccess && visiblePosts < postsByCategorySuccess.length && (
+        <div className="text-center mt-4">
+          <button className="btn btn-primary" onClick={handleViewMore}>
+            عرض المزيد
+          </button>
         </div>
       )}
     </div>
